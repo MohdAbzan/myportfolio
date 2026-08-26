@@ -25,34 +25,34 @@
 
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: var(--bg-color, #020907);
-            color: var(--text-color, #ecfdf5);
+            background-color: var(--bg-color, #010604);
+            color: var(--text-color, #ffffff);
             overflow-x: hidden;
             transition: background-color 0.4s ease, color 0.4s ease;
         }
 
         .font-mono-accent { font-family: 'Space Mono', monospace; }
 
-        /* Theme Variables (Dark Mode Default) */
+        /* Theme Variables (Dark Mode Default with Deep Solid Contrast) */
         body.dark-mode {
-            --bg-color: #020907;
-            --text-color: #ecfdf5;
-            --card-bg: rgba(4, 20, 15, 0.85);
-            --border-color: rgba(255, 255, 255, 0.12);
-            --nav-bg: rgba(2, 9, 7, 0.9);
+            --bg-color: #010604;
+            --text-color: #ffffff;
+            --card-bg: rgba(2, 18, 12, 0.96);
+            --border-color: rgba(52, 211, 153, 0.3);
+            --nav-bg: rgba(1, 8, 5, 0.95);
         }
 
         /* Light Mode Variables */
         body.light-mode {
             --bg-color: #f1f5f9;
             --text-color: #0f172a;
-            --card-bg: rgba(255, 255, 255, 0.95);
+            --card-bg: rgba(255, 255, 255, 0.98);
             --border-color: rgba(16, 185, 129, 0.3);
-            --nav-bg: rgba(241, 245, 249, 0.9);
+            --nav-bg: rgba(241, 245, 249, 0.95);
         }
 
         body.light-mode .hero-title-primary { color: #0f172a !important; text-shadow: none; }
-        body.light-mode p, body.light-mode li, body.light-mode span, body.light-mode div, body.light-mode h3, body.light-mode h2 { color: #1e293b; }
+        body.light-mode p, body.light-mode li, body.light-mode span, body.light-mode div, body.light-mode h3, body.light-mode h2 { color: #1e293b !important; }
         body.light-mode .text-emerald-100, body.light-mode .text-zinc-400, body.light-mode .text-zinc-500 { color: #334155 !important; }
         body.light-mode input, body.light-mode textarea { color: #0f172a !important; background: rgba(0, 0, 0, 0.03) !important; border-color: rgba(0,0,0,0.1) !important; }
         body.light-mode input::placeholder, body.light-mode textarea::placeholder { color: #64748b !important; }
@@ -104,42 +104,42 @@
             position: fixed; top: 0; left: 0;
             width: 100vw; height: 100vh;
             pointer-events: none; z-index: 40;
-            background: linear-gradient(rgba(2, 9, 7, 0) 50%, rgba(2, 9, 7, 0.35) 50%);
-            background-size: 100% 4px; opacity: 0.5;
+            background: linear-gradient(rgba(1, 6, 4, 0) 50%, rgba(1, 6, 4, 0.4) 50%);
+            background-size: 100% 4px; opacity: 0.6;
         }
 
         .tv-vignette {
             position: fixed; top: 0; left: 0;
             width: 100vw; height: 100vh;
             pointer-events: none; z-index: 39;
-            box-shadow: inset 0 0 160px rgba(1, 5, 4, 0.95);
+            box-shadow: inset 0 0 180px rgba(0, 3, 2, 0.98);
         }
 
-        /* Crisp Hero Typography (Fixed Blending) */
+        /* 100% Opaque Readable Hero Typography (Zero Blending) */
         .hero-title-primary {
             color: #ffffff !important;
-            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.8), 0 0 35px rgba(16, 185, 129, 0.3);
+            text-shadow: 0 4px 25px rgba(0, 0, 0, 0.9), 0 0 40px rgba(16, 185, 129, 0.2);
         }
 
         .hero-title-secondary {
             color: #34d399 !important;
-            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.8), 0 0 35px rgba(52, 211, 153, 0.5);
+            text-shadow: 0 4px 25px rgba(0, 0, 0, 0.9), 0 0 40px rgba(52, 211, 153, 0.4);
         }
 
-        /* Dynamic Glassmorphism Cards with Solid Backdrop Contrast */
+        /* Solid High-Contrast Glassmorphism Cards */
         .hd-card {
-            background: var(--card-bg, rgba(2, 15, 10, 0.9));
+            background: var(--card-bg, rgba(2, 18, 12, 0.96));
             backdrop-filter: blur(20px) saturate(180%);
             -webkit-backdrop-filter: blur(20px) saturate(180%);
-            border: 1px solid var(--border-color, rgba(255, 255, 255, 0.12));
+            border: 1px solid var(--border-color, rgba(52, 211, 153, 0.3));
             border-radius: 24px;
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7);
             position: relative; overflow: hidden;
             transition: transform 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
         }
 
         .hd-card:hover {
-            border-color: rgba(52, 211, 153, 0.6);
+            border-color: rgba(52, 211, 153, 0.8);
             transform: translateY(-4px);
         }
 
@@ -185,13 +185,13 @@
             visibility: hidden; opacity: 0;
             position: absolute; bottom: 125%; left: 50%;
             transform: translateX(-50%) translateY(5px);
-            background: #04200f; color: #34d399;
-            border: 1px solid rgba(52, 211, 153, 0.3);
+            background: #01140a; color: #34d399;
+            border: 1px solid rgba(52, 211, 153, 0.5);
             padding: 5px 10px; border-radius: 8px;
             font-size: 10px; font-family: 'Space Mono', monospace;
             white-space: nowrap; pointer-events: none;
             transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
             z-index: 60;
         }
         .tooltip-wrap:hover .tooltip-box {
@@ -219,45 +219,45 @@
     </button>
 
     <!-- COMMAND PALETTE MODAL (Ctrl + K) -->
-    <div id="cmd-palette" class="modal-overlay hidden-modal fixed inset-0 z-50 flex items-start justify-center pt-24 p-6 bg-black/80 backdrop-blur-md">
+    <div id="cmd-palette" class="modal-overlay hidden-modal fixed inset-0 z-50 flex items-start justify-center pt-24 p-6 bg-black/85 backdrop-blur-md">
         <div class="hd-card w-full max-w-xl p-6 space-y-4 border-t-4 border-t-emerald-400 shadow-2xl">
             <div class="flex items-center justify-between border-b pb-3" style="border-color: var(--border-color);">
-                <div class="flex items-center gap-2 text-xs font-mono-accent text-emerald-400 font-bold uppercase tracking-widest">
+                <div class="flex items-center gap-2 text-xs font-mono-accent text-emerald-300 font-bold uppercase tracking-widest">
                     <i data-lucide="command" class="w-4 h-4"></i> Command Terminal
                 </div>
-                <button onclick="playSFX(); toggleModal('cmd-palette')" class="opacity-60 hover:opacity-100 cursor-pointer"><i data-lucide="x" class="w-5 h-5"></i></button>
+                <button onclick="playSFX(); toggleModal('cmd-palette')" class="opacity-70 hover:opacity-100 cursor-pointer text-white"><i data-lucide="x" class="w-5 h-5"></i></button>
             </div>
             <div class="space-y-2 text-sm">
-                <a href="#about" onclick="playSFX(); toggleModal('cmd-palette')" class="flex items-center justify-between p-3 rounded-xl bg-white/5 hover:bg-emerald-500/20 transition-colors">
+                <a href="#about" onclick="playSFX(); toggleModal('cmd-palette')" class="flex items-center justify-between p-3 rounded-xl bg-black/40 hover:bg-emerald-500/20 text-white transition-colors border border-white/10">
                     <span class="flex items-center gap-2"><i data-lucide="user" class="w-4 h-4 text-emerald-400"></i> Jump to Professional Summary</span>
-                    <span class="text-[10px] font-mono-accent opacity-50">#about</span>
+                    <span class="text-[10px] font-mono-accent text-emerald-400">#about</span>
                 </a>
-                <a href="#experience" onclick="playSFX(); toggleModal('cmd-palette')" class="flex items-center justify-between p-3 rounded-xl bg-white/5 hover:bg-emerald-500/20 transition-colors">
+                <a href="#experience" onclick="playSFX(); toggleModal('cmd-palette')" class="flex items-center justify-between p-3 rounded-xl bg-black/40 hover:bg-emerald-500/20 text-white transition-colors border border-white/10">
                     <span class="flex items-center gap-2"><i data-lucide="briefcase" class="w-4 h-4 text-emerald-400"></i> Jump to dnata Experience</span>
-                    <span class="text-[10px] font-mono-accent opacity-50">#experience</span>
+                    <span class="text-[10px] font-mono-accent text-emerald-400">#experience</span>
                 </a>
-                <a href="Abzan's_Resume.pdf" download="Mohammed_Abzan_CV.pdf" onclick="triggerToast()" class="w-full flex items-center justify-between p-3 rounded-xl bg-white/5 hover:bg-emerald-500/20 transition-colors cursor-pointer text-left">
+                <a href="Abzan's_Resume.pdf" download="Mohammed_Abzan_CV.pdf" onclick="triggerToast()" class="w-full flex items-center justify-between p-3 rounded-xl bg-black/40 hover:bg-emerald-500/20 text-white transition-colors cursor-pointer text-left border border-white/10">
                     <span class="flex items-center gap-2"><i data-lucide="download" class="w-4 h-4 text-emerald-400"></i> Direct Download Official PDF CV</span>
-                    <span class="text-[10px] font-mono-accent opacity-50">PDF</span>
+                    <span class="text-[10px] font-mono-accent text-emerald-400">PDF</span>
                 </a>
-                <button onclick="playSFX(); toggleModal('cmd-palette'); toggleTheme();" class="w-full flex items-center justify-between p-3 rounded-xl bg-white/5 hover:bg-emerald-500/20 transition-colors cursor-pointer text-left">
+                <button onclick="playSFX(); toggleModal('cmd-palette'); toggleTheme();" class="w-full flex items-center justify-between p-3 rounded-xl bg-black/40 hover:bg-emerald-500/20 text-white transition-colors cursor-pointer text-left border border-white/10">
                     <span class="flex items-center gap-2"><i data-lucide="sun-moon" class="w-4 h-4 text-emerald-400"></i> Toggle Dark / Light Theme</span>
-                    <span class="text-[10px] font-mono-accent opacity-50">Theme</span>
+                    <span class="text-[10px] font-mono-accent text-emerald-400">Theme</span>
                 </button>
             </div>
         </div>
     </div>
 
     <!-- QUICK EMAIL MODAL POPUP -->
-    <div id="email-modal" class="modal-overlay hidden-modal fixed inset-0 z-50 flex items-center justify-center p-6 bg-black/70 backdrop-blur-md">
+    <div id="email-modal" class="modal-overlay hidden-modal fixed inset-0 z-50 flex items-center justify-center p-6 bg-black/80 backdrop-blur-md">
         <div class="hd-card w-full max-w-lg p-8 space-y-6 relative border-t-4 border-t-emerald-400">
-            <button onclick="playSFX(); toggleModal('email-modal')" class="absolute top-6 right-6 opacity-60 hover:opacity-100 transition-opacity cursor-pointer">
+            <button onclick="playSFX(); toggleModal('email-modal')" class="absolute top-6 right-6 opacity-70 hover:opacity-100 transition-opacity cursor-pointer text-white">
                 <i data-lucide="x" class="w-6 h-6"></i>
             </button>
 
             <div class="space-y-1">
-                <div class="text-xs font-mono-accent font-bold text-emerald-400 uppercase tracking-widest">Instant Transmission</div>
-                <h3 class="text-2xl font-black">Send Direct Message</h3>
+                <div class="text-xs font-mono-accent font-bold text-emerald-300 uppercase tracking-widest">Instant Transmission</div>
+                <h3 class="text-2xl font-black text-white">Send Direct Message</h3>
             </div>
 
             <form action="https://api.web3forms.com/submit" method="POST" class="space-y-4" onsubmit="handleFormSubmit(event)">
@@ -265,11 +265,11 @@
                 <input type="hidden" name="subject" value="New Portfolio Message">
                 <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
 
-                <input type="text" name="name" required placeholder="Your Name" class="w-full border rounded-xl px-4 py-3 focus:outline-none focus:border-emerald-400 transition-colors">
-                <input type="email" name="email" required placeholder="Your Email Address" class="w-full border rounded-xl px-4 py-3 focus:outline-none focus:border-emerald-400 transition-colors">
-                <textarea name="message" rows="4" required placeholder="Write your message or offer here..." class="w-full border rounded-xl px-4 py-3 focus:outline-none focus:border-emerald-400 transition-colors"></textarea>
+                <input type="text" name="name" required placeholder="Your Name" class="w-full border border-white/20 bg-black/60 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-emerald-400 transition-colors">
+                <input type="email" name="email" required placeholder="Your Email Address" class="w-full border border-white/20 bg-black/60 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-emerald-400 transition-colors">
+                <textarea name="message" rows="4" required placeholder="Write your message or offer here..." class="w-full border border-white/20 bg-black/60 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-emerald-400 transition-colors"></textarea>
                 
-                <button type="submit" class="w-full bg-gradient-to-r from-emerald-400 to-teal-500 hover:from-emerald-300 hover:to-teal-400 text-black font-extrabold py-3.5 rounded-xl transition-all duration-300 shadow-[0_0_20px_rgba(16,185,129,0.4)] cursor-pointer flex items-center justify-center gap-2">
+                <button type="submit" class="w-full bg-gradient-to-r from-emerald-400 to-teal-400 hover:from-emerald-300 hover:to-teal-300 text-black font-extrabold py-3.5 rounded-xl transition-all duration-300 shadow-[0_0_20px_rgba(16,185,129,0.4)] cursor-pointer flex items-center justify-center gap-2">
                     <i data-lucide="send" class="w-4 h-4"></i> Transmit Message
                 </button>
             </form>
@@ -279,17 +279,17 @@
     <!-- TOAST NOTIFICATION BANNER -->
     <div id="toast-banner" class="fixed bottom-6 left-6 z-50 transform translate-y-32 opacity-0 transition-all duration-500 hd-card px-6 py-3 border-l-4 border-emerald-400 flex items-center gap-3 shadow-2xl">
         <i data-lucide="check-circle" class="w-5 h-5 text-emerald-400"></i>
-        <span id="toast-msg" class="text-xs font-bold tracking-wide">Signal Transmitted Successfully! Direct delivery active.</span>
+        <span id="toast-msg" class="text-xs font-bold tracking-wide text-white">Signal Transmitted Successfully! Direct delivery active.</span>
     </div>
 
     <!-- Navigation Bar with Direct CV Download Button -->
-    <header class="fixed top-0 left-0 w-full z-50 backdrop-blur-xl border-b border-white/10" style="background-color: var(--nav-bg);">
+    <header class="fixed top-0 left-0 w-full z-50 backdrop-blur-xl border-b border-white/15" style="background-color: var(--nav-bg);">
         <div class="max-w-7xl mx-auto px-6 h-20 sm:h-24 flex items-center justify-between">
             <a href="#" class="text-2xl font-black tracking-tighter flex items-center gap-1 group cursor-pointer text-white">
                 ABZAN<span class="text-emerald-400 group-hover:scale-125 transition-transform duration-300 inline-block">.</span>
             </a>
             
-            <nav class="hidden md:flex items-center gap-6 text-[11px] font-bold tracking-[0.2em] uppercase opacity-90">
+            <nav class="hidden md:flex items-center gap-6 text-[11px] font-bold tracking-[0.2em] uppercase text-zinc-300">
                 <a href="#about" class="hover:text-emerald-400 transition-colors">Summary</a>
                 <a href="#experience" class="hover:text-emerald-400 transition-colors">Experience</a>
                 <a href="#education" class="hover:text-emerald-400 transition-colors">Education</a>
@@ -299,7 +299,7 @@
 
             <div class="flex items-center gap-3">
                 <!-- Direct Navigation Download CV Button -->
-                <a href="Abzan's_Resume.pdf" download="Mohammed_Abzan_CV.pdf" onclick="triggerToast()" class="hidden lg:flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/15 border border-emerald-500/40 text-[10px] font-mono-accent text-emerald-300 hover:bg-emerald-500 hover:text-black transition-all cursor-pointer">
+                <a href="Abzan's_Resume.pdf" download="Mohammed_Abzan_CV.pdf" onclick="triggerToast()" class="hidden lg:flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-[10px] font-mono-accent text-emerald-300 hover:bg-emerald-400 hover:text-black transition-all cursor-pointer">
                     <i data-lucide="download" class="w-3.5 h-3.5"></i>
                     <span>DOWNLOAD CV</span>
                 </a>
@@ -313,7 +313,7 @@
                 </div>
 
                 <!-- Command Palette Search Trigger Button -->
-                <button onclick="playSFX(); toggleModal('cmd-palette')" class="hidden sm:inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/20 text-xs opacity-90 hover:opacity-100 transition-opacity cursor-pointer">
+                <button onclick="playSFX(); toggleModal('cmd-palette')" class="hidden sm:inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/50 border border-white/20 text-xs text-zinc-300 hover:text-white transition-opacity cursor-pointer">
                     <i data-lucide="command" class="w-3.5 h-3.5 text-emerald-400"></i> <span class="font-mono-accent text-[10px]">Ctrl K</span>
                 </button>
 
@@ -335,7 +335,7 @@
         <!-- HERO SECTION -->
         <section id="hero" class="min-h-[75vh] flex flex-col justify-center relative reveal active">
             <div class="space-y-6">
-                <div class="inline-flex items-center gap-3 text-xs font-mono-accent font-bold tracking-widest text-emerald-300 uppercase bg-gradient-to-r from-emerald-500/20 to-teal-500/20 px-4 py-2 rounded-full border border-emerald-500/40 shadow-[0_0_20px_rgba(16,185,129,0.25)]">
+                <div class="inline-flex items-center gap-3 text-xs font-mono-accent font-bold tracking-widest text-emerald-300 uppercase bg-gradient-to-r from-emerald-500/25 to-teal-500/25 px-4 py-2 rounded-full border border-emerald-500/40 shadow-[0_0_20px_rgba(16,185,129,0.3)]">
                     <span class="relative flex h-2.5 w-2.5">
                         <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                         <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-400"></span>
@@ -352,17 +352,17 @@
                     </h1>
                 </div>
 
-                <p class="max-w-3xl text-lg sm:text-xl text-emerald-100 font-medium leading-relaxed pt-2 border-l-4 border-emerald-400 pl-4 sm:pl-6 bg-black/30 p-4 rounded-r-2xl backdrop-blur-sm">
-                    Administration & Customer Service Professional at <strong class="text-white font-bold">dnata — Emirates Group</strong>, turning complex airport logistics into seamless order at Dubai International Airport.
+                <p class="max-w-3xl text-lg sm:text-xl text-white font-medium leading-relaxed pt-2 border-l-4 border-emerald-400 pl-4 sm:pl-6 bg-black/60 p-5 rounded-r-2xl backdrop-blur-md shadow-2xl border-y border-r border-white/10">
+                    Administration & Customer Service Professional at <strong class="text-emerald-300 font-bold">dnata — Emirates Group</strong>, turning complex airport logistics into seamless order at Dubai International Airport.
                 </p>
 
                 <div class="flex flex-wrap items-center gap-4 sm:gap-5 pt-6">
                     <!-- Clean Direct Download Button in Hero -->
-                    <a href="Abzan's_Resume.pdf" download="Mohammed_Abzan_CV.pdf" onclick="triggerToast()" class="magnetic bg-gradient-to-r from-emerald-400 to-teal-400 hover:from-emerald-300 hover:to-teal-300 text-black font-extrabold px-7 py-3.5 rounded-full flex items-center gap-3 transition-all duration-300 shadow-[0_0_30px_rgba(16,185,129,0.4)] hover:scale-105 cursor-pointer">
+                    <a href="Abzan's_Resume.pdf" download="Mohammed_Abzan_CV.pdf" onclick="triggerToast()" class="magnetic bg-gradient-to-r from-emerald-400 to-teal-400 hover:from-emerald-300 hover:to-teal-300 text-black font-extrabold px-7 py-3.5 rounded-full flex items-center gap-3 transition-all duration-300 shadow-[0_0_30px_rgba(16,185,129,0.5)] hover:scale-105 cursor-pointer">
                         <i data-lucide="download" class="w-5 h-5"></i> Download PDF CV
                     </a>
                     
-                    <a href="https://www.linkedin.com/in/mohdabzan" target="_blank" class="magnetic hd-card hover:bg-emerald-600/30 font-bold px-7 py-3.5 rounded-full transition-all duration-300 flex items-center gap-3 border hover:border-emerald-400 hover:scale-105 cursor-pointer text-white">
+                    <a href="https://www.linkedin.com/in/mohdabzan" target="_blank" class="magnetic hd-card hover:bg-emerald-600/30 font-bold px-7 py-3.5 rounded-full transition-all duration-300 flex items-center gap-3 border border-emerald-500/40 hover:border-emerald-400 hover:scale-105 cursor-pointer text-white">
                         <svg class="w-5 h-5 fill-current text-emerald-400" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                         LinkedIn Profile
                     </a>
@@ -371,7 +371,7 @@
         </section>
 
         <!-- INFINITE RUNNING ROLES CAROUSEL -->
-        <div class="w-full border-y border-white/20 py-5 overflow-hidden backdrop-blur-md reveal bg-black/40">
+        <div class="w-full border-y border-white/20 py-5 overflow-hidden backdrop-blur-md reveal bg-black/60 shadow-xl">
             <div class="animate-marquee">
                 <div class="flex items-center gap-12 sm:gap-16 text-xs sm:text-sm font-black tracking-widest uppercase text-emerald-300 whitespace-nowrap pr-12 sm:pr-16">
                     <span class="flex items-center gap-3"><i data-lucide="briefcase" class="w-4 h-4 text-emerald-400"></i> ADMINISTRATIVE ASSISTANT (DNATA)</span>
@@ -399,9 +399,9 @@
             </h2>
 
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-                <div class="lg:col-span-7 space-y-6 text-base sm:text-lg text-emerald-50 leading-relaxed hd-card p-6 sm:p-10">
+                <div class="lg:col-span-7 space-y-6 text-base sm:text-lg text-white font-medium leading-relaxed hd-card p-6 sm:p-10">
                     <p>
-                        Administration and customer service professional with over two years of experience at <strong class="text-white font-bold">dnata (Emirates Group), Dubai International Airport</strong>, across cargo operations, document control, sustainability coordination, and customer support.
+                        Administration and customer service professional with over two years of experience at <strong class="text-emerald-300 font-bold">dnata (Emirates Group), Dubai International Airport</strong>, across cargo operations, document control, sustainability coordination, and customer support.
                     </p>
                     <p>
                         Comfortable maintaining compliance-grade records, resolving enquiries from airlines and freight forwarders, and keeping cross-departmental operations running smoothly in a fast-paced airport environment. Holds a Bachelor's degree in Business Management, with additional hands-on skills in Power BI and AI prompt engineering gained through the Dubai Future Foundation's One Million Prompters program.
@@ -412,9 +412,9 @@
                     <!-- Quick Copy Email Card -->
                     <div onclick="copyEmailToClipboard()" class="hd-card p-5 sm:p-6 flex items-center justify-between group cursor-pointer tooltip-wrap">
                         <div class="flex items-center gap-4">
-                            <div class="p-3.5 rounded-2xl bg-emerald-500/20 text-emerald-300 group-hover:bg-emerald-500 group-hover:text-black transition-colors"><i data-lucide="mail"></i></div>
+                            <div class="p-3.5 rounded-2xl bg-emerald-500/20 text-emerald-300 group-hover:bg-emerald-400 group-hover:text-black transition-colors"><i data-lucide="mail"></i></div>
                             <div>
-                                <div class="text-[10px] text-emerald-400/70 font-black tracking-widest uppercase mb-0.5">Email Contact (Click to Copy)</div>
+                                <div class="text-[10px] text-emerald-400 font-black tracking-widest uppercase mb-0.5">Email Contact (Click to Copy)</div>
                                 <div id="email-text" class="text-xs sm:text-sm font-bold text-white group-hover:text-emerald-300 transition-colors">mohdabzan2003@gmail.com</div>
                             </div>
                         </div>
@@ -425,9 +425,9 @@
                     </div>
 
                     <a href="tel:+971565754523" class="hd-card p-5 sm:p-6 flex items-center gap-4 group cursor-pointer">
-                        <div class="p-3.5 rounded-2xl bg-emerald-500/20 text-emerald-300 group-hover:bg-emerald-500 group-hover:text-black transition-colors"><i data-lucide="phone"></i></div>
+                        <div class="p-3.5 rounded-2xl bg-emerald-500/20 text-emerald-300 group-hover:bg-emerald-400 group-hover:text-black transition-colors"><i data-lucide="phone"></i></div>
                         <div>
-                            <div class="text-[10px] text-emerald-400/70 font-black tracking-widest uppercase mb-0.5">Direct Phone</div>
+                            <div class="text-[10px] text-emerald-400 font-black tracking-widest uppercase mb-0.5">Direct Phone</div>
                             <div class="text-xs sm:text-sm font-bold text-white group-hover:text-emerald-300 transition-colors">+971 56 575 4523</div>
                         </div>
                     </a>
@@ -437,7 +437,7 @@
                             <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                         </div>
                         <div>
-                            <div class="text-[10px] text-teal-400/70 font-black tracking-widest uppercase mb-0.5">LinkedIn Profile</div>
+                            <div class="text-[10px] text-teal-400 font-black tracking-widest uppercase mb-0.5">LinkedIn Profile</div>
                             <div class="text-xs sm:text-sm font-bold text-white group-hover:text-teal-300 transition-colors flex items-center gap-1.5">
                                 linkedin.com/in/mohdabzan
                             </div>
@@ -469,15 +469,15 @@
                                 <span class="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse"></span> 2025 — PRESENT
                             </div>
                             <h3 class="text-2xl sm:text-3xl font-black text-white">Administrative Assistant</h3>
-                            <div class="text-xs sm:text-sm font-mono-accent text-emerald-300 mt-1">dnata (Emirates Group) · Dubai International Airport</div>
+                            <div class="text-xs sm:text-sm font-mono-accent text-emerald-300 mt-1 font-bold">dnata (Emirates Group) · Dubai International Airport</div>
                         </div>
 
-                        <ul class="space-y-3.5 text-emerald-50 text-sm">
-                            <li class="flex items-start gap-3"><i data-lucide="arrow-right-circle" class="w-4 h-4 text-emerald-400 shrink-0 mt-1"></i> Manage document archiving for cargo and operational records, keeping filing systems organised and audit-ready for management reviews.</li>
-                            <li class="flex items-start gap-3"><i data-lucide="arrow-right-circle" class="w-4 h-4 text-emerald-400 shrink-0 mt-1"></i> Support environmental and sustainability initiatives within the department, including record-keeping tied to sustainability reporting and compliance requirements.</li>
-                            <li class="flex items-start gap-3"><i data-lucide="arrow-right-circle" class="w-4 h-4 text-emerald-400 shrink-0 mt-1"></i> Handle customer service enquiries from airlines, freight forwarders and internal teams, resolving cases and routing requests to the right department.</li>
-                            <li class="flex items-start gap-3"><i data-lucide="arrow-right-circle" class="w-4 h-4 text-emerald-400 shrink-0 mt-1"></i> Provide day-to-day administrative support, including correspondence, scheduling and coordination between operations, warehouse and management teams.</li>
-                            <li class="flex items-start gap-3"><i data-lucide="arrow-right-circle" class="w-4 h-4 text-emerald-400 shrink-0 mt-1"></i> Maintain accurate data entry across internal systems, supporting reporting needs for supervisors and department heads.</li>
+                        <ul class="space-y-3.5 text-white text-sm">
+                            <li class="flex items-start gap-3 bg-black/40 p-3.5 rounded-xl border border-white/10"><i data-lucide="arrow-right-circle" class="w-4 h-4 text-emerald-400 shrink-0 mt-1"></i> <span>Manage document archiving for cargo and operational records, keeping filing systems organised and audit-ready for management reviews.</span></li>
+                            <li class="flex items-start gap-3 bg-black/40 p-3.5 rounded-xl border border-white/10"><i data-lucide="arrow-right-circle" class="w-4 h-4 text-emerald-400 shrink-0 mt-1"></i> <span>Support environmental and sustainability initiatives within the department, including record-keeping tied to sustainability reporting and compliance requirements.</span></li>
+                            <li class="flex items-start gap-3 bg-black/40 p-3.5 rounded-xl border border-white/10"><i data-lucide="arrow-right-circle" class="w-4 h-4 text-emerald-400 shrink-0 mt-1"></i> <span>Handle customer service enquiries from airlines, freight forwarders and internal teams, resolving cases and routing requests to the right department.</span></li>
+                            <li class="flex items-start gap-3 bg-black/40 p-3.5 rounded-xl border border-white/10"><i data-lucide="arrow-right-circle" class="w-4 h-4 text-emerald-400 shrink-0 mt-1"></i> <span>Provide day-to-day administrative support, including correspondence, scheduling and coordination between operations, warehouse and management teams.</span></li>
+                            <li class="flex items-start gap-3 bg-black/40 p-3.5 rounded-xl border border-white/10"><i data-lucide="arrow-right-circle" class="w-4 h-4 text-emerald-400 shrink-0 mt-1"></i> <span>Maintain accurate data entry across internal systems, supporting reporting needs for supervisors and department heads.</span></li>
                         </ul>
                     </div>
                 </div>
@@ -488,17 +488,17 @@
                     
                     <div class="hd-card p-6 sm:p-10 border-l-4 border-l-teal-400">
                         <div class="mb-6">
-                            <div class="text-[10px] font-black text-teal-400 uppercase tracking-widest mb-2">2024 — 2025</div>
+                            <div class="text-[10px] font-black text-teal-300 bg-teal-500/20 px-3 py-1 rounded inline-block uppercase tracking-widest mb-2 border border-teal-500/40">2024 — 2025</div>
                             <h3 class="text-2xl sm:text-3xl font-black text-white">Cargo & Customer Service Agent</h3>
-                            <div class="text-xs sm:text-sm font-mono-accent text-teal-300 mt-1">dnata (Emirates Group) · Dubai International Airport</div>
+                            <div class="text-xs sm:text-sm font-mono-accent text-teal-300 mt-1 font-bold">dnata (Emirates Group) · Dubai International Airport</div>
                         </div>
 
-                        <ul class="space-y-3.5 text-emerald-50 text-sm">
-                            <li class="flex items-start gap-3"><i data-lucide="circle-dot" class="w-4 h-4 text-teal-400 shrink-0 mt-1"></i> Served as the main point of contact for international airlines, freight forwarders and multinational clients, managing import and export cargo enquiries end to end.</li>
-                            <li class="flex items-start gap-3"><i data-lucide="circle-dot" class="w-4 h-4 text-teal-400 shrink-0 mt-1"></i> Maintained compliance-grade records for AWB, Dangerous Goods, Pharmaceutical and AVI/HUM shipments in line with IATA and GCAA standards.</li>
-                            <li class="flex items-start gap-3"><i data-lucide="circle-dot" class="w-4 h-4 text-teal-400 shrink-0 mt-1"></i> Prepared billing reports, invoices and inventory trackers for management review.</li>
-                            <li class="flex items-start gap-3"><i data-lucide="circle-dot" class="w-4 h-4 text-teal-400 shrink-0 mt-1"></i> Guided customers through the Calogi digital platform, reducing repeat queries.</li>
-                            <li class="flex items-start gap-3"><i data-lucide="circle-dot" class="w-4 h-4 text-teal-400 shrink-0 mt-1"></i> Carried out ULD build-up and breakdown with close attention to load integrity, weight compliance and safety protocols.</li>
+                        <ul class="space-y-3.5 text-white text-sm">
+                            <li class="flex items-start gap-3 bg-black/40 p-3.5 rounded-xl border border-white/10"><i data-lucide="circle-dot" class="w-4 h-4 text-teal-400 shrink-0 mt-1"></i> <span>Served as the main point of contact for international airlines, freight forwarders and multinational clients, managing import and export cargo enquiries end to end.</span></li>
+                            <li class="flex items-start gap-3 bg-black/40 p-3.5 rounded-xl border border-white/10"><i data-lucide="circle-dot" class="w-4 h-4 text-teal-400 shrink-0 mt-1"></i> <span>Maintained compliance-grade records for AWB, Dangerous Goods, Pharmaceutical and AVI/HUM shipments in line with IATA and GCAA standards.</span></li>
+                            <li class="flex items-start gap-3 bg-black/40 p-3.5 rounded-xl border border-white/10"><i data-lucide="circle-dot" class="w-4 h-4 text-teal-400 shrink-0 mt-1"></i> <span>Prepared billing reports, invoices and inventory trackers for management review.</span></li>
+                            <li class="flex items-start gap-3 bg-black/40 p-3.5 rounded-xl border border-white/10"><i data-lucide="circle-dot" class="w-4 h-4 text-teal-400 shrink-0 mt-1"></i> <span>Guided customers through the Calogi digital platform, reducing repeat queries.</span></li>
+                            <li class="flex items-start gap-3 bg-black/40 p-3.5 rounded-xl border border-white/10"><i data-lucide="circle-dot" class="w-4 h-4 text-teal-400 shrink-0 mt-1"></i> <span>Carried out ULD build-up and breakdown with close attention to load integrity, weight compliance and safety protocols.</span></li>
                         </ul>
                     </div>
                 </div>
@@ -519,7 +519,7 @@
                     <div class="text-[10px] font-black text-emerald-300 bg-emerald-500/20 px-3 py-1 rounded inline-block uppercase tracking-widest mb-4 border border-emerald-500/30">IN PROGRESS</div>
                     <h3 class="text-2xl sm:text-3xl font-black mb-2 text-white">Master of Business Administration (MBA)</h3>
                     <div class="text-emerald-400 font-mono-accent font-bold text-sm mb-4">Business Analytics</div>
-                    <p class="text-emerald-50 text-sm leading-relaxed">
+                    <p class="text-white text-sm leading-relaxed font-medium">
                         Deepening expertise in data analytics, operational intelligence, business strategy, and data-driven decision-making.
                     </p>
                 </div>
@@ -530,7 +530,7 @@
                     <h3 class="text-2xl sm:text-3xl font-black mb-2 text-white">Bachelor of Commerce (B.Com)</h3>
                     <div class="text-teal-400 font-mono-accent font-bold text-sm mb-1">Business Management</div>
                     <div class="text-xs text-teal-300 font-bold uppercase mb-4">Mangalore University, India</div>
-                    <p class="text-emerald-50 text-sm leading-relaxed">
+                    <p class="text-white text-sm leading-relaxed font-medium">
                         Solid foundation in organizational operations, business administration, commerce, and operational leadership.
                     </p>
                 </div>
@@ -540,11 +540,11 @@
             <div class="hd-card p-6 sm:p-10">
                 <h3 class="text-xs font-black tracking-widest text-emerald-400 uppercase mb-6 flex items-center gap-3"><i data-lucide="award" class="text-emerald-400"></i> Certifications</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div class="p-4 rounded-xl bg-white/10 border border-white/10 flex items-center gap-3 text-white"><i data-lucide="check" class="text-emerald-400 shrink-0"></i><span class="text-xs sm:text-sm font-bold">One Million Prompters AI Prompt Engineering — Dubai Future Foundation</span></div>
-                    <div class="p-4 rounded-xl bg-white/10 border border-white/10 flex items-center gap-3 text-white"><i data-lucide="check" class="text-emerald-400 shrink-0"></i><span class="text-xs sm:text-sm font-bold">Emirates Aviation Dangerous Goods Handling — dnata</span></div>
-                    <div class="p-4 rounded-xl bg-white/10 border border-white/10 flex items-center gap-3 text-white"><i data-lucide="check" class="text-emerald-400 shrink-0"></i><span class="text-xs sm:text-sm font-bold">Cargo Product Knowledge & Documentation — dnata</span></div>
-                    <div class="p-4 rounded-xl bg-white/10 border border-white/10 flex items-center gap-3 text-white"><i data-lucide="check" class="text-emerald-400 shrink-0"></i><span class="text-xs sm:text-sm font-bold">Fundamentals of Cargo Operations (Export) — dnata</span></div>
-                    <div class="p-4 rounded-xl bg-white/10 border border-white/10 flex items-center gap-3 md:col-span-2 text-white"><i data-lucide="check" class="text-emerald-400 shrink-0"></i><span class="text-xs sm:text-sm font-bold">dnata Customer Service — dnata</span></div>
+                    <div class="p-4 rounded-xl bg-black/50 border border-white/15 flex items-center gap-3 text-white"><i data-lucide="check" class="text-emerald-400 shrink-0"></i><span class="text-xs sm:text-sm font-bold">One Million Prompters AI Prompt Engineering — Dubai Future Foundation</span></div>
+                    <div class="p-4 rounded-xl bg-black/50 border border-white/15 flex items-center gap-3 text-white"><i data-lucide="check" class="text-emerald-400 shrink-0"></i><span class="text-xs sm:text-sm font-bold">Emirates Aviation Dangerous Goods Handling — dnata</span></div>
+                    <div class="p-4 rounded-xl bg-black/50 border border-white/15 flex items-center gap-3 text-white"><i data-lucide="check" class="text-emerald-400 shrink-0"></i><span class="text-xs sm:text-sm font-bold">Cargo Product Knowledge & Documentation — dnata</span></div>
+                    <div class="p-4 rounded-xl bg-black/50 border border-white/15 flex items-center gap-3 text-white"><i data-lucide="check" class="text-emerald-400 shrink-0"></i><span class="text-xs sm:text-sm font-bold">Fundamentals of Cargo Operations (Export) — dnata</span></div>
+                    <div class="p-4 rounded-xl bg-black/50 border border-white/15 flex items-center gap-3 md:col-span-2 text-white"><i data-lucide="check" class="text-emerald-400 shrink-0"></i><span class="text-xs sm:text-sm font-bold">dnata Customer Service — dnata</span></div>
                 </div>
             </div>
         </section>
@@ -562,12 +562,12 @@
                 <div class="hd-card p-8 sm:p-10">
                     <h3 class="text-xl sm:text-2xl font-black mb-6 flex items-center gap-3 text-white"><i data-lucide="crosshair" class="text-emerald-400"></i> Field Skills</h3>
                     <div class="flex flex-wrap gap-2.5">
-                        <span class="anti-gravity border border-white/20 px-4 py-2 rounded-full text-xs font-bold text-white bg-black/40">Customer Service</span>
-                        <span class="anti-gravity-delayed border border-white/20 px-4 py-2 rounded-full text-xs font-bold text-white bg-black/40">Document Archiving & Control</span>
-                        <span class="anti-gravity border border-white/20 px-4 py-2 rounded-full text-xs font-bold text-white bg-black/40">Administrative Support</span>
-                        <span class="anti-gravity-delayed border border-white/20 px-4 py-2 rounded-full text-xs font-bold text-white bg-black/40">Sustainability Coordination</span>
-                        <span class="anti-gravity border border-white/20 px-4 py-2 rounded-full text-xs font-bold text-white bg-black/40">Cargo Operations</span>
-                        <span class="anti-gravity-delayed border border-white/20 px-4 py-2 rounded-full text-xs font-bold text-white bg-black/40">Data Entry & Reporting</span>
+                        <span class="anti-gravity border border-white/20 px-4 py-2 rounded-full text-xs font-bold text-white bg-black/60 shadow">Customer Service</span>
+                        <span class="anti-gravity-delayed border border-white/20 px-4 py-2 rounded-full text-xs font-bold text-white bg-black/60 shadow">Document Archiving & Control</span>
+                        <span class="anti-gravity border border-white/20 px-4 py-2 rounded-full text-xs font-bold text-white bg-black/60 shadow">Administrative Support</span>
+                        <span class="anti-gravity-delayed border border-white/20 px-4 py-2 rounded-full text-xs font-bold text-white bg-black/60 shadow">Sustainability Coordination</span>
+                        <span class="anti-gravity border border-white/20 px-4 py-2 rounded-full text-xs font-bold text-white bg-black/60 shadow">Cargo Operations</span>
+                        <span class="anti-gravity-delayed border border-white/20 px-4 py-2 rounded-full text-xs font-bold text-white bg-black/60 shadow">Data Entry & Reporting</span>
                     </div>
                 </div>
 
@@ -575,11 +575,11 @@
                 <div class="hd-card p-8 sm:p-10">
                     <h3 class="text-xl sm:text-2xl font-black mb-6 flex items-center gap-3 text-white"><i data-lucide="cpu" class="text-teal-400"></i> Software Stack</h3>
                     <div class="flex flex-wrap gap-2.5">
-                        <span class="anti-gravity-delayed bg-emerald-500/20 border border-emerald-500/40 px-4 py-2 rounded-full text-xs font-bold text-emerald-300">Microsoft 365 (Word, Excel, PowerPoint, Outlook)</span>
-                        <span class="anti-gravity bg-teal-500/20 border border-teal-500/40 px-4 py-2 rounded-full text-xs font-bold text-teal-300">Power BI</span>
-                        <span class="anti-gravity-delayed bg-emerald-500/20 border border-emerald-500/40 px-4 py-2 rounded-full text-xs font-bold text-emerald-300">AI Prompt Engineering</span>
-                        <span class="anti-gravity bg-teal-500/20 border border-teal-500/40 px-4 py-2 rounded-full text-xs font-bold text-teal-300">One Cargo</span>
-                        <span class="anti-gravity-delayed bg-emerald-500/20 border border-emerald-500/40 px-4 py-2 rounded-full text-xs font-bold text-emerald-300">Calogi</span>
+                        <span class="anti-gravity-delayed bg-emerald-500/25 border border-emerald-500/50 px-4 py-2 rounded-full text-xs font-bold text-emerald-200 shadow">Microsoft 365 (Word, Excel, PowerPoint, Outlook)</span>
+                        <span class="anti-gravity bg-teal-500/25 border border-teal-500/50 px-4 py-2 rounded-full text-xs font-bold text-teal-200 shadow">Power BI</span>
+                        <span class="anti-gravity-delayed bg-emerald-500/25 border border-emerald-500/50 px-4 py-2 rounded-full text-xs font-bold text-emerald-200 shadow">AI Prompt Engineering</span>
+                        <span class="anti-gravity bg-teal-500/25 border border-teal-500/50 px-4 py-2 rounded-full text-xs font-bold text-teal-200 shadow">One Cargo</span>
+                        <span class="anti-gravity-delayed bg-emerald-500/25 border border-emerald-500/50 px-4 py-2 rounded-full text-xs font-bold text-emerald-200 shadow">Calogi</span>
                     </div>
                 </div>
             </div>
@@ -602,22 +602,22 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div class="space-y-2">
                             <label class="text-xs font-bold text-emerald-300 uppercase tracking-widest">Your Name</label>
-                            <input type="text" name="name" required placeholder="John Doe" class="w-full border border-white/20 bg-black/50 text-white rounded-xl px-5 py-4 focus:outline-none focus:border-emerald-400 transition-colors">
+                            <input type="text" name="name" required placeholder="John Doe" class="w-full border border-white/20 bg-black/70 text-white rounded-xl px-5 py-4 focus:outline-none focus:border-emerald-400 transition-colors">
                         </div>
                         <div class="space-y-2">
                             <label class="text-xs font-bold text-emerald-300 uppercase tracking-widest">Your Email Address</label>
-                            <input type="email" name="email" required placeholder="john@company.com" class="w-full border border-white/20 bg-black/50 text-white rounded-xl px-5 py-4 focus:outline-none focus:border-emerald-400 transition-colors">
+                            <input type="email" name="email" required placeholder="john@company.com" class="w-full border border-white/20 bg-black/70 text-white rounded-xl px-5 py-4 focus:outline-none focus:border-emerald-400 transition-colors">
                         </div>
                     </div>
 
                     <div class="space-y-2">
                         <label class="text-xs font-bold text-emerald-300 uppercase tracking-widest">Subject</label>
-                        <input type="text" name="custom_subject" required placeholder="Executive Opportunity / Proposal" class="w-full border border-white/20 bg-black/50 text-white rounded-xl px-5 py-4 focus:outline-none focus:border-emerald-400 transition-colors">
+                        <input type="text" name="custom_subject" required placeholder="Executive Opportunity / Proposal" class="w-full border border-white/20 bg-black/70 text-white rounded-xl px-5 py-4 focus:outline-none focus:border-emerald-400 transition-colors">
                     </div>
 
                     <div class="space-y-2">
                         <label class="text-xs font-bold text-emerald-300 uppercase tracking-widest">Transmission Message</label>
-                        <textarea name="message" rows="5" required placeholder="State your inquiry or message details here..." class="w-full border border-white/20 bg-black/50 text-white rounded-xl px-5 py-4 focus:outline-none focus:border-emerald-400 transition-colors"></textarea>
+                        <textarea name="message" rows="5" required placeholder="State your inquiry or message details here..." class="w-full border border-white/20 bg-black/70 text-white rounded-xl px-5 py-4 focus:outline-none focus:border-emerald-400 transition-colors"></textarea>
                     </div>
 
                     <button type="submit" class="magnetic w-full sm:w-auto bg-gradient-to-r from-emerald-400 to-teal-400 hover:from-emerald-300 hover:to-teal-300 text-black font-extrabold px-10 py-4 rounded-full flex items-center justify-center gap-3 transition-all duration-300 shadow-[0_0_30px_rgba(16,185,129,0.4)] hover:scale-105 cursor-pointer">
@@ -630,10 +630,10 @@
     </main>
 
     <!-- FOOTER -->
-    <footer class="border-t border-white/10 py-10 relative z-10 text-center text-[10px] font-black tracking-widest text-emerald-300 backdrop-blur-md" style="background-color: var(--nav-bg);">
+    <footer class="border-t border-white/15 py-10 relative z-10 text-center text-[10px] font-black tracking-widest text-emerald-300 backdrop-blur-md shadow-2xl" style="background-color: var(--nav-bg);">
         <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
             <div class="text-white">&copy; 2026 MOHAMMED ABZAN. ALL RIGHTS RESERVED.</div>
-            <div class="flex gap-3 text-emerald-400">
+            <div class="flex gap-3 text-emerald-400 font-bold">
                 <span>ENGLISH</span> • <span>HINDI</span> • <span>URDU</span> • <span>KANNADA</span> • <span>TULU</span>
             </div>
         </div>

@@ -2,7 +2,7 @@
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <title>MOHAMMED ABZAN — Executive Portfolio</title>
     <!-- Open Graph Social Meta Tags -->
     <meta property="og:title" content="MOHAMMED ABZAN — Executive Portfolio">
@@ -17,18 +17,16 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap');
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        /* CRITICAL RESET: Eliminate all stray margins and paddings across elements */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: transparent;
+        html, body {
+            width: 100%;
+            min-height: 100vh;
+            background-color: #020907 !important;
             color: var(--text-color, #ecfdf5);
             overflow-x: hidden;
-            transition: color 0.4s ease;
+            scroll-behavior: smooth;
         }
 
         .font-mono-accent { font-family: 'Space Mono', monospace; }
@@ -38,7 +36,7 @@
             --text-color: #ecfdf5;
             --card-bg: rgba(4, 20, 15, 0.85);
             --border-color: rgba(255, 255, 255, 0.08);
-            --nav-bg: rgba(2, 9, 7, 0.85);
+            --nav-bg: rgba(2, 9, 7, 0.90);
         }
 
         /* Light Mode Variables */
@@ -47,6 +45,10 @@
             --card-bg: rgba(255, 255, 255, 0.95);
             --border-color: rgba(16, 185, 129, 0.3);
             --nav-bg: rgba(241, 245, 249, 0.95);
+        }
+
+        body.light-mode html, body.light-mode {
+            background-color: #f1f5f9 !important;
         }
 
         body.light-mode .hero-title-primary { color: #0f172a !important; text-shadow: none; }
@@ -135,7 +137,7 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             filter: drop-shadow(0 0 35px rgba(16, 185, 129, 0.45));
-            margin-top: 0.35rem; /* Explicit space between Mohammed and Abzan on mobile */
+            margin-top: 0.45rem; /* Explicit mobile gap between Mohammed and Abzan */
         }
 
         @media (min-width: 640px) {
@@ -346,7 +348,7 @@
     <!-- Main Content Container -->
     <main class="max-w-7xl mx-auto px-6 pt-32 sm:pt-40 pb-24 space-y-32 sm:space-y-40 relative z-10">
 
-        <!-- HERO SECTION WITH MOBILE SPACING FIXED -->
+        <!-- HERO SECTION -->
         <section id="hero" class="min-h-[75vh] flex flex-col justify-center relative reveal active">
             <div class="space-y-6">
                 <div class="inline-flex items-center gap-3 text-xs font-mono-accent font-bold tracking-widest text-emerald-400 uppercase bg-gradient-to-r from-emerald-500/10 to-teal-500/10 px-4 py-2 rounded-full border border-emerald-500/20 shadow-[0_0_20px_rgba(16,185,129,0.15)]">
@@ -401,7 +403,7 @@
             </div>
         </div>
 
-        <!-- ABOUT SECTION WITH QUICK COPY EMAIL BUTTON -->
+        <!-- ABOUT SECTION -->
         <section id="about" class="space-y-10 reveal">
             <div class="flex items-center gap-4">
                 <span class="w-10 h-1 bg-gradient-to-r from-emerald-400 to-teal-500 rounded-full"></span>
@@ -815,6 +817,29 @@
 
             targetMouseX = (e.clientX / window.innerWidth - 0.5) * 2;
             targetMouseY = (e.clientY / window.innerHeight - 0.5) * 2;
+        });
+
+        // Mobile touch support for rotating the 3D core
+        let isDragging = false;
+        let touchStartX = 0, touchStartY = 0;
+
+        window.addEventListener('touchstart', (e) => {
+            isDragging = true;
+            touchStartX = e.touches[0].clientX;
+            touchStartY = e.touches[0].clientY;
+        }, { passive: true });
+
+        window.addEventListener('touchmove', (e) => {
+            if (!isDragging) return;
+            const deltaX = e.touches[0].clientX - touchStartX;
+            const deltaY = e.touches[0].clientY - touchStartY;
+            
+            targetMouseX = (deltaX / window.innerWidth) * 2;
+            targetMouseY = (deltaY / window.innerHeight) * 2;
+        }, { passive: true });
+
+        window.addEventListener('touchend', () => {
+            isDragging = false;
         });
 
         function animateCursor() {

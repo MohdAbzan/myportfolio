@@ -362,7 +362,7 @@
                 <div class="flex flex-wrap items-center gap-4 sm:gap-5 pt-6">
                     <!-- Direct Download Button in Hero -->
                     <a href="Abzan's_Resume.pdf" download="Mohammed_Abzan_CV.pdf" onclick="incrementDownloadCount()" class="magnetic bg-gradient-to-r from-emerald-400 to-teal-500 hover:from-emerald-300 hover:to-teal-400 text-black font-extrabold px-7 py-3.5 rounded-full flex items-center gap-3 transition-all duration-300 shadow-[0_0_30px_rgba(16,185,129,0.4)] hover:scale-105 cursor-pointer">
-                        <i data-lucide="download" class="w-5 h-5"></i> Download PDF CV (<span id="hero-download-counter">142</span>)
+                        <i data-lucide="download" class="w-5 h-5"></i> Download PDF CV (<span id="hero-download-counter">0</span>)
                     </a>
                     
                     <a href="https://www.linkedin.com/in/mohdabzan" target="_blank" class="magnetic hd-card hover:bg-emerald-600/30 font-bold px-7 py-3.5 rounded-full transition-all duration-300 flex items-center gap-3 border hover:border-emerald-400 hover:scale-105 cursor-pointer">
@@ -657,15 +657,15 @@
             });
         }
 
-        // Increment PDF CV Download Counter & Toast Feedback
-        let downloadCount = 142;
+        // Increment PDF CV Download Counter & Toast Feedback (Starts fresh at 0)
+        let downloadCount = 0;
         function incrementDownloadCount() {
             playSFX();
             downloadCount++;
-            const counterEls = [document.getElementById('download-counter'), document.getElementById('hero-download-counter')];
-            counterEls.forEach(el => {
-                if (el) el.innerText = downloadCount;
-            });
+            const counterEl = document.getElementById('hero-download-counter');
+            if (counterEl) {
+                counterEl.innerText = downloadCount;
+            }
             showToast("Official PDF CV Downloaded Successfully!");
         }
 

@@ -37,9 +37,9 @@
         body.dark-mode {
             --bg-color: #010604;
             --text-color: #ffffff;
-            --card-bg: rgba(2, 20, 13, 0.98);
+            --card-bg: rgba(2, 20, 13, 0.95);
             --border-color: rgba(52, 211, 153, 0.4);
-            --nav-bg: rgba(1, 8, 5, 0.98);
+            --nav-bg: rgba(1, 8, 5, 0.95);
         }
 
         body.light-mode {
@@ -81,7 +81,7 @@
             display: inline-block;
         }
 
-        /* Fixed High-Definition 3D Canvas Container */
+        /* Fixed High-Definition 3D Quantum Canvas Background */
         #webgl-container {
             position: fixed; top: 0; left: 0;
             width: 100vw; height: 100vh;
@@ -102,32 +102,28 @@
             position: fixed; top: 0; left: 0;
             width: 100vw; height: 100vh;
             pointer-events: none; z-index: 39;
-            box-shadow: inset 0 0 120px rgba(0, 3, 2, 0.9);
-        }
-
-        @media (max-width: 768px) {
-            .tv-overlay, .tv-vignette { opacity: 0.2; }
+            box-shadow: inset 0 0 140px rgba(0, 3, 2, 0.92);
         }
 
         /* 100% Opaque HD Hero Typography */
         .hero-title-primary {
             color: #ffffff !important;
-            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.95), 0 0 30px rgba(16, 185, 129, 0.3);
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.95), 0 0 35px rgba(16, 185, 129, 0.3);
         }
 
         .hero-title-secondary {
             color: #34d399 !important;
-            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.95), 0 0 30px rgba(52, 211, 153, 0.5);
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.95), 0 0 35px rgba(52, 211, 153, 0.5);
         }
 
         /* HD High-Contrast Glassmorphism Cards */
         .hd-card {
-            background: var(--card-bg, rgba(2, 20, 13, 0.98));
+            background: var(--card-bg, rgba(2, 20, 13, 0.95));
             backdrop-filter: blur(25px) saturate(200%);
             -webkit-backdrop-filter: blur(25px) saturate(200%);
             border: 1px solid var(--border-color, rgba(52, 211, 153, 0.4));
             border-radius: 24px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.8);
             position: relative; overflow: hidden;
             transition: transform 0.3s ease, border-color 0.3s ease;
         }
@@ -204,7 +200,7 @@
     <div class="tv-overlay"></div>
     <div class="tv-vignette"></div>
 
-    <!-- 3D Three.js Quantum Core Background -->
+    <!-- 3D Three.js Quantum Core Background (Fully Restored & HD Retina Optimized) -->
     <div id="webgl-container"></div>
 
     <!-- FLOATING QUICK MAIL BUTTON -->
@@ -526,7 +522,7 @@
             <div class="hd-card p-6 sm:p-10">
                 <h3 class="text-xs font-black tracking-widest text-emerald-400 uppercase mb-6 flex items-center gap-3"><i data-lucide="award" class="text-emerald-400"></i> Certifications</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div class="p-4 rounded-xl bg-black/70 border border-white/2getAction flex items-center gap-3 text-white"><i data-lucide="check" class="text-emerald-400 shrink-0"></i><span class="text-xs sm:text-sm font-bold">One Million Prompters AI Prompt Engineering — Dubai Future Foundation</span></div>
+                    <div class="p-4 rounded-xl bg-black/70 border border-white/20 flex items-center gap-3 text-white"><i data-lucide="check" class="text-emerald-400 shrink-0"></i><span class="text-xs sm:text-sm font-bold">One Million Prompters AI Prompt Engineering — Dubai Future Foundation</span></div>
                     <div class="p-4 rounded-xl bg-black/70 border border-white/20 flex items-center gap-3 text-white"><i data-lucide="check" class="text-emerald-400 shrink-0"></i><span class="text-xs sm:text-sm font-bold">Emirates Aviation Dangerous Goods Handling — dnata</span></div>
                     <div class="p-4 rounded-xl bg-black/70 border border-white/20 flex items-center gap-3 text-white"><i data-lucide="check" class="text-emerald-400 shrink-0"></i><span class="text-xs sm:text-sm font-bold">Cargo Product Knowledge & Documentation — dnata</span></div>
                     <div class="p-4 rounded-xl bg-black/70 border border-white/20 flex items-center gap-3 text-white"><i data-lucide="check" class="text-emerald-400 shrink-0"></i><span class="text-xs sm:text-sm font-bold">Fundamentals of Cargo Operations (Export) — dnata</span></div>
@@ -623,7 +619,7 @@
         </div>
     </footer>
 
-    <!-- SCRIPT ENGINE -->
+    <!-- SCRIPT ENGINE (WITH FULL RESTORED 3D QUANTUM CORE) -->
     <script>
         lucide.createIcons();
 
@@ -811,7 +807,7 @@
         }, { threshold: 0.1 });
         document.querySelectorAll('.reveal').forEach(r => observer.observe(r));
 
-        // 3D QUANTUM CORE ENGINE (HD RETINA OPTIMIZED)
+        // 3D QUANTUM CORE ENGINE (HD RETINA OPTIMIZED & FULLY RESTORED)
         const container = document.getElementById('webgl-container');
         const scene = new THREE.Scene();
 
@@ -820,35 +816,35 @@
 
         const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: "high-performance" });
         renderer.setSize(window.innerWidth, window.innerHeight);
-        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2)); // High-definition rendering for mobile retina screens
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
         container.appendChild(renderer.domElement);
 
         const coreGeometry = new THREE.IcosahedronGeometry(2.8, 2);
-        const coreMaterial = new THREE.MeshBasicMaterial({ color: 0x10b981, wireframe: true, transparent: true, opacity: 0.75 });
+        const coreMaterial = new THREE.MeshBasicMaterial({ color: 0x10b981, wireframe: true, transparent: true, opacity: 0.65 });
         const quantumCore = new THREE.Mesh(coreGeometry, coreMaterial);
         scene.add(quantumCore);
 
         const innerGeo = new THREE.SphereGeometry(2.0, 32, 32);
-        const innerMat = new THREE.MeshBasicMaterial({ color: 0x34d399, transparent: true, opacity: 0.4 });
+        const innerMat = new THREE.MeshBasicMaterial({ color: 0x34d399, transparent: true, opacity: 0.35 });
         const innerPlasma = new THREE.Mesh(innerGeo, innerMat);
         scene.add(innerPlasma);
 
-        const ringGeo1 = new THREE.TorusGeometry(4.8, 0.035, 16, 100);
-        const ringMat1 = new THREE.MeshBasicMaterial({ color: 0x10b981, transparent: true, opacity: 0.8 });
+        const ringGeo1 = new THREE.TorusGeometry(4.8, 0.03, 16, 100);
+        const ringMat1 = new THREE.MeshBasicMaterial({ color: 0x10b981, transparent: true, opacity: 0.7 });
         const orbitalRing1 = new THREE.Mesh(ringGeo1, ringMat1);
         scene.add(orbitalRing1);
 
-        const ringGeo2 = new THREE.TorusGeometry(6.2, 0.025, 16, 100);
-        const ringMat2 = new THREE.MeshBasicMaterial({ color: 0x14b8a6, transparent: true, opacity: 0.6 });
+        const ringGeo2 = new THREE.TorusGeometry(6.2, 0.02, 16, 100);
+        const ringMat2 = new THREE.MeshBasicMaterial({ color: 0x14b8a6, transparent: true, opacity: 0.5 });
         const orbitalRing2 = new THREE.Mesh(ringGeo2, ringMat2);
         scene.add(orbitalRing2);
 
-        const ringGeo3 = new THREE.TorusGeometry(7.5, 0.02, 16, 100);
-        const ringMat3 = new THREE.MeshBasicMaterial({ color: 0x06b6d4, transparent: true, opacity: 0.45 });
+        const ringGeo3 = new THREE.TorusGeometry(7.5, 0.015, 16, 100);
+        const ringMat3 = new THREE.MeshBasicMaterial({ color: 0x06b6d4, transparent: true, opacity: 0.35 });
         const orbitalRing3 = new THREE.Mesh(ringGeo3, ringMat3);
         scene.add(orbitalRing3);
 
-        const particleCount = 3500;
+        const particleCount = 4000;
         const particleGeometry = new THREE.BufferGeometry();
         const positions = new Float32Array(particleCount * 3);
         const colors = new Float32Array(particleCount * 3);
@@ -878,9 +874,12 @@
         particleGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
         particleGeometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
 
-        const particleMaterial = new THREE.PointsMaterial({ size: 0.06, vertexColors: true, transparent: true, opacity: 0.85, blending: THREE.AdditiveBlending });
+        const particleMaterial = new THREE.PointsMaterial({ size: 0.05, vertexColors: true, transparent: true, opacity: 0.8, blending: THREE.AdditiveBlending });
         const quantumSwarm = new THREE.Points(particleGeometry, particleMaterial);
         scene.add(quantumSwarm);
+
+        let shockwaveFactor = 0;
+        window.addEventListener('click', () => { shockwaveFactor = 1.0; });
 
         let targetScroll = 0, currentScroll = 0;
         window.addEventListener('scroll', () => {
@@ -901,7 +900,7 @@
             const elapsedTime = clock.getElapsedTime();
 
             currentScroll += (targetScroll - currentScroll) * 0.1;
-            currentMouseX = (targetMouseX - currentMouseX) * 0.1;
+            currentMouseX += (targetMouseX - currentMouseX) * 0.1;
 
             camera.position.z = 16 - (currentScroll * 4);
             camera.position.y = currentScroll * 1.2;
@@ -911,12 +910,14 @@
             innerPlasma.rotation.y = -elapsedTime * 0.2;
 
             orbitalRing1.rotation.z = elapsedTime * 0.4;
+            orbitalRing1.rotation.x = (Math.PI / 3);
             orbitalRing2.rotation.x = -elapsedTime * 0.5;
             orbitalRing3.rotation.y = elapsedTime * 0.3;
 
             quantumSwarm.rotation.y = elapsedTime * 0.15;
 
-            const breatheScale = 1 + Math.sin(elapsedTime * 1.5) * 0.08 + (currentScroll * 0.6);
+            shockwaveFactor *= 0.9;
+            const breatheScale = 1 + Math.sin(elapsedTime * 1.5) * 0.08 + (currentScroll * 0.6) + (shockwaveFactor * 0.2);
             quantumCore.scale.set(breatheScale, breatheScale, breatheScale);
             innerPlasma.scale.set(breatheScale, breatheScale, breatheScale);
 

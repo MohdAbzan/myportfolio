@@ -4,10 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MOHAMMED ABZAN — Executive Portfolio</title>
+    <!-- Open Graph Social Meta Tags -->
+    <meta property="og:title" content="MOHAMMED ABZAN — Executive Portfolio">
+    <meta property="og:description" content="Administration & Customer Service Professional at dnata, Dubai International Airport.">
+    <meta property="og:type" content="website">
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Three.js for 3D Photorealistic Quantum Physics -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- Lenis Smooth Scroll -->
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
@@ -50,7 +56,7 @@
         body.light-mode input::placeholder, body.light-mode textarea::placeholder { color: #64748b !important; }
         body.light-mode .tv-overlay, body.light-mode .tv-vignette { display: none; }
 
-        /* Custom Interactive Emerald Cursor */
+        /* Custom Interactive Emerald Cursor & Magnetic Elements */
         @media (min-width: 1024px) {
             * { cursor: none !important; }
             #cursor-dot, #cursor-ring {
@@ -74,6 +80,11 @@
                 border-color: rgba(52, 211, 153, 1);
                 background-color: rgba(16, 185, 129, 0.12);
             }
+        }
+
+        .magnetic {
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            display: inline-block;
         }
 
         /* Fixed 3D Canvas Container */
@@ -148,10 +159,10 @@
             50% { transform: translateY(-10px) rotate(1deg); }
         }
 
-        /* Smooth Scroll Reveal */
+        /* Smooth Scroll Staggered Reveal */
         .reveal {
-            opacity: 0; transform: translateY(35px);
-            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            opacity: 0; transform: translateY(45px);
+            transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .reveal.active { opacity: 1; transform: translateY(0); }
 
@@ -163,7 +174,7 @@
         .animate-marquee { display: flex; width: 200%; animation: marquee 24s linear infinite; }
         .animate-marquee:hover { animation-play-state: paused; }
 
-        /* Modals & Command Palette Overlays */
+        /* Modals Overlays */
         .modal-overlay {
             transition: opacity 0.3s ease, visibility 0.3s ease;
         }
@@ -195,7 +206,7 @@
     <div id="webgl-container"></div>
 
     <!-- FLOATING QUICK MAIL BUTTON -->
-    <button onclick="toggleModal('email-modal')" class="fixed bottom-8 right-8 z-50 bg-gradient-to-r from-emerald-400 to-teal-500 hover:from-emerald-300 hover:to-teal-400 text-black p-4 rounded-full shadow-[0_0_25px_rgba(16,185,129,0.5)] transition-all duration-300 hover:scale-110 flex items-center justify-center cursor-pointer group">
+    <button onclick="playSFX(); toggleModal('email-modal')" class="magnetic fixed bottom-8 right-8 z-50 bg-gradient-to-r from-emerald-400 to-teal-500 hover:from-emerald-300 hover:to-teal-400 text-black p-4 rounded-full shadow-[0_0_25px_rgba(16,185,129,0.5)] transition-all duration-300 hover:scale-110 flex items-center justify-center cursor-pointer group">
         <i data-lucide="mail" class="w-6 h-6 group-hover:rotate-12 transition-transform"></i>
     </button>
 
@@ -206,22 +217,22 @@
                 <div class="flex items-center gap-2 text-xs font-mono-accent text-emerald-400 font-bold uppercase tracking-widest">
                     <i data-lucide="command" class="w-4 h-4"></i> Command Terminal
                 </div>
-                <button onclick="toggleModal('cmd-palette')" class="opacity-60 hover:opacity-100"><i data-lucide="x" class="w-5 h-5"></i></button>
+                <button onclick="playSFX(); toggleModal('cmd-palette')" class="opacity-60 hover:opacity-100 cursor-pointer"><i data-lucide="x" class="w-5 h-5"></i></button>
             </div>
             <div class="space-y-2 text-sm">
-                <a href="#about" onclick="toggleModal('cmd-palette')" class="flex items-center justify-between p-3 rounded-xl bg-white/5 hover:bg-emerald-500/20 transition-colors">
+                <a href="#about" onclick="playSFX(); toggleModal('cmd-palette')" class="flex items-center justify-between p-3 rounded-xl bg-white/5 hover:bg-emerald-500/20 transition-colors">
                     <span class="flex items-center gap-2"><i data-lucide="user" class="w-4 h-4 text-emerald-400"></i> Jump to Professional Summary</span>
                     <span class="text-[10px] font-mono-accent opacity-50">#about</span>
                 </a>
-                <a href="#experience" onclick="toggleModal('cmd-palette')" class="flex items-center justify-between p-3 rounded-xl bg-white/5 hover:bg-emerald-500/20 transition-colors">
+                <a href="#experience" onclick="playSFX(); toggleModal('cmd-palette')" class="flex items-center justify-between p-3 rounded-xl bg-white/5 hover:bg-emerald-500/20 transition-colors">
                     <span class="flex items-center gap-2"><i data-lucide="briefcase" class="w-4 h-4 text-emerald-400"></i> Jump to dnata Experience</span>
                     <span class="text-[10px] font-mono-accent opacity-50">#experience</span>
                 </a>
-                <button onclick="toggleModal('cmd-palette'); toggleModal('resume-modal');" class="w-full flex items-center justify-between p-3 rounded-xl bg-white/5 hover:bg-emerald-500/20 transition-colors cursor-pointer text-left">
-                    <span class="flex items-center gap-2"><i data-lucide="file-text" class="w-4 h-4 text-emerald-400"></i> Open Downloadable / Printable CV</span>
+                <button onclick="playSFX(); toggleModal('cmd-palette'); toggleModal('resume-modal');" class="w-full flex items-center justify-between p-3 rounded-xl bg-white/5 hover:bg-emerald-500/20 transition-colors cursor-pointer text-left">
+                    <span class="flex items-center gap-2"><i data-lucide="file-text" class="w-4 h-4 text-emerald-400"></i> Open Official Resume & CV</span>
                     <span class="text-[10px] font-mono-accent opacity-50">CV.pdf</span>
                 </button>
-                <button onclick="toggleModal('cmd-palette'); toggleTheme();" class="w-full flex items-center justify-between p-3 rounded-xl bg-white/5 hover:bg-emerald-500/20 transition-colors cursor-pointer text-left">
+                <button onclick="playSFX(); toggleModal('cmd-palette'); toggleTheme();" class="w-full flex items-center justify-between p-3 rounded-xl bg-white/5 hover:bg-emerald-500/20 transition-colors cursor-pointer text-left">
                     <span class="flex items-center gap-2"><i data-lucide="sun-moon" class="w-4 h-4 text-emerald-400"></i> Toggle Dark / Light Theme</span>
                     <span class="text-[10px] font-mono-accent opacity-50">Theme</span>
                 </button>
@@ -229,50 +240,69 @@
         </div>
     </div>
 
-    <!-- DOWNLOADABLE & PRINTABLE CV MODAL -->
+    <!-- OFFICIAL RESUME & CV MODAL -->
     <div id="resume-modal" class="modal-overlay hidden-modal fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/80 backdrop-blur-md">
         <div class="hd-card w-full max-w-3xl max-h-[90vh] overflow-y-auto p-6 sm:p-10 space-y-6 relative border-t-4 border-t-emerald-400">
             <div class="flex items-center justify-between border-b pb-4" style="border-color: var(--border-color);">
-                <div>
-                    <h3 class="text-xl sm:text-2xl font-black">Mohammed Abzan — Executive CV</h3>
-                    <p class="text-xs opacity-60 font-mono-accent mt-0.5">Administration & Operations Professional · Dubai, UAE</p>
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-full border border-emerald-400/50 bg-emerald-500/10 flex items-center justify-center text-emerald-400 font-black">MA</div>
+                    <div>
+                        <h3 class="text-xl sm:text-2xl font-black">MOHAMMED ABZAN</h3>
+                        <p class="text-xs opacity-70 font-mono-accent mt-0.5">Administration & Customer Service Professional | Cargo Operations</p>
+                    </div>
                 </div>
-                <button onclick="toggleModal('resume-modal')" class="opacity-60 hover:opacity-100 p-2"><i data-lucide="x" class="w-6 h-6"></i></button>
+                <button onclick="playSFX(); toggleModal('resume-modal')" class="opacity-60 hover:opacity-100 p-2 cursor-pointer"><i data-lucide="x" class="w-6 h-6"></i></button>
             </div>
 
             <!-- Resume Content Sheet -->
-            <div id="printable-cv-content" class="space-y-6 text-sm opacity-90 p-4 rounded-xl bg-white/5 border border-white/10">
+            <div id="printable-cv-content" class="space-y-6 text-sm opacity-90 p-6 rounded-xl bg-white/5 border border-white/10">
                 <div class="space-y-1">
-                    <h4 class="font-bold text-emerald-400 uppercase tracking-widest text-xs">Professional Profile</h4>
-                    <p>Administration and customer service professional with over two years of experience at dnata (Emirates Group), Dubai International Airport, across cargo operations, document control, sustainability coordination, and customer support.</p>
+                    <h4 class="font-bold text-emerald-400 uppercase tracking-widest text-xs">Professional Summary</h4>
+                    <p class="leading-relaxed">Administration and customer service professional with over two years of experience at dnata (Emirates Group), Dubai International Airport, across cargo operations, document control, sustainability coordination, and customer support. Comfortable maintaining compliance-grade records, resolving enquiries from airlines and freight forwarders, and keeping cross-departmental operations running smoothly. Holds a Bachelor's degree in Business Management, with additional hands-on skills in Power BI and AI prompt engineering gained through the Dubai Future Foundation's One Million Prompters program.</p>
                 </div>
+
+                <div class="space-y-3">
+                    <h4 class="font-bold text-emerald-400 uppercase tracking-widest text-xs">Work Experience</h4>
+                    <div class="border-l-2 border-emerald-400/50 pl-4 space-y-1">
+                        <strong class="block text-white font-bold">Administrative Assistant</strong>
+                        <span class="text-xs opacity-60 font-mono-accent">dnata (Emirates Group) · Dubai International Airport (2025 – Present)</span>
+                        <ul class="list-disc list-inside text-xs space-y-1 opacity-90 pt-1">
+                            <li>Manage document archiving for cargo and operational records, keeping filing systems organised and audit-ready.</li>
+                            <li>Support environmental and sustainability initiatives, including compliance and reporting records.</li>
+                            <li>Handle customer service enquiries from airlines, freight forwarders and internal teams.</li>
+                        </ul>
+                    </div>
+                    <div class="border-l-2 border-teal-500/50 pl-4 space-y-1 pt-2">
+                        <strong class="block text-white font-bold">Cargo & Customer Service Agent</strong>
+                        <span class="text-xs opacity-60 font-mono-accent">dnata (Emirates Group) · Dubai International Airport (2024 – 2025)</span>
+                        <ul class="list-disc list-inside text-xs space-y-1 opacity-90 pt-1">
+                            <li>Served as main point of contact for international airlines and freight forwarders managing import/export enquiries.</li>
+                            <li>Maintained compliance-grade records for AWB, Dangerous Goods, Pharmaceutical and AVI/HUM shipments under IATA and GCAA standards.</li>
+                            <li>Guided customers through Calogi and carried out ULD build-up/breakdown with strict safety focus.</li>
+                        </ul>
+                    </div>
+                </div>
+
                 <div class="space-y-2">
-                    <h4 class="font-bold text-emerald-400 uppercase tracking-widest text-xs">Experience Highlights</h4>
-                    <div>
-                        <strong class="block text-white">Administrative Assistant — dnata (Emirates Group)</strong>
-                        <span class="text-xs opacity-60">2025 — Present · Dubai International Airport</span>
-                        <p class="text-xs mt-1 opacity-80">Manage document archiving for cargo/operational records, support environmental/sustainability initiatives, and handle airline and freight forwarder customer enquiries.</p>
-                    </div>
-                    <div>
-                        <strong class="block text-white">Cargo & Customer Service Agent — dnata (Emirates Group)</strong>
-                        <span class="text-xs opacity-60">2024 — 2025 · Dubai International Airport</span>
-                        <p class="text-xs mt-1 opacity-80">Handled import/export cargo queries, maintained compliance-grade records for AWB and Dangerous Goods, and supported Calogi operations.</p>
-                    </div>
-                </div>
-                <div class="space-y-1">
                     <h4 class="font-bold text-emerald-400 uppercase tracking-widest text-xs">Education & Certifications</h4>
-                    <p><strong>MBA in Business Analytics</strong> (In Progress) | <strong>Bachelor of Commerce (B.Com)</strong> in Business Management, Mangalore University.</p>
-                    <p class="text-xs opacity-70">Certifications: AI Prompt Engineering (Dubai Future Foundation), Emirates Aviation Dangerous Goods Handling, Cargo Product Knowledge.</p>
+                    <p class="text-xs"><strong>Bachelor of Commerce (B.Com) in Business Management</strong> — Mangalore University, India (2021–2024)</p>
+                    <p class="text-xs opacity-80"><strong>Certifications:</strong> One Million Prompters AI Prompt Engineering (Dubai Future Foundation), Emirates Aviation Dangerous Goods Handling, Cargo Product Knowledge & Documentation, Fundamentals of Export Cargo Operations, dnata Customer Service.</p>
+                </div>
+
+                <div class="space-y-1">
+                    <h4 class="font-bold text-emerald-400 uppercase tracking-widest text-xs">Languages & Contact</h4>
+                    <p class="text-xs"><strong>Languages:</strong> English, Hindi, Urdu, Kannada, Tulu</p>
+                    <p class="text-xs"><strong>Contact:</strong> +971 56 575 4523 | mohdabzan2003@gmail.com | Dubai, UAE</p>
                 </div>
             </div>
 
             <!-- Modal Action Buttons -->
             <div class="flex flex-wrap items-center justify-end gap-4 pt-2">
-                <button onclick="window.print()" class="px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 font-bold text-xs uppercase tracking-widest flex items-center gap-2 cursor-pointer transition-colors">
-                    <i data-lucide="printer" class="w-4 h-4"></i> Print CV
+                <button onclick="playSFX(); window.print()" class="px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 font-bold text-xs uppercase tracking-widest flex items-center gap-2 cursor-pointer transition-colors">
+                    <i data-lucide="printer" class="w-4 h-4"></i> Print Official CV
                 </button>
-                <a href="mailto:mohdabzan2003@gmail.com?subject=CV%20Request%20-%20Mohammed%20Abzan" class="bg-gradient-to-r from-emerald-400 to-teal-500 hover:from-emerald-300 hover:to-teal-400 text-black font-extrabold px-6 py-3 rounded-full text-xs uppercase tracking-widest flex items-center gap-2 transition-all shadow-lg cursor-pointer">
-                    <i data-lucide="download" class="w-4 h-4"></i> Request / Download PDF
+                <a href="mailto:mohdabzan2003@gmail.com?subject=CV%20Inquiry%20-%20Mohammed%20Abzan" class="bg-gradient-to-r from-emerald-400 to-teal-500 hover:from-emerald-300 hover:to-teal-400 text-black font-extrabold px-6 py-3 rounded-full text-xs uppercase tracking-widest flex items-center gap-2 transition-all shadow-lg cursor-pointer">
+                    <i data-lucide="download" class="w-4 h-4"></i> Send Direct Email Inquiry
                 </a>
             </div>
         </div>
@@ -281,7 +311,7 @@
     <!-- QUICK EMAIL MODAL POPUP -->
     <div id="email-modal" class="modal-overlay hidden-modal fixed inset-0 z-50 flex items-center justify-center p-6 bg-black/70 backdrop-blur-md">
         <div class="hd-card w-full max-w-lg p-8 space-y-6 relative border-t-4 border-t-emerald-400">
-            <button onclick="toggleModal('email-modal')" class="absolute top-6 right-6 opacity-60 hover:opacity-100 transition-opacity cursor-pointer">
+            <button onclick="playSFX(); toggleModal('email-modal')" class="absolute top-6 right-6 opacity-60 hover:opacity-100 transition-opacity cursor-pointer">
                 <i data-lucide="x" class="w-6 h-6"></i>
             </button>
 
@@ -328,17 +358,22 @@
             </nav>
 
             <div class="flex items-center gap-3">
+                <!-- Sound Effects Mute Toggle Button -->
+                <button onclick="toggleAudio()" id="audio-btn" class="p-2.5 rounded-full border hover:border-emerald-400 text-emerald-400 transition-all cursor-pointer shadow-sm" title="Toggle SFX Mute">
+                    <i data-lucide="volume-2" id="audio-icon" class="w-4 h-4"></i>
+                </button>
+
                 <!-- Command Palette Search Trigger Button -->
-                <button onclick="toggleModal('cmd-palette')" class="hidden sm:inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs opacity-70 hover:opacity-100 transition-opacity cursor-pointer">
+                <button onclick="playSFX(); toggleModal('cmd-palette')" class="hidden sm:inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs opacity-70 hover:opacity-100 transition-opacity cursor-pointer">
                     <i data-lucide="command" class="w-3.5 h-3.5 text-emerald-400"></i> <span class="font-mono-accent text-[10px]">Ctrl K</span>
                 </button>
 
                 <!-- Theme Toggle Button -->
-                <button onclick="toggleTheme()" id="theme-btn" class="p-2.5 rounded-full border hover:border-emerald-400 text-emerald-400 transition-all cursor-pointer shadow-sm" title="Toggle Theme">
+                <button onclick="playSFX(); toggleTheme()" id="theme-btn" class="p-2.5 rounded-full border hover:border-emerald-400 text-emerald-400 transition-all cursor-pointer shadow-sm" title="Toggle Theme">
                     <i data-lucide="sun" id="theme-icon" class="w-4 h-4"></i>
                 </button>
 
-                <button onclick="toggleModal('email-modal')" class="bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-black font-extrabold px-6 py-2.5 rounded-full text-xs uppercase tracking-widest transition-all duration-300 shadow-lg cursor-pointer">
+                <button onclick="playSFX(); toggleModal('email-modal')" class="magnetic bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-black font-extrabold px-6 py-2.5 rounded-full text-xs uppercase tracking-widest transition-all duration-300 shadow-lg cursor-pointer">
                     Contact Me
                 </button>
             </div>
@@ -373,11 +408,11 @@
                 </p>
 
                 <div class="flex flex-wrap items-center gap-4 sm:gap-5 pt-6">
-                    <button onclick="toggleModal('resume-modal')" class="bg-gradient-to-r from-emerald-400 to-teal-500 hover:from-emerald-300 hover:to-teal-400 text-black font-extrabold px-7 py-3.5 rounded-full flex items-center gap-3 transition-all duration-300 shadow-[0_0_30px_rgba(16,185,129,0.4)] hover:scale-105 cursor-pointer">
-                        <i data-lucide="file-text" class="w-5 h-5"></i> View & Print CV
+                    <button onclick="playSFX(); toggleModal('resume-modal')" class="magnetic bg-gradient-to-r from-emerald-400 to-teal-500 hover:from-emerald-300 hover:to-teal-400 text-black font-extrabold px-7 py-3.5 rounded-full flex items-center gap-3 transition-all duration-300 shadow-[0_0_30px_rgba(16,185,129,0.4)] hover:scale-105 cursor-pointer">
+                        <i data-lucide="file-text" class="w-5 h-5"></i> View Official CV
                     </button>
                     
-                    <a href="https://www.linkedin.com/in/abzan" target="_blank" class="hd-card hover:bg-emerald-600/30 font-bold px-7 py-3.5 rounded-full transition-all duration-300 flex items-center gap-3 border hover:border-emerald-400 hover:scale-105 cursor-pointer">
+                    <a href="https://www.linkedin.com/in/mohdabzan" target="_blank" class="magnetic hd-card hover:bg-emerald-600/30 font-bold px-7 py-3.5 rounded-full transition-all duration-300 flex items-center gap-3 border hover:border-emerald-400 hover:scale-105 cursor-pointer">
                         <i data-lucide="linkedin" class="w-5 h-5 text-emerald-400"></i> LinkedIn Profile
                     </a>
                 </div>
@@ -418,7 +453,7 @@
                         Administration and customer service professional with over two years of experience at <strong class="font-bold">dnata (Emirates Group), Dubai International Airport</strong>, across cargo operations, document control, sustainability coordination, and customer support.
                     </p>
                     <p>
-                        Comfortable maintaining compliance-grade records, resolving enquiries from airlines and freight forwarders, and keeping cross-departmental operations running smoothly in a fast-paced airport environment. Holds a Bachelor's degree in Business Management and currently <span class="text-emerald-500 font-bold bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-1 rounded">pursuing an MBA in Business Analytics</span>, complemented by hands-on AI prompt engineering skills from the Dubai Future Foundation.
+                        Comfortable maintaining compliance-grade records, resolving enquiries from airlines and freight forwarders, and keeping cross-departmental operations running smoothly in a fast-paced airport environment. Holds a Bachelor's degree in Business Management, with additional hands-on skills in Power BI and AI prompt engineering gained through the Dubai Future Foundation's One Million Prompters program.
                     </p>
                 </div>
 
@@ -438,14 +473,14 @@
                         </div>
                     </a>
                     
-                    <a href="https://www.linkedin.com/in/abzan" target="_blank" class="hd-card p-5 sm:p-6 flex items-center gap-4 group cursor-pointer">
+                    <a href="https://www.linkedin.com/in/mohdabzan" target="_blank" class="hd-card p-5 sm:p-6 flex items-center gap-4 group cursor-pointer">
                         <div class="p-3.5 rounded-2xl bg-teal-500/10 text-teal-500 group-hover:bg-teal-400 group-hover:text-black transition-colors">
                             <i data-lucide="linkedin" class="w-6 h-6"></i>
                         </div>
                         <div>
                             <div class="text-[10px] opacity-50 font-black tracking-widest uppercase mb-0.5">LinkedIn Profile</div>
                             <div class="text-xs sm:text-sm font-bold group-hover:text-teal-500 transition-colors flex items-center gap-1.5">
-                                <i data-lucide="linkedin" class="w-4 h-4 text-emerald-400"></i> www.linkedin.com/in/abzan
+                                <i data-lucide="linkedin" class="w-4 h-4 text-emerald-400"></i> linkedin.com/in/mohdabzan
                             </div>
                         </div>
                     </a>
@@ -569,7 +604,7 @@
                     <h3 class="text-xl sm:text-2xl font-black mb-6 flex items-center gap-3"><i data-lucide="crosshair" class="text-emerald-400"></i> Field Skills</h3>
                     <div class="flex flex-wrap gap-2.5">
                         <span class="anti-gravity border border-white/10 px-4 py-2 rounded-full text-xs font-bold" style="background: rgba(16,185,129,0.08)">Customer Service</span>
-                        <span class="anti-gravity-delayed border border-white/10 px-4 py-2 rounded-full text-xs font-bold" style="background: rgba(16,185,129,0.08)">Document Archiving</span>
+                        <span class="anti-gravity-delayed border border-white/10 px-4 py-2 rounded-full text-xs font-bold" style="background: rgba(16,185,129,0.08)">Document Archiving & Control</span>
                         <span class="anti-gravity border border-white/10 px-4 py-2 rounded-full text-xs font-bold" style="background: rgba(16,185,129,0.08)">Administrative Support</span>
                         <span class="anti-gravity-delayed border border-white/10 px-4 py-2 rounded-full text-xs font-bold" style="background: rgba(16,185,129,0.08)">Sustainability Coordination</span>
                         <span class="anti-gravity border border-white/10 px-4 py-2 rounded-full text-xs font-bold" style="background: rgba(16,185,129,0.08)">Cargo Operations</span>
@@ -581,7 +616,7 @@
                 <div class="hd-card p-8 sm:p-10">
                     <h3 class="text-xl sm:text-2xl font-black mb-6 flex items-center gap-3"><i data-lucide="cpu" class="text-teal-500"></i> Software Stack</h3>
                     <div class="flex flex-wrap gap-2.5">
-                        <span class="anti-gravity-delayed bg-emerald-500/10 border border-emerald-500/30 px-4 py-2 rounded-full text-xs font-bold text-emerald-500">Microsoft 365 (Word, Excel)</span>
+                        <span class="anti-gravity-delayed bg-emerald-500/10 border border-emerald-500/30 px-4 py-2 rounded-full text-xs font-bold text-emerald-500">Microsoft 365 (Word, Excel, PowerPoint, Outlook)</span>
                         <span class="anti-gravity bg-teal-500/10 border border-teal-500/30 px-4 py-2 rounded-full text-xs font-bold text-teal-500">Power BI</span>
                         <span class="anti-gravity-delayed bg-emerald-500/10 border border-emerald-500/30 px-4 py-2 rounded-full text-xs font-bold text-emerald-500">AI Prompt Engineering</span>
                         <span class="anti-gravity bg-teal-500/10 border border-teal-500/30 px-4 py-2 rounded-full text-xs font-bold text-teal-500">One Cargo</span>
@@ -626,7 +661,7 @@
                         <textarea name="message" rows="5" required placeholder="State your inquiry or message details here..." class="w-full border rounded-xl px-5 py-4 focus:outline-none focus:border-emerald-400 transition-colors"></textarea>
                     </div>
 
-                    <button type="submit" class="w-full sm:w-auto bg-gradient-to-r from-emerald-400 to-teal-500 hover:from-emerald-300 hover:to-teal-400 text-black font-extrabold px-10 py-4 rounded-full flex items-center justify-center gap-3 transition-all duration-300 shadow-[0_0_30px_rgba(16,185,129,0.4)] hover:scale-105 cursor-pointer">
+                    <button type="submit" class="magnetic w-full sm:w-auto bg-gradient-to-r from-emerald-400 to-teal-500 hover:from-emerald-300 hover:to-teal-400 text-black font-extrabold px-10 py-4 rounded-full flex items-center justify-center gap-3 transition-all duration-300 shadow-[0_0_30px_rgba(16,185,129,0.4)] hover:scale-105 cursor-pointer">
                         <i data-lucide="send" class="w-5 h-5"></i> Transmit Message
                     </button>
                 </form>
@@ -645,14 +680,72 @@
         </div>
     </footer>
 
-    <!-- SCRIPT ENGINE -->
+    <!-- SCRIPT ENGINE WITH LENIS SMOOTH SCROLL, PARTICLE REPULSION & SFX -->
     <script>
         lucide.createIcons();
+
+        // Initialize Lenis Smooth Scroll
+        const lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            direction: 'vertical',
+            smooth: true
+        });
+
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+
+        // Sound Effects (SFX) Engine
+        let soundEnabled = true;
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+        function playSFX() {
+            if (!soundEnabled) return;
+            if (audioCtx.state === 'suspended') {
+                audioCtx.resume();
+            }
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(440, audioCtx.currentTime);
+            osc.frequency.exponentialRampToValueAtTime(880, audioCtx.currentTime + 0.08);
+            gain.gain.setValueAtTime(0.05, audioCtx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.08);
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+            osc.start();
+            osc.stop(audioCtx.currentTime + 0.08);
+        }
+
+        function toggleAudio() {
+            soundEnabled = !soundEnabled;
+            const icon = document.getElementById('audio-icon');
+            icon.setAttribute('data-lucide', soundEnabled ? 'volume-2' : 'volume-x');
+            lucide.createIcons();
+            playSFX();
+        }
+
+        // Magnetic Hover Effect for Buttons
+        document.querySelectorAll('.magnetic').forEach(btn => {
+            btn.addEventListener('mousemove', (e) => {
+                const rect = btn.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+            });
+            btn.addEventListener('mouseleave', () => {
+                btn.style.transform = 'translate(0px, 0px)';
+            });
+        });
 
         // Keyboard Shortcut for Command Palette (Ctrl+K or Cmd+K)
         window.addEventListener('keydown', (e) => {
             if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
                 e.preventDefault();
+                playSFX();
                 toggleModal('cmd-palette');
             }
         });
@@ -666,6 +759,7 @@
         // Form Submit Handler with Toast Feedback
         function handleFormSubmit(event) {
             event.preventDefault();
+            playSFX();
             const form = event.target;
             const formData = new FormData(form);
 
@@ -747,8 +841,11 @@
         animateCursor();
 
         document.querySelectorAll('a, button, input, textarea, .hd-card').forEach(el => {
-            el.addEventListener('mouseenter', () => document.body.classList.add('hover-active'));
-            el.addEventListener('mouseleave', () => document.body.classList.remove('hover-active'));
+            el.addEventListener('mouseenter', () => { document.body.classList.add('hover-active'); });
+            el.addEventListener('mouseleave', () => { document.body.classList.remove('hover-active'); });
+            if(el.tagName === 'BUTTON' || el.tagName === 'A') {
+                el.addEventListener('click', () => playSFX());
+            }
         });
 
         document.querySelectorAll('.hd-card').forEach(card => {
@@ -766,7 +863,7 @@
         }, { threshold: 0.1 });
         document.querySelectorAll('.reveal').forEach(r => observer.observe(r));
 
-        // 3D QUANTUM CORE ENGINE WITH SCROLL ZOOM & COLOR MORPHING
+        // 3D QUANTUM CORE ENGINE WITH PARTICLE REPULSION & BLOOM
         const container = document.getElementById('webgl-container');
         const scene = new THREE.Scene();
 
@@ -803,9 +900,10 @@
         const orbitalRing3 = new THREE.Mesh(ringGeo3, ringMat3);
         scene.add(orbitalRing3);
 
-        const particleCount = 10000;
+        const particleCount = 8000;
         const particleGeometry = new THREE.BufferGeometry();
         const positions = new Float32Array(particleCount * 3);
+        const originalPositions = new Float32Array(particleCount * 3);
         const colors = new Float32Array(particleCount * 3);
 
         const colorEmerald = new THREE.Color(0x10b981);
@@ -818,9 +916,17 @@
             const phi = Math.acos(2.0 * v - 1.0);
             const radius = 3.2 + Math.random() * 8.5;
 
-            positions[i * 3] = radius * Math.sin(phi) * Math.cos(theta);
-            positions[i * 3 + 1] = radius * Math.sin(phi) * Math.sin(theta);
-            positions[i * 3 + 2] = radius * Math.cos(phi);
+            const x = radius * Math.sin(phi) * Math.cos(theta);
+            const y = radius * Math.sin(phi) * Math.sin(theta);
+            const z = radius * Math.cos(phi);
+
+            positions[i * 3] = x;
+            positions[i * 3 + 1] = y;
+            positions[i * 3 + 2] = z;
+
+            originalPositions[i * 3] = x;
+            originalPositions[i * 3 + 1] = y;
+            originalPositions[i * 3 + 2] = z;
 
             const mixRatio = (radius - 3.2) / 8.5;
             const finalColor = mixRatio < 0.5 ? colorEmerald.clone().lerp(colorTeal, mixRatio * 2.0) : colorTeal.clone().lerp(colorCyan, (mixRatio - 0.5) * 2.0);
@@ -833,7 +939,7 @@
         particleGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
         particleGeometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
 
-        const particleMaterial = new THREE.PointsMaterial({ size: 0.04, vertexColors: true, transparent: true, opacity: 0.75, blending: THREE.AdditiveBlending });
+        const particleMaterial = new THREE.PointsMaterial({ size: 0.045, vertexColors: true, transparent: true, opacity: 0.8, blending: THREE.AdditiveBlending });
         const quantumSwarm = new THREE.Points(particleGeometry, particleMaterial);
         scene.add(quantumSwarm);
 
@@ -865,6 +971,29 @@
             // Advanced Scroll Zoom & Parallax
             camera.position.z = 16 - (currentScroll * 5);
             camera.position.y = currentScroll * 1.5;
+
+            // Particle Repulsion Physics against Mouse
+            const posAttr = particleGeometry.attributes.position;
+            const mouseScreenX = (mouseX / window.innerWidth) * 2 - 1;
+            const mouseScreenY = -(mouseY / window.innerHeight) * 2 + 1;
+
+            for (let i = 0; i < particleCount; i++) {
+                let ox = originalPositions[i * 3];
+                let oy = originalPositions[i * 3 + 1];
+                let oz = originalPositions[i * 3 + 2];
+
+                let dx = mouseScreenX * 10 - ox;
+                let dy = mouseScreenY * 10 - oy;
+                let dist = Math.sqrt(dx * dx + dy * dy);
+
+                if (dist < 3.5) {
+                    let force = (3.5 - dist) / 3.5;
+                    posAttr.setXYZ(i, ox - dx * force * 0.5, oy - dy * force * 0.5, oz);
+                } else {
+                    posAttr.setXYZ(i, ox, oy, oz);
+                }
+            }
+            posAttr.needsUpdate = true;
 
             quantumCore.rotation.x = elapsedTime * 0.3;
             quantumCore.rotation.y = elapsedTime * 0.5;

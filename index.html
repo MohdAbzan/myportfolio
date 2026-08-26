@@ -61,7 +61,7 @@
         /* Advanced Redesigned Futuristic Custom Cursor */
         @media (min-width: 1024px) {
             * { cursor: none !important; }
-            #cursor-dot, #cursor-ring, #cursor-trail {
+            #cursor-dot, #cursor-ring {
                 position: fixed; top: 0; left: 0;
                 transform: translate(-50%, -50%);
                 border-radius: 50%; pointer-events: none; z-index: 9999;
@@ -236,69 +236,66 @@
         </div>
     </div>
 
-    <!-- OFFICIAL RESUME & CV MODAL -->
+    <!-- OFFICIAL RESUME & CV MODAL WITH DIRECT PDF DOWNLOAD -->
     <div id="resume-modal" class="modal-overlay hidden-modal fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/80 backdrop-blur-md">
         <div class="hd-card w-full max-w-3xl max-h-[90vh] overflow-y-auto p-6 sm:p-10 space-y-6 relative border-t-4 border-t-emerald-400">
             <div class="flex items-center justify-between border-b pb-4" style="border-color: var(--border-color);">
                 <div class="flex items-center gap-4">
                     <div class="w-12 h-12 rounded-full border border-emerald-400/50 bg-emerald-500/10 flex items-center justify-center text-emerald-400 font-black">MA</div>
                     <div>
-                        <h3 class="text-xl sm:text-2xl font-black">MOHAMMED ABZAN[cite: 1]</h3>
-                        <p class="text-xs opacity-70 font-mono-accent mt-0.5">Administration & Customer Service Professional | Cargo Operations[cite: 1]</p>
+                        <h3 class="text-xl sm:text-2xl font-black">MOHAMMED ABZAN</h3>
+                        <p class="text-xs opacity-70 font-mono-accent mt-0.5">Administration & Customer Service Professional | Cargo Operations</p>
                     </div>
                 </div>
                 <button onclick="playSFX(); toggleModal('resume-modal')" class="opacity-60 hover:opacity-100 p-2 cursor-pointer"><i data-lucide="x" class="w-6 h-6"></i></button>
             </div>
 
-            <!-- Resume Content Sheet -->
+            <!-- Resume Content Preview Sheet -->
             <div id="printable-cv-content" class="space-y-6 text-sm opacity-90 p-6 rounded-xl bg-white/5 border border-white/10">
                 <div class="space-y-1">
-                    <h4 class="font-bold text-emerald-400 uppercase tracking-widest text-xs">Professional Summary[cite: 1]</h4>
-                    <p class="leading-relaxed">Administration and customer service professional with over two years of experience at dnata (Emirates Group), Dubai International Airport, across cargo operations, document control, sustainability coordination, and customer support[cite: 1]. Comfortable maintaining compliance-grade records, resolving enquiries from airlines and freight forwarders, and keeping cross-departmental operations running smoothly[cite: 1]. Holds a Bachelor's degree in Business Management, with additional hands-on skills in Power BI and AI prompt engineering gained through the Dubai Future Foundation's One Million Prompters program[cite: 1].</p>
+                    <h4 class="font-bold text-emerald-400 uppercase tracking-widest text-xs">Professional Summary</h4>
+                    <p class="leading-relaxed">Administration and customer service professional with over two years of experience at dnata (Emirates Group), Dubai International Airport, across cargo operations, document control, sustainability coordination, and customer support. Comfortable maintaining compliance-grade records, resolving enquiries from airlines and freight forwarders, and keeping cross-departmental operations running smoothly. Holds a Bachelor's degree in Business Management, with additional hands-on skills in Power BI and AI prompt engineering gained through the Dubai Future Foundation's One Million Prompters program.</p>
                 </div>
 
                 <div class="space-y-3">
-                    <h4 class="font-bold text-emerald-400 uppercase tracking-widest text-xs">Work Experience[cite: 1]</h4>
+                    <h4 class="font-bold text-emerald-400 uppercase tracking-widest text-xs">Work Experience</h4>
                     <div class="border-l-2 border-emerald-400/50 pl-4 space-y-1">
-                        <strong class="block text-white font-bold">Administrative Assistant[cite: 1]</strong>
-                        <span class="text-xs opacity-60 font-mono-accent">dnata (Emirates Group) · Dubai International Airport (2025 – Present)[cite: 1]</span>
+                        <strong class="block text-white font-bold">Administrative Assistant</strong>
+                        <span class="text-xs opacity-60 font-mono-accent">dnata (Emirates Group) · Dubai International Airport (2025 – Present)</span>
                         <ul class="list-disc list-inside text-xs space-y-1 opacity-90 pt-1">
-                            <li>Manage document archiving for cargo and operational records, keeping filing systems organised and audit-ready[cite: 1].</li>
-                            <li>Support environmental and sustainability initiatives, including compliance and reporting records[cite: 1].</li>
-                            <li>Handle customer service enquiries from airlines, freight forwarders and internal teams[cite: 1].</li>
+                            <li>Manage document archiving for cargo and operational records, keeping filing systems organised and audit-ready.</li>
+                            <li>Support environmental and sustainability initiatives, including compliance and reporting records.</li>
+                            <li>Handle customer service enquiries from airlines, freight forwarders and internal teams.</li>
                         </ul>
                     </div>
                     <div class="border-l-2 border-teal-500/50 pl-4 space-y-1 pt-2">
-                        <strong class="block text-white font-bold">Cargo & Customer Service Agent[cite: 1]</strong>
-                        <span class="text-xs opacity-60 font-mono-accent">dnata (Emirates Group) · Dubai International Airport (2024 – 2025)[cite: 1]</span>
+                        <strong class="block text-white font-bold">Cargo & Customer Service Agent</strong>
+                        <span class="text-xs opacity-60 font-mono-accent">dnata (Emirates Group) · Dubai International Airport (2024 – 2025)</span>
                         <ul class="list-disc list-inside text-xs space-y-1 opacity-90 pt-1">
-                            <li>Served as main point of contact for international airlines and freight forwarders managing import/export enquiries[cite: 1].</li>
-                            <li>Maintained compliance-grade records for AWB, Dangerous Goods, Pharmaceutical and AVI/HUM shipments under IATA and GCAA standards[cite: 1].</li>
-                            <li>Guided customers through Calogi and carried out ULD build-up/breakdown with strict safety focus[cite: 1].</li>
+                            <li>Served as main point of contact for international airlines and freight forwarders managing import/export enquiries.</li>
+                            <li>Maintained compliance-grade records for AWB, Dangerous Goods, Pharmaceutical and AVI/HUM shipments under IATA and GCAA standards.</li>
+                            <li>Guided customers through Calogi and carried out ULD build-up/breakdown with strict safety focus.</li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="space-y-2">
-                    <h4 class="font-bold text-emerald-400 uppercase tracking-widest text-xs">Education & Certifications[cite: 1]</h4>
-                    <p class="text-xs"><strong>Bachelor of Commerce (B.Com) in Business Management</strong> — Mangalore University, India (2021–2024)[cite: 1]</p>
-                    <p class="text-xs opacity-80"><strong>Certifications:</strong> One Million Prompters AI Prompt Engineering (Dubai Future Foundation), Emirates Aviation Dangerous Goods Handling, Cargo Product Knowledge & Documentation, Fundamentals of Export Cargo Operations, dnata Customer Service[cite: 1].</p>
+                    <h4 class="font-bold text-emerald-400 uppercase tracking-widest text-xs">Education & Certifications</h4>
+                    <p class="text-xs"><strong>Bachelor of Commerce (B.Com) in Business Management</strong> — Mangalore University, India (2021–2024)</p>
+                    <p class="text-xs opacity-80"><strong>Certifications:</strong> One Million Prompters AI Prompt Engineering (Dubai Future Foundation), Emirates Aviation Dangerous Goods Handling, Cargo Product Knowledge & Documentation, Fundamentals of Export Cargo Operations, dnata Customer Service.</p>
                 </div>
 
                 <div class="space-y-1">
-                    <h4 class="font-bold text-emerald-400 uppercase tracking-widest text-xs">Languages & Contact[cite: 1]</h4>
-                    <p class="text-xs"><strong>Languages:</strong> English, Hindi, Urdu, Kannada, Tulu[cite: 1]</p>
-                    <p class="text-xs"><strong>Contact:</strong> +971 56 575 4523 | mohdabzan2003@gmail.com | Dubai, UAE[cite: 1]</p>
+                    <h4 class="font-bold text-emerald-400 uppercase tracking-widest text-xs">Languages & Contact</h4>
+                    <p class="text-xs"><strong>Languages:</strong> English, Hindi, Urdu, Kannada, Tulu</p>
+                    <p class="text-xs"><strong>Contact:</strong> +971 56 575 4523 | mohdabzan2003@gmail.com | Dubai, UAE</p>
                 </div>
             </div>
 
-            <!-- Modal Action Buttons -->
+            <!-- Modal Action Buttons with Direct Original PDF Download Link -->
             <div class="flex flex-wrap items-center justify-end gap-4 pt-2">
-                <button onclick="playSFX(); window.print()" class="px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 font-bold text-xs uppercase tracking-widest flex items-center gap-2 cursor-pointer transition-colors">
-                    <i data-lucide="printer" class="w-4 h-4"></i> Print CV
-                </button>
-                <a href="#contact" onclick="toggleModal('resume-modal')" class="bg-gradient-to-r from-emerald-400 to-teal-500 hover:from-emerald-300 hover:to-teal-400 text-black font-extrabold px-6 py-3 rounded-full text-xs uppercase tracking-widest flex items-center gap-2 transition-all shadow-lg cursor-pointer">
-                    <i data-lucide="send" class="w-4 h-4"></i> Request / Inquiry
+                <a href="Abzan's_Resume.pdf" download="Mohammed_Abzan_CV.pdf" class="bg-gradient-to-r from-emerald-400 to-teal-500 hover:from-emerald-300 hover:to-teal-400 text-black font-extrabold px-6 py-3 rounded-full text-xs uppercase tracking-widest flex items-center gap-2 transition-all shadow-lg cursor-pointer">
+                    <i data-lucide="download" class="w-4 h-4"></i> Download Original PDF CV
                 </a>
             </div>
         </div>
@@ -393,29 +390,31 @@
                         <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                         <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-400"></span>
                     </span>
-                    Dubai, UAE • UAE Driving Licence[cite: 1]
+                    Dubai, UAE • UAE Driving Licence
                 </div>
                 
                 <div class="space-y-[-5px] sm:space-y-[-15px]">
                     <h1 class="text-5xl sm:text-8xl lg:text-[10rem] font-black tracking-tighter hero-title-primary leading-none">
-                        MOHAMMED[cite: 1]
+                        MOHAMMED
                     </h1>
                     <h1 class="text-5xl sm:text-8xl lg:text-[10rem] font-black tracking-tighter hero-title-secondary leading-none">
-                        ABZAN[cite: 1]
+                        ABZAN
                     </h1>
                 </div>
 
                 <p class="max-w-3xl text-lg sm:text-xl opacity-85 font-medium leading-relaxed pt-2 border-l-2 border-emerald-500 pl-4 sm:pl-6">
-                    Administration & Customer Service Professional at <strong class="font-bold">dnata — Emirates Group</strong>[cite: 1], turning complex airport logistics into seamless order at Dubai International Airport.
+                    Administration & Customer Service Professional at <strong class="font-bold">dnata — Emirates Group</strong>, turning complex airport logistics into seamless order at Dubai International Airport.
                 </p>
 
                 <div class="flex flex-wrap items-center gap-4 sm:gap-5 pt-6">
                     <button onclick="playSFX(); toggleModal('resume-modal')" class="magnetic bg-gradient-to-r from-emerald-400 to-teal-500 hover:from-emerald-300 hover:to-teal-400 text-black font-extrabold px-7 py-3.5 rounded-full flex items-center gap-3 transition-all duration-300 shadow-[0_0_30px_rgba(16,185,129,0.4)] hover:scale-105 cursor-pointer">
-                        <i data-lucide="file-text" class="w-5 h-5"></i> View Official CV[cite: 1]
+                        <i data-lucide="file-text" class="w-5 h-5"></i> View Official CV
                     </button>
                     
                     <a href="https://www.linkedin.com/in/mohdabzan" target="_blank" class="magnetic hd-card hover:bg-emerald-600/30 font-bold px-7 py-3.5 rounded-full transition-all duration-300 flex items-center gap-3 border hover:border-emerald-400 hover:scale-105 cursor-pointer">
-                        <i data-lucide="linkedin" class="w-5 h-5 text-emerald-400"></i> LinkedIn Profile[cite: 1]
+                        <!-- Official LinkedIn SVG Logo -->
+                        <svg class="w-5 h-5 fill-current text-emerald-400" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        LinkedIn Profile
                     </a>
                 </div>
             </div>
@@ -425,16 +424,16 @@
         <div class="w-full border-y border-white/10 py-5 overflow-hidden backdrop-blur-md reveal">
             <div class="animate-marquee">
                 <div class="flex items-center gap-12 sm:gap-16 text-xs sm:text-sm font-black tracking-widest uppercase opacity-80 whitespace-nowrap pr-12 sm:pr-16">
-                    <span class="flex items-center gap-3 text-emerald-400"><i data-lucide="briefcase" class="w-4 h-4 text-emerald-400"></i> ADMINISTRATIVE ASSISTANT (DNATA)[cite: 1]</span>
-                    <span class="flex items-center gap-3 text-teal-500"><i data-lucide="plane-takeoff" class="w-4 h-4 text-teal-500"></i> CARGO & CUSTOMER SERVICE AGENT[cite: 1]</span>
+                    <span class="flex items-center gap-3 text-emerald-400"><i data-lucide="briefcase" class="w-4 h-4 text-emerald-400"></i> ADMINISTRATIVE ASSISTANT (DNATA)</span>
+                    <span class="flex items-center gap-3 text-teal-500"><i data-lucide="plane-takeoff" class="w-4 h-4 text-teal-500"></i> CARGO & CUSTOMER SERVICE AGENT</span>
                     <span class="flex items-center gap-3 text-emerald-400"><i data-lucide="graduation-cap" class="w-4 h-4 text-emerald-400"></i> PURSUING MBA IN BUSINESS ANALYTICS</span>
-                    <span class="flex items-center gap-3 text-teal-500"><i data-lucide="shield-check" class="w-4 h-4 text-teal-500"></i> SUSTAINABILITY & COMPLIANCE[cite: 1]</span>
+                    <span class="flex items-center gap-3 text-teal-500"><i data-lucide="shield-check" class="w-4 h-4 text-teal-500"></i> SUSTAINABILITY & COMPLIANCE</span>
                 </div>
                 <div class="flex items-center gap-12 sm:gap-16 text-xs sm:text-sm font-black tracking-widest uppercase opacity-80 whitespace-nowrap pr-12 sm:pr-16">
-                    <span class="flex items-center gap-3 text-emerald-400"><i data-lucide="briefcase" class="w-4 h-4 text-emerald-400"></i> ADMINISTRATIVE ASSISTANT (DNATA)[cite: 1]</span>
-                    <span class="flex items-center gap-3 text-teal-500"><i data-lucide="plane-takeoff" class="w-4 h-4 text-teal-500"></i> CARGO & CUSTOMER SERVICE AGENT[cite: 1]</span>
+                    <span class="flex items-center gap-3 text-emerald-400"><i data-lucide="briefcase" class="w-4 h-4 text-emerald-400"></i> ADMINISTRATIVE ASSISTANT (DNATA)</span>
+                    <span class="flex items-center gap-3 text-teal-500"><i data-lucide="plane-takeoff" class="w-4 h-4 text-teal-500"></i> CARGO & CUSTOMER SERVICE AGENT</span>
                     <span class="flex items-center gap-3 text-emerald-400"><i data-lucide="graduation-cap" class="w-4 h-4 text-emerald-400"></i> PURSUING MBA IN BUSINESS ANALYTICS</span>
-                    <span class="flex items-center gap-3 text-teal-500"><i data-lucide="shield-check" class="w-4 h-4 text-teal-500"></i> SUSTAINABILITY & COMPLIANCE[cite: 1]</span>
+                    <span class="flex items-center gap-3 text-teal-500"><i data-lucide="shield-check" class="w-4 h-4 text-teal-500"></i> SUSTAINABILITY & COMPLIANCE</span>
                 </div>
             </div>
         </div>
@@ -443,7 +442,7 @@
         <section id="about" class="space-y-10 reveal">
             <div class="flex items-center gap-4">
                 <span class="w-10 h-1 bg-gradient-to-r from-emerald-400 to-teal-500 rounded-full"></span>
-                <div class="text-xs font-black tracking-[0.2em] text-emerald-400 uppercase">01 / Summary[cite: 1]</div>
+                <div class="text-xs font-black tracking-[0.2em] text-emerald-400 uppercase">01 / Summary</div>
             </div>
             <h2 class="text-3xl sm:text-6xl font-black tracking-tight">
                 Quantum Precision in Operations.
@@ -452,10 +451,10 @@
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
                 <div class="lg:col-span-7 space-y-6 text-base sm:text-lg opacity-90 leading-relaxed hd-card p-6 sm:p-10">
                     <p>
-                        Administration and customer service professional with over two years of experience at <strong class="font-bold">dnata (Emirates Group), Dubai International Airport</strong>, across cargo operations, document control, sustainability coordination, and customer support[cite: 1].
+                        Administration and customer service professional with over two years of experience at <strong class="font-bold">dnata (Emirates Group), Dubai International Airport</strong>, across cargo operations, document control, sustainability coordination, and customer support.
                     </p>
                     <p>
-                        Comfortable maintaining compliance-grade records, resolving enquiries from airlines and freight forwarders, and keeping cross-departmental operations running smoothly in a fast-paced airport environment[cite: 1]. Holds a Bachelor's degree in Business Management, with additional hands-on skills in Power BI and AI prompt engineering gained through the Dubai Future Foundation's One Million Prompters program[cite: 1].
+                        Comfortable maintaining compliance-grade records, resolving enquiries from airlines and freight forwarders, and keeping cross-departmental operations running smoothly in a fast-paced airport environment. Holds a Bachelor's degree in Business Management, with additional hands-on skills in Power BI and AI prompt engineering gained through the Dubai Future Foundation's One Million Prompters program.
                     </p>
                 </div>
 
@@ -464,25 +463,25 @@
                         <div class="p-3.5 rounded-2xl bg-emerald-500/10 text-emerald-400 group-hover:bg-emerald-500 group-hover:text-black transition-colors"><i data-lucide="mail"></i></div>
                         <div>
                             <div class="text-[10px] opacity-50 font-black tracking-widest uppercase mb-0.5">Email Contact</div>
-                            <div class="text-xs sm:text-sm font-bold group-hover:text-emerald-400 transition-colors">mohdabzan2003@gmail.com[cite: 1]</div>
+                            <div class="text-xs sm:text-sm font-bold group-hover:text-emerald-400 transition-colors">mohdabzan2003@gmail.com</div>
                         </div>
                     </a>
                     <a href="tel:+971565754523" class="hd-card p-5 sm:p-6 flex items-center gap-4 group cursor-pointer">
                         <div class="p-3.5 rounded-2xl bg-emerald-500/10 text-emerald-400 group-hover:bg-emerald-500 group-hover:text-black transition-colors"><i data-lucide="phone"></i></div>
                         <div>
                             <div class="text-[10px] opacity-50 font-black tracking-widest uppercase mb-0.5">Direct Phone</div>
-                            <div class="text-xs sm:text-sm font-bold group-hover:text-emerald-400 transition-colors">+971 56 575 4523[cite: 1]</div>
+                            <div class="text-xs sm:text-sm font-bold group-hover:text-emerald-400 transition-colors">+971 56 575 4523</div>
                         </div>
                     </a>
                     
                     <a href="https://www.linkedin.com/in/mohdabzan" target="_blank" class="hd-card p-5 sm:p-6 flex items-center gap-4 group cursor-pointer">
-                        <div class="p-3.5 rounded-2xl bg-teal-500/10 text-teal-500 group-hover:bg-teal-400 group-hover:text-black transition-colors">
-                            <i data-lucide="linkedin" class="w-6 h-6"></i>
+                        <div class="p-3.5 rounded-2xl bg-teal-500/10 text-teal-500 group-hover:bg-teal-400 group-hover:text-black transition-colors flex items-center justify-center">
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                         </div>
                         <div>
-                            <div class="text-[10px] opacity-50 font-black tracking-widest uppercase mb-0.5">LinkedIn Profile[cite: 1]</div>
+                            <div class="text-[10px] opacity-50 font-black tracking-widest uppercase mb-0.5">LinkedIn Profile</div>
                             <div class="text-xs sm:text-sm font-bold group-hover:text-teal-500 transition-colors flex items-center gap-1.5">
-                                <i data-lucide="linkedin" class="w-4 h-4 text-emerald-400"></i> linkedin.com/in/mohdabzan[cite: 1]
+                                linkedin.com/in/mohdabzan
                             </div>
                         </div>
                     </a>
@@ -494,7 +493,7 @@
         <section id="experience" class="space-y-10 reveal">
             <div class="flex items-center gap-4">
                 <span class="w-10 h-1 bg-gradient-to-r from-emerald-400 to-teal-500 rounded-full"></span>
-                <div class="text-xs font-black tracking-[0.2em] text-emerald-400 uppercase">02 / Experience[cite: 1]</div>
+                <div class="text-xs font-black tracking-[0.2em] text-emerald-400 uppercase">02 / Experience</div>
             </div>
             <h2 class="text-3xl sm:text-6xl font-black tracking-tight">
                 Two years in the busiest orbit on Earth.
@@ -509,18 +508,18 @@
                     <div class="hd-card p-6 sm:p-10 border-l-2 border-l-emerald-400">
                         <div class="mb-6">
                             <div class="inline-flex items-center gap-2 bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest mb-3">
-                                <span class="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse"></span> 2025 — PRESENT[cite: 1]
+                                <span class="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse"></span> 2025 — PRESENT
                             </div>
-                            <h3 class="text-2xl sm:text-3xl font-black">Administrative Assistant[cite: 1]</h3>
-                            <div class="text-xs sm:text-sm font-mono-accent opacity-70 mt-1">dnata (Emirates Group) · Dubai International Airport[cite: 1]</div>
+                            <h3 class="text-2xl sm:text-3xl font-black">Administrative Assistant</h3>
+                            <div class="text-xs sm:text-sm font-mono-accent opacity-70 mt-1">dnata (Emirates Group) · Dubai International Airport</div>
                         </div>
 
                         <ul class="space-y-3.5 opacity-90 text-sm">
-                            <li class="flex items-start gap-3"><i data-lucide="arrow-right-circle" class="w-4 h-4 text-emerald-400 shrink-0 mt-1"></i> Manage document archiving for cargo and operational records, keeping filing systems organised and audit-ready for management reviews[cite: 1].</li>
-                            <li class="flex items-start gap-3"><i data-lucide="arrow-right-circle" class="w-4 h-4 text-emerald-400 shrink-0 mt-1"></i> Support environmental and sustainability initiatives within the department, including record-keeping tied to sustainability reporting and compliance requirements[cite: 1].</li>
-                            <li class="flex items-start gap-3"><i data-lucide="arrow-right-circle" class="w-4 h-4 text-emerald-400 shrink-0 mt-1"></i> Handle customer service enquiries from airlines, freight forwarders and internal teams, resolving cases and routing requests to the right department[cite: 1].</li>
-                            <li class="flex items-start gap-3"><i data-lucide="arrow-right-circle" class="w-4 h-4 text-emerald-400 shrink-0 mt-1"></i> Provide day-to-day administrative support, including correspondence, scheduling and coordination between operations, warehouse and management teams[cite: 1].</li>
-                            <li class="flex items-start gap-3"><i data-lucide="arrow-right-circle" class="w-4 h-4 text-emerald-400 shrink-0 mt-1"></i> Maintain accurate data entry across internal systems, supporting reporting needs for supervisors and department heads[cite: 1].</li>
+                            <li class="flex items-start gap-3"><i data-lucide="arrow-right-circle" class="w-4 h-4 text-emerald-400 shrink-0 mt-1"></i> Manage document archiving for cargo and operational records, keeping filing systems organised and audit-ready for management reviews.</li>
+                            <li class="flex items-start gap-3"><i data-lucide="arrow-right-circle" class="w-4 h-4 text-emerald-400 shrink-0 mt-1"></i> Support environmental and sustainability initiatives within the department, including record-keeping tied to sustainability reporting and compliance requirements.</li>
+                            <li class="flex items-start gap-3"><i data-lucide="arrow-right-circle" class="w-4 h-4 text-emerald-400 shrink-0 mt-1"></i> Handle customer service enquiries from airlines, freight forwarders and internal teams, resolving cases and routing requests to the right department.</li>
+                            <li class="flex items-start gap-3"><i data-lucide="arrow-right-circle" class="w-4 h-4 text-emerald-400 shrink-0 mt-1"></i> Provide day-to-day administrative support, including correspondence, scheduling and coordination between operations, warehouse and management teams.</li>
+                            <li class="flex items-start gap-3"><i data-lucide="arrow-right-circle" class="w-4 h-4 text-emerald-400 shrink-0 mt-1"></i> Maintain accurate data entry across internal systems, supporting reporting needs for supervisors and department heads.</li>
                         </ul>
                     </div>
                 </div>
@@ -531,17 +530,17 @@
                     
                     <div class="hd-card p-6 sm:p-10 border-l-2 border-l-teal-500">
                         <div class="mb-6">
-                            <div class="text-[10px] font-black opacity-50 uppercase tracking-widest mb-2">2024 — 2025[cite: 1]</div>
-                            <h3 class="text-2xl sm:text-3xl font-black opacity-90 group-hover:opacity-100 transition-opacity">Cargo & Customer Service Agent[cite: 1]</h3>
-                            <div class="text-xs sm:text-sm font-mono-accent opacity-70 mt-1">dnata (Emirates Group) · Dubai International Airport[cite: 1]</div>
+                            <div class="text-[10px] font-black opacity-50 uppercase tracking-widest mb-2">2024 — 2025</div>
+                            <h3 class="text-2xl sm:text-3xl font-black opacity-90 group-hover:opacity-100 transition-opacity">Cargo & Customer Service Agent</h3>
+                            <div class="text-xs sm:text-sm font-mono-accent opacity-70 mt-1">dnata (Emirates Group) · Dubai International Airport</div>
                         </div>
 
                         <ul class="space-y-3.5 opacity-80 text-sm group-hover:opacity-100 transition-opacity">
-                            <li class="flex items-start gap-3"><i data-lucide="circle-dot" class="w-4 h-4 text-teal-500 shrink-0 mt-1"></i> Served as the main point of contact for international airlines, freight forwarders and multinational clients, managing import and export cargo enquiries end to end[cite: 1].</li>
-                            <li class="flex items-start gap-3"><i data-lucide="circle-dot" class="w-4 h-4 text-teal-500 shrink-0 mt-1"></i> Maintained compliance-grade records for AWB, Dangerous Goods, Pharmaceutical and AVI/HUM shipments in line with IATA and GCAA standards[cite: 1].</li>
-                            <li class="flex items-start gap-3"><i data-lucide="circle-dot" class="w-4 h-4 text-teal-500 shrink-0 mt-1"></i> Prepared billing reports, invoices and inventory trackers for management review[cite: 1].</li>
-                            <li class="flex items-start gap-3"><i data-lucide="circle-dot" class="w-4 h-4 text-teal-500 shrink-0 mt-1"></i> Guided customers through the Calogi digital platform, reducing repeat queries[cite: 1].</li>
-                            <li class="flex items-start gap-3"><i data-lucide="circle-dot" class="w-4 h-4 text-teal-500 shrink-0 mt-1"></i> Carried out ULD build-up and breakdown with close attention to load integrity, weight compliance and safety protocols[cite: 1].</li>
+                            <li class="flex items-start gap-3"><i data-lucide="circle-dot" class="w-4 h-4 text-teal-500 shrink-0 mt-1"></i> Served as the main point of contact for international airlines, freight forwarders and multinational clients, managing import and export cargo enquiries end to end.</li>
+                            <li class="flex items-start gap-3"><i data-lucide="circle-dot" class="w-4 h-4 text-teal-500 shrink-0 mt-1"></i> Maintained compliance-grade records for AWB, Dangerous Goods, Pharmaceutical and AVI/HUM shipments in line with IATA and GCAA standards.</li>
+                            <li class="flex items-start gap-3"><i data-lucide="circle-dot" class="w-4 h-4 text-teal-500 shrink-0 mt-1"></i> Prepared billing reports, invoices and inventory trackers for management review.</li>
+                            <li class="flex items-start gap-3"><i data-lucide="circle-dot" class="w-4 h-4 text-teal-500 shrink-0 mt-1"></i> Guided customers through the Calogi digital platform, reducing repeat queries.</li>
+                            <li class="flex items-start gap-3"><i data-lucide="circle-dot" class="w-4 h-4 text-teal-500 shrink-0 mt-1"></i> Carried out ULD build-up and breakdown with close attention to load integrity, weight compliance and safety protocols.</li>
                         </ul>
                     </div>
                 </div>
@@ -552,7 +551,7 @@
         <section id="education" class="space-y-10 reveal">
             <div class="flex items-center gap-4">
                 <span class="w-10 h-1 bg-gradient-to-r from-emerald-400 to-teal-500 rounded-full"></span>
-                <div class="text-xs font-black tracking-[0.2em] text-emerald-400 uppercase">03 / Education[cite: 1]</div>
+                <div class="text-xs font-black tracking-[0.2em] text-emerald-400 uppercase">03 / Education</div>
             </div>
             <h2 class="text-3xl sm:text-6xl font-black tracking-tight">Academic Ascent.</h2>
 
@@ -561,7 +560,7 @@
                 <div class="hd-card p-8 sm:p-10 border-t-4 border-t-emerald-400">
                     <div class="text-[10px] font-black text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded inline-block uppercase tracking-widest mb-4">IN PROGRESS</div>
                     <h3 class="text-2xl sm:text-3xl font-black mb-2">Master of Business Administration (MBA)</h3>
-                    <div class="text-emerald-500 font-mono-accent font-bold text-sm mb-4">Business Analytics[cite: 1]</div>
+                    <div class="text-emerald-500 font-mono-accent font-bold text-sm mb-4">Business Analytics</div>
                     <p class="opacity-80 text-sm leading-relaxed">
                         Deepening expertise in data analytics, operational intelligence, business strategy, and data-driven decision-making.
                     </p>
@@ -569,10 +568,10 @@
 
                 <!-- Bachelor Degree -->
                 <div class="hd-card p-8 sm:p-10 border-t-4 border-t-teal-500">
-                    <div class="text-[10px] font-black opacity-50 uppercase tracking-widest mb-4">2021 — 2024[cite: 1]</div>
-                    <h3 class="text-2xl sm:text-3xl font-black opacity-90 mb-2">Bachelor of Commerce (B.Com)[cite: 1]</h3>
-                    <div class="text-teal-500 font-mono-accent font-bold text-sm mb-1">Business Management[cite: 1]</div>
-                    <div class="text-xs opacity-50 font-bold uppercase mb-4">Mangalore University, India[cite: 1]</div>
+                    <div class="text-[10px] font-black opacity-50 uppercase tracking-widest mb-4">2021 — 2024</div>
+                    <h3 class="text-2xl sm:text-3xl font-black opacity-90 mb-2">Bachelor of Commerce (B.Com)</h3>
+                    <div class="text-teal-500 font-mono-accent font-bold text-sm mb-1">Business Management</div>
+                    <div class="text-xs opacity-50 font-bold uppercase mb-4">Mangalore University, India</div>
                     <p class="opacity-60 text-sm leading-relaxed">
                         Solid foundation in organizational operations, business administration, commerce, and operational leadership.
                     </p>
@@ -581,13 +580,13 @@
 
             <!-- Certifications -->
             <div class="hd-card p-6 sm:p-10">
-                <h3 class="text-xs font-black tracking-widest opacity-60 uppercase mb-6 flex items-center gap-3"><i data-lucide="award" class="text-emerald-400"></i> Certifications[cite: 1]</h3>
+                <h3 class="text-xs font-black tracking-widest opacity-60 uppercase mb-6 flex items-center gap-3"><i data-lucide="award" class="text-emerald-400"></i> Certifications</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div class="p-4 rounded-xl bg-white/5 border border-white/5 flex items-center gap-3"><i data-lucide="check" class="text-emerald-400 shrink-0"></i><span class="text-xs sm:text-sm font-bold">One Million Prompters AI Prompt Engineering — Dubai Future Foundation[cite: 1]</span></div>
-                    <div class="p-4 rounded-xl bg-white/5 border border-white/5 flex items-center gap-3"><i data-lucide="check" class="text-emerald-400 shrink-0"></i><span class="text-xs sm:text-sm font-bold">Emirates Aviation Dangerous Goods Handling — dnata[cite: 1]</span></div>
-                    <div class="p-4 rounded-xl bg-white/5 border border-white/5 flex items-center gap-3"><i data-lucide="check" class="text-emerald-400 shrink-0"></i><span class="text-xs sm:text-sm font-bold">Cargo Product Knowledge & Documentation — dnata[cite: 1]</span></div>
-                    <div class="p-4 rounded-xl bg-white/5 border border-white/5 flex items-center gap-3"><i data-lucide="check" class="text-emerald-400 shrink-0"></i><span class="text-xs sm:text-sm font-bold">Fundamentals of Cargo Operations (Export) — dnata[cite: 1]</span></div>
-                    <div class="p-4 rounded-xl bg-white/5 border border-white/5 flex items-center gap-3 md:col-span-2"><i data-lucide="check" class="text-emerald-400 shrink-0"></i><span class="text-xs sm:text-sm font-bold">dnata Customer Service — dnata[cite: 1]</span></div>
+                    <div class="p-4 rounded-xl bg-white/5 border border-white/5 flex items-center gap-3"><i data-lucide="check" class="text-emerald-400 shrink-0"></i><span class="text-xs sm:text-sm font-bold">One Million Prompters AI Prompt Engineering — Dubai Future Foundation</span></div>
+                    <div class="p-4 rounded-xl bg-white/5 border border-white/5 flex items-center gap-3"><i data-lucide="check" class="text-emerald-400 shrink-0"></i><span class="text-xs sm:text-sm font-bold">Emirates Aviation Dangerous Goods Handling — dnata</span></div>
+                    <div class="p-4 rounded-xl bg-white/5 border border-white/5 flex items-center gap-3"><i data-lucide="check" class="text-emerald-400 shrink-0"></i><span class="text-xs sm:text-sm font-bold">Cargo Product Knowledge & Documentation — dnata</span></div>
+                    <div class="p-4 rounded-xl bg-white/5 border border-white/5 flex items-center gap-3"><i data-lucide="check" class="text-emerald-400 shrink-0"></i><span class="text-xs sm:text-sm font-bold">Fundamentals of Cargo Operations (Export) — dnata</span></div>
+                    <div class="p-4 rounded-xl bg-white/5 border border-white/5 flex items-center gap-3 md:col-span-2"><i data-lucide="check" class="text-emerald-400 shrink-0"></i><span class="text-xs sm:text-sm font-bold">dnata Customer Service — dnata</span></div>
                 </div>
             </div>
         </section>
@@ -596,33 +595,33 @@
         <section id="skills" class="space-y-10 reveal">
             <div class="flex items-center gap-4">
                 <span class="w-10 h-1 bg-gradient-to-r from-emerald-400 to-teal-500 rounded-full"></span>
-                <div class="text-xs font-black tracking-[0.2em] text-emerald-400 uppercase">04 / Capabilities[cite: 1]</div>
+                <div class="text-xs font-black tracking-[0.2em] text-emerald-400 uppercase">04 / Capabilities</div>
             </div>
-            <h2 class="text-3xl sm:text-6xl font-black tracking-tight">Core Competencies[cite: 1].</h2>
+            <h2 class="text-3xl sm:text-6xl font-black tracking-tight">Core Competencies.</h2>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <!-- Operations -->
                 <div class="hd-card p-8 sm:p-10">
-                    <h3 class="text-xl sm:text-2xl font-black mb-6 flex items-center gap-3"><i data-lucide="crosshair" class="text-emerald-400"></i> Field Skills[cite: 1]</h3>
+                    <h3 class="text-xl sm:text-2xl font-black mb-6 flex items-center gap-3"><i data-lucide="crosshair" class="text-emerald-400"></i> Field Skills</h3>
                     <div class="flex flex-wrap gap-2.5">
-                        <span class="anti-gravity border border-white/10 px-4 py-2 rounded-full text-xs font-bold" style="background: rgba(16,185,129,0.08)">Customer Service[cite: 1]</span>
-                        <span class="anti-gravity-delayed border border-white/10 px-4 py-2 rounded-full text-xs font-bold" style="background: rgba(16,185,129,0.08)">Document Archiving & Control[cite: 1]</span>
-                        <span class="anti-gravity border border-white/10 px-4 py-2 rounded-full text-xs font-bold" style="background: rgba(16,185,129,0.08)">Administrative Support[cite: 1]</span>
-                        <span class="anti-gravity-delayed border border-white/10 px-4 py-2 rounded-full text-xs font-bold" style="background: rgba(16,185,129,0.08)">Sustainability Coordination[cite: 1]</span>
-                        <span class="anti-gravity border border-white/10 px-4 py-2 rounded-full text-xs font-bold" style="background: rgba(16,185,129,0.08)">Cargo Operations[cite: 1]</span>
-                        <span class="anti-gravity-delayed border border-white/10 px-4 py-2 rounded-full text-xs font-bold" style="background: rgba(16,185,129,0.08)">Data Entry & Reporting[cite: 1]</span>
+                        <span class="anti-gravity border border-white/10 px-4 py-2 rounded-full text-xs font-bold" style="background: rgba(16,185,129,0.08)">Customer Service</span>
+                        <span class="anti-gravity-delayed border border-white/10 px-4 py-2 rounded-full text-xs font-bold" style="background: rgba(16,185,129,0.08)">Document Archiving & Control</span>
+                        <span class="anti-gravity border border-white/10 px-4 py-2 rounded-full text-xs font-bold" style="background: rgba(16,185,129,0.08)">Administrative Support</span>
+                        <span class="anti-gravity-delayed border border-white/10 px-4 py-2 rounded-full text-xs font-bold" style="background: rgba(16,185,129,0.08)">Sustainability Coordination</span>
+                        <span class="anti-gravity border border-white/10 px-4 py-2 rounded-full text-xs font-bold" style="background: rgba(16,185,129,0.08)">Cargo Operations</span>
+                        <span class="anti-gravity-delayed border border-white/10 px-4 py-2 rounded-full text-xs font-bold" style="background: rgba(16,185,129,0.08)">Data Entry & Reporting</span>
                     </div>
                 </div>
 
                 <!-- Software Stack -->
                 <div class="hd-card p-8 sm:p-10">
-                    <h3 class="text-xl sm:text-2xl font-black mb-6 flex items-center gap-3"><i data-lucide="cpu" class="text-teal-500"></i> Software Stack[cite: 1]</h3>
+                    <h3 class="text-xl sm:text-2xl font-black mb-6 flex items-center gap-3"><i data-lucide="cpu" class="text-teal-500"></i> Software Stack</h3>
                     <div class="flex flex-wrap gap-2.5">
-                        <span class="anti-gravity-delayed bg-emerald-500/10 border border-emerald-500/30 px-4 py-2 rounded-full text-xs font-bold text-emerald-500">Microsoft 365 (Word, Excel, PowerPoint, Outlook)[cite: 1]</span>
-                        <span class="anti-gravity bg-teal-500/10 border border-teal-500/30 px-4 py-2 rounded-full text-xs font-bold text-teal-500">Power BI[cite: 1]</span>
-                        <span class="anti-gravity-delayed bg-emerald-500/10 border border-emerald-500/30 px-4 py-2 rounded-full text-xs font-bold text-emerald-500">AI Prompt Engineering[cite: 1]</span>
-                        <span class="anti-gravity bg-teal-500/10 border border-teal-500/30 px-4 py-2 rounded-full text-xs font-bold text-teal-500">One Cargo[cite: 1]</span>
-                        <span class="anti-gravity-delayed bg-emerald-500/10 border border-emerald-500/30 px-4 py-2 rounded-full text-xs font-bold text-emerald-500">Calogi[cite: 1]</span>
+                        <span class="anti-gravity-delayed bg-emerald-500/10 border border-emerald-500/30 px-4 py-2 rounded-full text-xs font-bold text-emerald-500">Microsoft 365 (Word, Excel, PowerPoint, Outlook)</span>
+                        <span class="anti-gravity bg-teal-500/10 border border-teal-500/30 px-4 py-2 rounded-full text-xs font-bold text-teal-500">Power BI</span>
+                        <span class="anti-gravity-delayed bg-emerald-500/10 border border-emerald-500/30 px-4 py-2 rounded-full text-xs font-bold text-emerald-500">AI Prompt Engineering</span>
+                        <span class="anti-gravity bg-teal-500/10 border border-teal-500/30 px-4 py-2 rounded-full text-xs font-bold text-teal-500">One Cargo</span>
+                        <span class="anti-gravity-delayed bg-emerald-500/10 border border-emerald-500/30 px-4 py-2 rounded-full text-xs font-bold text-emerald-500">Calogi</span>
                     </div>
                 </div>
             </div>
@@ -677,7 +676,7 @@
         <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
             <div>&copy; 2026 MOHAMMED ABZAN. ALL RIGHTS RESERVED.</div>
             <div class="flex gap-3 opacity-90">
-                <span>ENGLISH</span> • <span>HINDI</span> • <span>URDU</span> • <span>KANNADA</span> • <span>TULU[cite: 1]</span>
+                <span>ENGLISH</span> • <span>HINDI</span> • <span>URDU</span> • <span>KANNADA</span> • <span>TULU</span>
             </div>
         </div>
     </footer>
@@ -686,26 +685,49 @@
     <script>
         lucide.createIcons();
 
-        // Sound Effects (SFX) Engine
+        // Enhanced Sound Effects (SFX) Engine with Auto-Resume
         let soundEnabled = true;
-        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        let audioCtx = null;
 
-        function playSFX() {
-            if (!soundEnabled) return;
+        function initAudio() {
+            if (!audioCtx) {
+                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            }
             if (audioCtx.state === 'suspended') {
                 audioCtx.resume();
             }
-            const osc = audioCtx.createOscillator();
-            const gain = audioCtx.createGain();
-            osc.type = 'sine';
-            osc.frequency.setValueAtTime(440, audioCtx.currentTime);
-            osc.frequency.exponentialRampToValueAtTime(880, audioCtx.currentTime + 0.08);
-            gain.gain.setValueAtTime(0.05, audioCtx.currentTime);
-            gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.08);
-            osc.connect(gain);
-            gain.connect(audioCtx.destination);
-            osc.start();
-            osc.stop(audioCtx.currentTime + 0.08);
+        }
+
+        // Initialize audio context on first user interaction anywhere on page
+        window.addEventListener('pointerdown', initAudio, { once: true });
+        window.addEventListener('keydown', initAudio, { once: true });
+
+        function playSFX() {
+            if (!soundEnabled) return;
+            try {
+                if (!audioCtx) {
+                    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                }
+                if (audioCtx.state === 'suspended') {
+                    audioCtx.resume();
+                }
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(520, audioCtx.currentTime);
+                osc.frequency.exponentialRampToValueAtTime(1040, audioCtx.currentTime + 0.1);
+                
+                // Increased gain for clear audible sound
+                gain.gain.setValueAtTime(0.15, audioCtx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.1);
+                
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+                osc.start();
+                osc.stop(audioCtx.currentTime + 0.1);
+            } catch (e) {
+                console.log("Audio play error:", e);
+            }
         }
 
         function toggleAudio() {

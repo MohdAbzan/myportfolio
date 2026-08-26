@@ -131,12 +131,12 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             filter: drop-shadow(0 0 35px rgba(16, 185, 129, 0.45));
-            margin-top: 0.55rem; /* Explicit mobile gap between Mohammed and Abzan */
+            margin-top: 0.55rem;
         }
 
         @media (min-width: 640px) {
             .hero-title-secondary {
-                margin-top: 0rem; /* Reset for desktop */
+                margin-top: 0rem;
             }
         }
 
@@ -236,26 +236,30 @@
     <div id="cmd-palette" class="modal-overlay hidden-modal fixed inset-0 z-50 flex items-start justify-center pt-24 p-6 bg-black/80 backdrop-blur-md">
         <div class="hd-card w-full max-w-xl p-6 space-y-4 border-t-4 border-t-emerald-400 shadow-2xl">
             <div class="flex items-center justify-between border-b pb-3" style="border-color: var(--border-color);">
-                <div class="flex items-center gap-2 text-xs font-mono-accent text-emerald-400 font-bold uppercase tracking-widest">
+                <div class="flex items-center gap-2 text-xs font-mono-accent text-emerald-500 font-bold uppercase tracking-widest">
                     <i data-lucide="command" class="w-4 h-4"></i> Command Terminal
                 </div>
                 <button onclick="playSFX(); toggleModal('cmd-palette')" class="opacity-60 hover:opacity-100 cursor-pointer"><i data-lucide="x" class="w-5 h-5"></i></button>
             </div>
             <div class="space-y-2 text-sm">
                 <a href="#about" onclick="playSFX(); toggleModal('cmd-palette')" class="flex items-center justify-between p-3 rounded-xl bg-emerald-500/10 hover:bg-emerald-500/20 transition-colors">
-                    <span class="flex items-center gap-2"><i data-lucide="user" class="w-4 h-4 text-emerald-400"></i> Jump to Professional Summary</span>
+                    <span class="flex items-center gap-2"><i data-lucide="user" class="w-4 h-4 text-emerald-500"></i> Jump to Professional Summary</span>
                     <span class="text-[10px] font-mono-accent opacity-50">#about</span>
                 </a>
                 <a href="#experience" onclick="playSFX(); toggleModal('cmd-palette')" class="flex items-center justify-between p-3 rounded-xl bg-emerald-500/10 hover:bg-emerald-500/20 transition-colors">
-                    <span class="flex items-center gap-2"><i data-lucide="briefcase" class="w-4 h-4 text-emerald-400"></i> Jump to dnata Experience</span>
+                    <span class="flex items-center gap-2"><i data-lucide="briefcase" class="w-4 h-4 text-emerald-500"></i> Jump to dnata Experience</span>
                     <span class="text-[10px] font-mono-accent opacity-50">#experience</span>
                 </a>
+                <a href="#languages" onclick="playSFX(); toggleModal('cmd-palette')" class="flex items-center justify-between p-3 rounded-xl bg-emerald-500/10 hover:bg-emerald-500/20 transition-colors">
+                    <span class="flex items-center gap-2"><i data-lucide="languages" class="w-4 h-4 text-emerald-500"></i> Jump to Languages Section</span>
+                    <span class="text-[10px] font-mono-accent opacity-50">#languages</span>
+                </a>
                 <a href="Abzan's_Resume.pdf" download="Mohammed_Abzan_CV.pdf" onclick="triggerToast()" class="w-full flex items-center justify-between p-3 rounded-xl bg-emerald-500/10 hover:bg-emerald-500/20 transition-colors cursor-pointer text-left">
-                    <span class="flex items-center gap-2"><i data-lucide="download" class="w-4 h-4 text-emerald-400"></i> Direct Download Official PDF CV</span>
+                    <span class="flex items-center gap-2"><i data-lucide="download" class="w-4 h-4 text-emerald-500"></i> Direct Download Official PDF CV</span>
                     <span class="text-[10px] font-mono-accent opacity-50">PDF</span>
                 </a>
                 <button onclick="playSFX(); toggleModal('cmd-palette'); toggleTheme();" class="w-full flex items-center justify-between p-3 rounded-xl bg-emerald-500/10 hover:bg-emerald-500/20 transition-colors cursor-pointer text-left">
-                    <span class="flex items-center gap-2"><i data-lucide="sun-moon" class="w-4 h-4 text-emerald-400"></i> Toggle Dark / Light Theme</span>
+                    <span class="flex items-center gap-2"><i data-lucide="sun-moon" class="w-4 h-4 text-emerald-500"></i> Toggle Dark / Light Theme</span>
                     <span class="text-[10px] font-mono-accent opacity-50">Theme</span>
                 </button>
             </div>
@@ -270,7 +274,7 @@
             </button>
 
             <div class="space-y-1">
-                <div class="text-xs font-mono-accent font-bold text-emerald-400 uppercase tracking-widest">Instant Transmission</div>
+                <div class="text-xs font-mono-accent font-bold text-emerald-500 uppercase tracking-widest">Instant Transmission</div>
                 <h3 class="text-2xl font-black">Send Direct Message</h3>
             </div>
 
@@ -279,9 +283,9 @@
                 <input type="hidden" name="subject" value="New Portfolio Message">
                 <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
 
-                <input type="text" name="name" required placeholder="Your Name" class="w-full border rounded-xl px-4 py-3 focus:outline-none focus:border-emerald-400 transition-colors bg-emerald-500/5">
-                <input type="email" name="email" required placeholder="Your Email Address" class="w-full border rounded-xl px-4 py-3 focus:outline-none focus:border-emerald-400 transition-colors bg-emerald-500/5">
-                <textarea name="message" rows="4" required placeholder="Write your message or offer here..." class="w-full border rounded-xl px-4 py-3 focus:outline-none focus:border-emerald-400 transition-colors bg-emerald-500/5"></textarea>
+                <input type="text" name="name" required placeholder="Your Name" class="w-full border rounded-xl px-4 py-3 focus:outline-none focus:border-emerald-500 transition-colors bg-emerald-500/5">
+                <input type="email" name="email" required placeholder="Your Email Address" class="w-full border rounded-xl px-4 py-3 focus:outline-none focus:border-emerald-500 transition-colors bg-emerald-500/5">
+                <textarea name="message" rows="4" required placeholder="Write your message or offer here..." class="w-full border rounded-xl px-4 py-3 focus:outline-none focus:border-emerald-500 transition-colors bg-emerald-500/5"></textarea>
                 
                 <button type="submit" class="w-full bg-gradient-to-r from-emerald-400 to-teal-500 hover:from-emerald-300 hover:to-teal-400 text-black font-extrabold py-3.5 rounded-xl transition-all duration-300 shadow-[0_0_20px_rgba(16,185,129,0.4)] cursor-pointer flex items-center justify-center gap-2">
                     <i data-lucide="send" class="w-4 h-4"></i> Transmit Message
@@ -292,7 +296,7 @@
 
     <!-- TOAST NOTIFICATION BANNER -->
     <div id="toast-banner" class="fixed bottom-6 left-6 z-50 transform translate-y-32 opacity-0 transition-all duration-500 hd-card px-6 py-3 border-l-4 border-emerald-400 flex items-center gap-3 shadow-2xl">
-        <i data-lucide="check-circle" class="w-5 h-5 text-emerald-400"></i>
+        <i data-lucide="check-circle" class="w-5 h-5 text-emerald-500"></i>
         <span id="toast-msg" class="text-xs font-bold tracking-wide">Signal Transmitted Successfully! Direct delivery active.</span>
     </div>
 
@@ -300,35 +304,36 @@
     <header class="fixed top-0 left-0 w-full z-50 backdrop-blur-xl border-b border-white/5" style="background-color: var(--nav-bg);">
         <div class="max-w-7xl mx-auto px-6 h-20 sm:h-24 flex items-center justify-between">
             <a href="#" class="text-2xl font-black tracking-tighter flex items-center gap-1 group cursor-pointer">
-                ABZAN<span class="text-emerald-400 group-hover:scale-125 transition-transform duration-300 inline-block">.</span>
+                ABZAN<span class="text-emerald-500 group-hover:scale-125 transition-transform duration-300 inline-block">.</span>
             </a>
             
             <nav class="hidden md:flex items-center gap-6 text-[11px] font-bold tracking-[0.2em] uppercase opacity-75">
-                <a href="#about" class="hover:text-emerald-400 transition-colors">Summary</a>
-                <a href="#experience" class="hover:text-emerald-400 transition-colors">Experience</a>
-                <a href="#education" class="hover:text-emerald-400 transition-colors">Education</a>
-                <a href="#skills" class="hover:text-emerald-400 transition-colors">Skills</a>
-                <a href="#contact" class="hover:text-emerald-400 transition-colors">Contact</a>
+                <a href="#about" class="hover:text-emerald-500 transition-colors">Summary</a>
+                <a href="#experience" class="hover:text-emerald-500 transition-colors">Experience</a>
+                <a href="#education" class="hover:text-emerald-500 transition-colors">Education</a>
+                <a href="#skills" class="hover:text-emerald-500 transition-colors">Skills</a>
+                <a href="#languages" class="hover:text-emerald-500 transition-colors">Languages</a>
+                <a href="#contact" class="hover:text-emerald-500 transition-colors">Contact</a>
             </nav>
 
             <div class="flex items-center gap-3">
-                <a href="Abzan's_Resume.pdf" download="Mohammed_Abzan_CV.pdf" onclick="triggerToast()" class="hidden lg:flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-[10px] font-mono-accent text-emerald-400 hover:bg-emerald-500 hover:text-black transition-all cursor-pointer">
+                <a href="Abzan's_Resume.pdf" download="Mohammed_Abzan_CV.pdf" onclick="triggerToast()" class="hidden lg:flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-[10px] font-mono-accent text-emerald-500 hover:bg-emerald-500 hover:text-black transition-all cursor-pointer">
                     <i data-lucide="download" class="w-3.5 h-3.5"></i>
                     <span>DOWNLOAD CV</span>
                 </a>
 
                 <div class="tooltip-wrap">
-                    <button onclick="toggleAudio()" id="audio-btn" class="p-2.5 rounded-full border hover:border-emerald-400 text-emerald-400 transition-all cursor-pointer shadow-sm" title="Toggle SFX Mute">
+                    <button onclick="toggleAudio()" id="audio-btn" class="p-2.5 rounded-full border hover:border-emerald-500 text-emerald-500 transition-all cursor-pointer shadow-sm" title="Toggle SFX Mute">
                         <i data-lucide="volume-2" id="audio-icon" class="w-4 h-4"></i>
                     </button>
                     <div class="tooltip-box">Sci-Fi Audio Feed</div>
                 </div>
 
                 <button onclick="playSFX(); toggleModal('cmd-palette')" class="hidden sm:inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-xs opacity-80 hover:opacity-100 transition-opacity cursor-pointer">
-                    <i data-lucide="command" class="w-3.5 h-3.5 text-emerald-400"></i> <span class="font-mono-accent text-[10px]">Ctrl K</span>
+                    <i data-lucide="command" class="w-3.5 h-3.5 text-emerald-500"></i> <span class="font-mono-accent text-[10px]">Ctrl K</span>
                 </button>
 
-                <button onclick="playSFX(); toggleTheme()" id="theme-btn" class="p-2.5 rounded-full border hover:border-emerald-400 text-emerald-400 transition-all cursor-pointer shadow-sm" title="Toggle Theme">
+                <button onclick="playSFX(); toggleTheme()" id="theme-btn" class="p-2.5 rounded-full border hover:border-emerald-500 text-emerald-500 transition-all cursor-pointer shadow-sm" title="Toggle Theme">
                     <i data-lucide="sun" id="theme-icon" class="w-4 h-4"></i>
                 </button>
 
@@ -345,10 +350,10 @@
         <!-- HERO SECTION -->
         <section id="hero" class="min-h-[75vh] flex flex-col justify-center relative reveal active">
             <div class="space-y-6">
-                <div class="inline-flex items-center gap-3 text-xs font-mono-accent font-bold tracking-widest text-emerald-400 uppercase bg-gradient-to-r from-emerald-500/10 to-teal-500/10 px-4 py-2 rounded-full border border-emerald-500/20 shadow-[0_0_20px_rgba(16,185,129,0.15)]">
+                <div class="inline-flex items-center gap-3 text-xs font-mono-accent font-bold tracking-widest text-emerald-500 uppercase bg-gradient-to-r from-emerald-500/10 to-teal-500/10 px-4 py-2 rounded-full border border-emerald-500/20 shadow-[0_0_20px_rgba(16,185,129,0.15)]">
                     <span class="relative flex h-2.5 w-2.5">
                         <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-400"></span>
+                        <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
                     </span>
                     Dubai, UAE • UAE Driving Licence
                 </div>
@@ -371,8 +376,8 @@
                         <i data-lucide="download" class="w-5 h-5"></i> Download PDF CV
                     </a>
                     
-                    <a href="https://www.linkedin.com/in/mohdabzan" target="_blank" class="magnetic hd-card hover:bg-emerald-600/30 font-bold px-7 py-3.5 rounded-full transition-all duration-300 flex items-center gap-3 border hover:border-emerald-400 hover:scale-105 cursor-pointer">
-                        <svg class="w-5 h-5 fill-current text-emerald-400" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    <a href="https://www.linkedin.com/in/mohdabzan" target="_blank" class="magnetic hd-card hover:bg-emerald-600/30 font-bold px-7 py-3.5 rounded-full transition-all duration-300 flex items-center gap-3 border hover:border-emerald-500 hover:scale-105 cursor-pointer">
+                        <svg class="w-5 h-5 fill-current text-emerald-500" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                         LinkedIn Profile
                     </a>
                 </div>
@@ -589,6 +594,67 @@
                         <span class="anti-gravity bg-teal-500/10 border border-teal-500/30 px-4 py-2 rounded-full text-xs font-bold text-teal-600 dark:text-teal-400">One Cargo</span>
                         <span class="anti-gravity-delayed bg-emerald-500/10 border border-emerald-500/30 px-4 py-2 rounded-full text-xs font-bold text-emerald-600 dark:text-emerald-400">Calogi</span>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DEDICATED LANGUAGES SECTION -->
+        <section id="languages" class="space-y-10 reveal">
+            <div class="flex items-center gap-4">
+                <span class="w-10 h-1 bg-gradient-to-r from-emerald-400 to-teal-500 rounded-full"></span>
+                <div class="text-xs font-black tracking-[0.2em] text-emerald-500 uppercase">06 / Languages</div>
+            </div>
+            <h2 class="text-3xl sm:text-6xl font-black tracking-tight">Multilingual Communication.</h2>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- English -->
+                <div class="hd-card p-6 sm:p-8 border-t-4 border-t-emerald-500 space-y-3">
+                    <div class="flex items-center justify-between">
+                        <i data-lucide="globe" class="w-6 h-6 text-emerald-500"></i>
+                        <span class="text-[10px] font-mono-accent uppercase tracking-widest bg-emerald-500/10 px-2.5 py-1 rounded-full text-emerald-500 font-bold">Professional</span>
+                    </div>
+                    <h3 class="text-2xl font-black">English</h3>
+                    <p class="text-xs opacity-70">Fluent verbal & written communication for multinational airport logistics and global client relations.</p>
+                </div>
+
+                <!-- Hindi -->
+                <div class="hd-card p-6 sm:p-8 border-t-4 border-t-teal-500 space-y-3">
+                    <div class="flex items-center justify-between">
+                        <i data-lucide="message-square" class="w-6 h-6 text-teal-500"></i>
+                        <span class="text-[10px] font-mono-accent uppercase tracking-widest bg-teal-500/10 px-2.5 py-1 rounded-full text-teal-500 font-bold">Fluent</span>
+                    </div>
+                    <h3 class="text-2xl font-black">Hindi</h3>
+                    <p class="text-xs opacity-70">Seamless interpersonal coordination with diverse teams, transit passengers, and freight associates.</p>
+                </div>
+
+                <!-- Urdu -->
+                <div class="hd-card p-6 sm:p-8 border-t-4 border-t-emerald-500 space-y-3">
+                    <div class="flex items-center justify-between">
+                        <i data-lucide="message-circle" class="w-6 h-6 text-emerald-500"></i>
+                        <span class="text-[10px] font-mono-accent uppercase tracking-widest bg-emerald-500/10 px-2.5 py-1 rounded-full text-emerald-500 font-bold">Fluent</span>
+                    </div>
+                    <h3 class="text-2xl font-black">Urdu</h3>
+                    <p class="text-xs opacity-70">Advanced conversational fluency supporting smooth stakeholder engagement across the region.</p>
+                </div>
+
+                <!-- Kannada -->
+                <div class="hd-card p-6 sm:p-8 border-t-4 border-t-teal-500 space-y-3">
+                    <div class="flex items-center justify-between">
+                        <i data-lucide="mic" class="w-6 h-6 text-teal-500"></i>
+                        <span class="text-[10px] font-mono-accent uppercase tracking-widest bg-teal-500/10 px-2.5 py-1 rounded-full text-teal-500 font-bold">Native / Bilingual</span>
+                    </div>
+                    <h3 class="text-2xl font-black">Kannada</h3>
+                    <p class="text-xs opacity-70">Native regional fluency ensuring precise cross-cultural understanding and regional network interaction.</p>
+                </div>
+
+                <!-- Tulu -->
+                <div class="hd-card p-6 sm:p-8 border-t-4 border-t-emerald-500 space-y-3 sm:col-span-2 lg:col-span-2">
+                    <div class="flex items-center justify-between">
+                        <i data-lucide="headphones" class="w-6 h-6 text-emerald-500"></i>
+                        <span class="text-[10px] font-mono-accent uppercase tracking-widest bg-emerald-500/10 px-2.5 py-1 rounded-full text-emerald-500 font-bold">Native Dialect</span>
+                    </div>
+                    <h3 class="text-2xl font-black">Tulu</h3>
+                    <p class="text-xs opacity-70">Complete native command of regional dialect, adding strong interpersonal versatility.</p>
                 </div>
             </div>
         </section>

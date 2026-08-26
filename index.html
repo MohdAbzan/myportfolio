@@ -239,7 +239,7 @@
                     <span class="flex items-center gap-2"><i data-lucide="briefcase" class="w-4 h-4 text-emerald-400"></i> Jump to dnata Experience</span>
                     <span class="text-[10px] font-mono-accent opacity-50">#experience</span>
                 </a>
-                <a href="Abzan's_Resume.pdf" download="Mohammed_Abzan_CV.pdf" onclick="incrementDownloadCount()" class="w-full flex items-center justify-between p-3 rounded-xl bg-white/5 hover:bg-emerald-500/20 transition-colors cursor-pointer text-left">
+                <a href="Abzan's_Resume.pdf" download="Mohammed_Abzan_CV.pdf" onclick="triggerToast()" class="w-full flex items-center justify-between p-3 rounded-xl bg-white/5 hover:bg-emerald-500/20 transition-colors cursor-pointer text-left">
                     <span class="flex items-center gap-2"><i data-lucide="download" class="w-4 h-4 text-emerald-400"></i> Direct Download Official PDF CV</span>
                     <span class="text-[10px] font-mono-accent opacity-50">PDF</span>
                 </a>
@@ -302,7 +302,7 @@
 
             <div class="flex items-center gap-3">
                 <!-- Direct Navigation Download CV Button -->
-                <a href="Abzan's_Resume.pdf" download="Mohammed_Abzan_CV.pdf" onclick="incrementDownloadCount()" class="hidden lg:flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-[10px] font-mono-accent text-emerald-400 hover:bg-emerald-500 hover:text-black transition-all cursor-pointer">
+                <a href="Abzan's_Resume.pdf" download="Mohammed_Abzan_CV.pdf" onclick="triggerToast()" class="hidden lg:flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-[10px] font-mono-accent text-emerald-400 hover:bg-emerald-500 hover:text-black transition-all cursor-pointer">
                     <i data-lucide="download" class="w-3.5 h-3.5"></i>
                     <span>DOWNLOAD CV</span>
                 </a>
@@ -360,9 +360,9 @@
                 </p>
 
                 <div class="flex flex-wrap items-center gap-4 sm:gap-5 pt-6">
-                    <!-- Direct Download Button in Hero -->
-                    <a href="Abzan's_Resume.pdf" download="Mohammed_Abzan_CV.pdf" onclick="incrementDownloadCount()" class="magnetic bg-gradient-to-r from-emerald-400 to-teal-500 hover:from-emerald-300 hover:to-teal-400 text-black font-extrabold px-7 py-3.5 rounded-full flex items-center gap-3 transition-all duration-300 shadow-[0_0_30px_rgba(16,185,129,0.4)] hover:scale-105 cursor-pointer">
-                        <i data-lucide="download" class="w-5 h-5"></i> Download PDF CV (<span id="hero-download-counter">0</span>)
+                    <!-- Clean Direct Download Button in Hero -->
+                    <a href="Abzan's_Resume.pdf" download="Mohammed_Abzan_CV.pdf" onclick="triggerToast()" class="magnetic bg-gradient-to-r from-emerald-400 to-teal-500 hover:from-emerald-300 hover:to-teal-400 text-black font-extrabold px-7 py-3.5 rounded-full flex items-center gap-3 transition-all duration-300 shadow-[0_0_30px_rgba(16,185,129,0.4)] hover:scale-105 cursor-pointer">
+                        <i data-lucide="download" class="w-5 h-5"></i> Download PDF CV
                     </a>
                     
                     <a href="https://www.linkedin.com/in/mohdabzan" target="_blank" class="magnetic hd-card hover:bg-emerald-600/30 font-bold px-7 py-3.5 rounded-full transition-all duration-300 flex items-center gap-3 border hover:border-emerald-400 hover:scale-105 cursor-pointer">
@@ -657,15 +657,9 @@
             });
         }
 
-        // Increment PDF CV Download Counter & Toast Feedback (Starts fresh at 0)
-        let downloadCount = 0;
-        function incrementDownloadCount() {
+        // Trigger Toast Feedback on Download
+        function triggerToast() {
             playSFX();
-            downloadCount++;
-            const counterEl = document.getElementById('hero-download-counter');
-            if (counterEl) {
-                counterEl.innerText = downloadCount;
-            }
             showToast("Official PDF CV Downloaded Successfully!");
         }
 

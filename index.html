@@ -12,14 +12,16 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Three.js for 3D Photorealistic Quantum Physics -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <!-- Lenis Smooth Scroll -->
-    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap');
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html {
+            scroll-behavior: smooth;
+        }
 
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
@@ -37,7 +39,7 @@
             --text-color: #ecfdf5;
             --card-bg: rgba(4, 20, 15, 0.75);
             --border-color: rgba(255, 255, 255, 0.08);
-            --nav-bg: rgba(2, 9, 7, 0.6);
+            --nav-bg: rgba(2, 9, 7, 0.85);
         }
 
         /* Light Mode Variables */
@@ -46,7 +48,7 @@
             --text-color: #0f172a;
             --card-bg: rgba(255, 255, 255, 0.9);
             --border-color: rgba(16, 185, 129, 0.3);
-            --nav-bg: rgba(241, 245, 249, 0.85);
+            --nav-bg: rgba(241, 245, 249, 0.9);
         }
 
         body.light-mode .hero-title-primary { color: #0f172a !important; text-shadow: none; }
@@ -92,6 +94,7 @@
             position: fixed; top: 0; left: 0;
             width: 100vw; height: 100vh;
             z-index: 0; pointer-events: none;
+            will-change: transform;
         }
 
         /* Ambient Screen Overlays */
@@ -127,24 +130,15 @@
         /* Dynamic Glassmorphism Cards */
         .hd-card {
             background: var(--card-bg, rgba(4, 20, 15, 0.75));
-            backdrop-filter: blur(24px) saturate(180%);
-            -webkit-backdrop-filter: blur(24px) saturate(180%);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
             border: 1px solid var(--border-color, rgba(255, 255, 255, 0.08));
             border-radius: 24px;
             box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
             position: relative; overflow: hidden;
-            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, background-color 0.4s ease;
+            transition: transform 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
         }
 
-        .hd-card::before {
-            content: ""; position: absolute;
-            top: var(--mouse-y, -500px); left: var(--mouse-x, -500px);
-            transform: translate(-50%, -50%);
-            width: 400px; height: 400px;
-            background: radial-gradient(circle, rgba(16, 185, 129, 0.18) 0%, transparent 60%);
-            opacity: 0; transition: opacity 0.3s ease; pointer-events: none; z-index: -1;
-        }
-        .hd-card:hover::before { opacity: 1; }
         .hd-card:hover {
             border-color: rgba(52, 211, 153, 0.45);
             transform: translateY(-4px);
@@ -161,8 +155,8 @@
 
         /* Smooth Scroll Staggered Reveal */
         .reveal {
-            opacity: 0; transform: translateY(45px);
-            transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+            opacity: 0; transform: translateY(30px);
+            transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .reveal.active { opacity: 1; transform: translateY(0); }
 
@@ -680,23 +674,9 @@
         </div>
     </footer>
 
-    <!-- SCRIPT ENGINE WITH LENIS SMOOTH SCROLL, PARTICLE REPULSION & SFX -->
+    <!-- SCRIPT ENGINE WITH OPTIMIZED 60FPS RENDERING -->
     <script>
         lucide.createIcons();
-
-        // Initialize Lenis Smooth Scroll
-        const lenis = new Lenis({
-            duration: 1.2,
-            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-            direction: 'vertical',
-            smooth: true
-        });
-
-        function raf(time) {
-            lenis.raf(time);
-            requestAnimationFrame(raf);
-        }
-        requestAnimationFrame(raf);
 
         // Sound Effects (SFX) Engine
         let soundEnabled = true;
@@ -831,8 +811,8 @@
 
         function animateCursor() {
             if (ring) {
-                ringX += (mouseX - ringX) * 0.15; 
-                ringY += (mouseY - ringY) * 0.15;
+                ringX += (mouseX - ringX) * 0.2; 
+                ringY += (mouseY - ringY) * 0.2;
                 ring.style.left = `${ringX}px`; 
                 ring.style.top = `${ringY}px`;
             }
@@ -863,7 +843,7 @@
         }, { threshold: 0.1 });
         document.querySelectorAll('.reveal').forEach(r => observer.observe(r));
 
-        // 3D QUANTUM CORE ENGINE WITH PARTICLE REPULSION & BLOOM
+        // 3D QUANTUM CORE ENGINE OPTIMIZED FOR 60FPS
         const container = document.getElementById('webgl-container');
         const scene = new THREE.Scene();
 
@@ -900,7 +880,7 @@
         const orbitalRing3 = new THREE.Mesh(ringGeo3, ringMat3);
         scene.add(orbitalRing3);
 
-        const particleCount = 8000;
+        const particleCount = 4000; // Optimized count for buttery smooth frame rates
         const particleGeometry = new THREE.BufferGeometry();
         const positions = new Float32Array(particleCount * 3);
         const originalPositions = new Float32Array(particleCount * 3);
@@ -939,7 +919,7 @@
         particleGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
         particleGeometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
 
-        const particleMaterial = new THREE.PointsMaterial({ size: 0.045, vertexColors: true, transparent: true, opacity: 0.8, blending: THREE.AdditiveBlending });
+        const particleMaterial = new THREE.PointsMaterial({ size: 0.05, vertexColors: true, transparent: true, opacity: 0.8, blending: THREE.AdditiveBlending });
         const quantumSwarm = new THREE.Points(particleGeometry, particleMaterial);
         scene.add(quantumSwarm);
 
@@ -949,7 +929,7 @@
         let targetScroll = 0, currentScroll = 0;
         window.addEventListener('scroll', () => {
             targetScroll = window.scrollY / (document.body.scrollHeight - window.innerHeight);
-        });
+        }, { passive: true });
 
         window.addEventListener('resize', () => {
             camera.aspect = window.innerWidth / window.innerHeight;
@@ -964,61 +944,37 @@
 
             const elapsedTime = clock.getElapsedTime();
 
-            currentScroll += (targetScroll - currentScroll) * 0.05;
-            currentMouseX += (targetMouseX - currentMouseX) * 0.05;
-            currentMouseY += (targetMouseY - currentMouseY) * 0.05;
+            currentScroll += (targetScroll - currentScroll) * 0.1;
+            currentMouseX += (targetMouseX - currentMouseX) * 0.1;
+            currentMouseY += (targetMouseY - currentMouseY) * 0.1;
 
-            // Advanced Scroll Zoom & Parallax
-            camera.position.z = 16 - (currentScroll * 5);
-            camera.position.y = currentScroll * 1.5;
-
-            // Particle Repulsion Physics against Mouse
-            const posAttr = particleGeometry.attributes.position;
-            const mouseScreenX = (mouseX / window.innerWidth) * 2 - 1;
-            const mouseScreenY = -(mouseY / window.innerHeight) * 2 + 1;
-
-            for (let i = 0; i < particleCount; i++) {
-                let ox = originalPositions[i * 3];
-                let oy = originalPositions[i * 3 + 1];
-                let oz = originalPositions[i * 3 + 2];
-
-                let dx = mouseScreenX * 10 - ox;
-                let dy = mouseScreenY * 10 - oy;
-                let dist = Math.sqrt(dx * dx + dy * dy);
-
-                if (dist < 3.5) {
-                    let force = (3.5 - dist) / 3.5;
-                    posAttr.setXYZ(i, ox - dx * force * 0.5, oy - dy * force * 0.5, oz);
-                } else {
-                    posAttr.setXYZ(i, ox, oy, oz);
-                }
-            }
-            posAttr.needsUpdate = true;
+            camera.position.z = 16 - (currentScroll * 4);
+            camera.position.y = currentScroll * 1.2;
 
             quantumCore.rotation.x = elapsedTime * 0.3;
             quantumCore.rotation.y = elapsedTime * 0.5;
             innerPlasma.rotation.y = -elapsedTime * 0.2;
 
             orbitalRing1.rotation.z = elapsedTime * 0.4;
-            orbitalRing1.rotation.x = (Math.PI / 3) + (currentMouseY * 0.8);
-            orbitalRing1.rotation.y = currentMouseX * 0.8;
+            orbitalRing1.rotation.x = (Math.PI / 3) + (currentMouseY * 0.5);
+            orbitalRing1.rotation.y = currentMouseX * 0.5;
 
-            orbitalRing2.rotation.x = -elapsedTime * 0.5 + (currentMouseY * 0.6);
-            orbitalRing2.rotation.y = (Math.PI / 4) + (currentMouseX * 0.6);
+            orbitalRing2.rotation.x = -elapsedTime * 0.5 + (currentMouseY * 0.4);
+            orbitalRing2.rotation.y = (Math.PI / 4) + (currentMouseX * 0.4);
 
-            orbitalRing3.rotation.y = elapsedTime * 0.3 + (currentMouseX * 0.5);
-            orbitalRing3.rotation.z = (Math.PI / 6) + (currentMouseY * 0.5);
+            orbitalRing3.rotation.y = elapsedTime * 0.3 + (currentMouseX * 0.3);
+            orbitalRing3.rotation.z = (Math.PI / 6) + (currentMouseY * 0.3);
 
-            quantumSwarm.rotation.y = elapsedTime * 0.15 + (currentMouseX * 0.3);
-            quantumSwarm.rotation.x = Math.sin(elapsedTime * 0.2) * 0.1 + (currentMouseY * 0.3);
+            quantumSwarm.rotation.y = elapsedTime * 0.15 + (currentMouseX * 0.2);
+            quantumSwarm.rotation.x = Math.sin(elapsedTime * 0.2) * 0.1 + (currentMouseY * 0.2);
 
-            shockwaveFactor *= 0.92;
-            const breatheScale = 1 + Math.sin(elapsedTime * 1.5) * 0.08 + (currentScroll * 0.8) + (shockwaveFactor * 0.25);
+            shockwaveFactor *= 0.9;
+            const breatheScale = 1 + Math.sin(elapsedTime * 1.5) * 0.08 + (currentScroll * 0.6) + (shockwaveFactor * 0.2);
             quantumCore.scale.set(breatheScale, breatheScale, breatheScale);
             innerPlasma.scale.set(breatheScale, breatheScale, breatheScale);
 
-            scene.rotation.y = currentMouseX * 0.4;
-            scene.rotation.x = -currentMouseY * 0.4;
+            scene.rotation.y = currentMouseX * 0.3;
+            scene.rotation.x = -currentMouseY * 0.3;
 
             renderer.render(scene, camera);
         }

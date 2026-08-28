@@ -213,6 +213,13 @@
             transform: translateX(-50%) translateY(0);
         }
     </style>
+    <!-- Immediate theme application script to prevent any flash on reload -->
+    <script>
+        const savedTheme = localStorage.getItem('abzan_portfolio_theme');
+        if (savedTheme === 'light') {
+            document.write('<style>body { background-color: #f1f5f9 !important; color: #0f172a !important; }</style>');
+        }
+    </script>
 </head>
 <body class="dark-mode selection:bg-emerald-400 selection:text-black">
 
@@ -718,6 +725,24 @@
     <script>
         lucide.createIcons();
 
+        // Apply saved theme state immediately upon script execution
+        (function() {
+            const savedTheme = localStorage.getItem('abzan_portfolio_theme');
+            const body = document.body;
+            const themeIcon = document.getElementById('theme-icon');
+            
+            if (savedTheme === 'light') {
+                body.classList.remove('dark-mode');
+                body.classList.add('light-mode');
+                if (themeIcon) themeIcon.setAttribute('data-lucide', 'moon');
+            } else {
+                body.classList.remove('light-mode');
+                body.classList.add('dark-mode');
+                if (themeIcon) themeIcon.setAttribute('data-lucide', 'sun');
+            }
+            lucide.createIcons();
+        })();
+
         function copyEmailToClipboard() {
             playSFX();
             const emailText = "mohdabzan2003@gmail.com";
@@ -851,18 +876,12 @@
                 body.classList.remove('dark-mode');
                 body.classList.add('light-mode');
                 themeIcon.setAttribute('data-lucide', 'moon');
-                // Boost particle visibility for light mode
-                particleMaterial.size = 0.08;
-                particleMaterial.opacity = 0.95;
-                coreMaterial.opacity = 0.85;
+                localStorage.setItem('abzan_portfolio_theme', 'light');
             } else {
                 body.classList.remove('light-mode');
                 body.classList.add('dark-mode');
                 themeIcon.setAttribute('data-lucide', 'sun');
-                // Standardize for dark mode
-                particleMaterial.size = 0.05;
-                particleMaterial.opacity = 0.8;
-                coreMaterial.opacity = 0.65;
+                localStorage.setItem('abzan_portfolio_theme', 'dark');
             }
             lucide.createIcons();
         }
@@ -949,27 +968,27 @@
         container.appendChild(renderer.domElement);
 
         const coreGeometry = new THREE.IcosahedronGeometry(2.8, 2);
-        const coreMaterial = new THREE.MeshBasicMaterial({ color: 0x059669, wireframe: true, transparent: true, opacity: 0.65 });
+        const coreMaterial = new THREE.MeshBasicMaterial({ color: 0x10b981, wireframe: true, transparent: true, opacity: 0.65 });
         const quantumCore = new THREE.Mesh(coreGeometry, coreMaterial);
         scene.add(quantumCore);
 
         const innerGeo = new THREE.SphereGeometry(2.0, 32, 32);
-        const innerMat = new THREE.MeshBasicMaterial({ color: 0x10b981, transparent: true, opacity: 0.35 });
+        const innerMat = new THREE.MeshBasicMaterial({ color: 0x34d399, transparent: true, opacity: 0.35 });
         const innerPlasma = new THREE.Mesh(innerGeo, innerMat);
         scene.add(innerPlasma);
 
         const ringGeo1 = new THREE.TorusGeometry(4.8, 0.03, 16, 100);
-        const ringMat1 = new THREE.MeshBasicMaterial({ color: 0x059669, transparent: true, opacity: 0.7 });
+        const ringMat1 = new THREE.MeshBasicMaterial({ color: 0x10b981, transparent: true, opacity: 0.7 });
         const orbitalRing1 = new THREE.Mesh(ringGeo1, ringMat1);
         scene.add(orbitalRing1);
 
         const ringGeo2 = new THREE.TorusGeometry(6.2, 0.02, 16, 100);
-        const ringMat2 = new THREE.MeshBasicMaterial({ color: 0x0d9488, transparent: true, opacity: 0.5 });
+        const ringMat2 = new THREE.MeshBasicMaterial({ color: 0x14b8a6, transparent: true, opacity: 0.5 });
         const orbitalRing2 = new THREE.Mesh(ringGeo2, ringMat2);
         scene.add(orbitalRing2);
 
         const ringGeo3 = new THREE.TorusGeometry(7.5, 0.015, 16, 100);
-        const ringMat3 = new THREE.MeshBasicMaterial({ color: 0x0891b2, transparent: true, opacity: 0.35 });
+        const ringMat3 = new THREE.MeshBasicMaterial({ color: 0x06b6d4, transparent: true, opacity: 0.35 });
         const orbitalRing3 = new THREE.Mesh(ringGeo3, ringMat3);
         scene.add(orbitalRing3);
 
@@ -978,9 +997,9 @@
         const positions = new Float32Array(particleCount * 3);
         const colors = new Float32Array(particleCount * 3);
 
-        const colorEmerald = new THREE.Color(0x059669);
-        const colorTeal = new THREE.Color(0x0d9488);
-        const colorCyan = new THREE.Color(0x0891b2);
+        const colorEmerald = new THREE.Color(0x10b981);
+        const colorTeal = new THREE.Color(0x14b8a6);
+        const colorCyan = new THREE.Color(0x06b6d4);
 
         for (let i = 0; i < particleCount; i++) {
             const u = Math.random(), v = Math.random();
@@ -1003,7 +1022,7 @@
         particleGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
         particleGeometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
 
-        const particleMaterial = new THREE.PointsMaterial({ size: 0.05, vertexColors: true, transparent: true, opacity: 0.8, blending: THREE.NormalBlending });
+        const particleMaterial = new THREE.PointsMaterial({ size: 0.05, vertexColors: true, transparent: true, opacity: 0.8, blending: THREE.AdditiveBlending });
         const quantumSwarm = new THREE.Points(particleGeometry, particleMaterial);
         scene.add(quantumSwarm);
 

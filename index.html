@@ -217,7 +217,7 @@
     <script>
         const savedTheme = localStorage.getItem('abzan_portfolio_theme');
         if (savedTheme === 'light') {
-            document.write('<style>body { background-color: #f1f5f9 !important; color: #0f172a !important; }</style>');
+            document.write('<style id="preload-style">body { background-color: #f1f5f9 !important; color: #0f172a !important; }</style>');
         }
     </script>
 </head>
@@ -871,6 +871,8 @@
         function toggleTheme() {
             const body = document.body;
             const themeIcon = document.getElementById('theme-icon');
+            const preloadStyle = document.getElementById('preload-style');
+            if (preloadStyle) preloadStyle.remove();
             
             if (body.classList.contains('dark-mode')) {
                 body.classList.remove('dark-mode');

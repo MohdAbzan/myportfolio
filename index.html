@@ -4,10 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <title>MOHAMMED ABZAN — Executive Portfolio</title>
+
+    <!-- Browser Favicon & Google Search Icon -->
+    <link rel="icon" href="Abzan Logi.png" type="image/png">
+    <link rel="apple-touch-icon" href="Abzan Logi.png">
+
     <!-- Open Graph Social Meta Tags -->
     <meta property="og:title" content="MOHAMMED ABZAN — Executive Portfolio">
     <meta property="og:description" content="Administration & Customer Service Professional at dnata, Dubai International Airport.">
     <meta property="og:type" content="website">
+    <meta property="og:image" content="https://yourdomain.com/Abzan%20Logi.png">
+    <meta property="og:url" content="https://yourdomain.com/">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MOHAMMED ABZAN — Executive Portfolio">
+    <meta name="twitter:description" content="Administration & Customer Service Professional at dnata, Dubai International Airport.">
+    <meta name="twitter:image" content="https://yourdomain.com/Abzan%20Logi.png">
+
+    <!-- Google Structured Data (JSON-LD for Logo Indexing) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Mohammed Abzan",
+      "url": "https://yourdomain.com/",
+      "image": "https://yourdomain.com/Abzan%20Logi.png",
+      "jobTitle": "Administrative Assistant",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "dnata"
+      }
+    }
+    </script>
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Three.js for 3D Photorealistic Quantum Physics -->
@@ -160,7 +190,7 @@
         /* Floating Motion */
         .anti-gravity { animation: float 6s ease-in-out infinite; }
         .anti-gravity-delayed { animation: float 7s ease-in-out infinite reverse; }
-        
+
         @keyframes float {
             0%, 100% { transform: translateY(0px) rotate(0deg); }
             50% { transform: translateY(-10px) rotate(1deg); }
@@ -293,7 +323,7 @@
                 <input type="text" name="name" required placeholder="Your Name" class="w-full border rounded-xl px-4 py-3 focus:outline-none focus:border-emerald-500 transition-colors bg-emerald-500/5">
                 <input type="email" name="email" required placeholder="Your Email Address" class="w-full border rounded-xl px-4 py-3 focus:outline-none focus:border-emerald-500 transition-colors bg-emerald-500/5">
                 <textarea name="message" rows="4" required placeholder="Write your message or offer here..." class="w-full border rounded-xl px-4 py-3 focus:outline-none focus:border-emerald-500 transition-colors bg-emerald-500/5"></textarea>
-                
+
                 <button type="submit" class="w-full bg-gradient-to-r from-emerald-400 to-teal-500 hover:from-emerald-300 hover:to-teal-400 text-black font-extrabold py-3.5 rounded-xl transition-all duration-300 shadow-[0_0_20px_rgba(16,185,129,0.4)] cursor-pointer flex items-center justify-center gap-2">
                     <i data-lucide="send" class="w-4 h-4"></i> Transmit Message
                 </button>
@@ -310,10 +340,11 @@
     <!-- Navigation Bar -->
     <header class="fixed top-0 left-0 w-full z-50 backdrop-blur-xl border-b border-white/5" style="background-color: var(--nav-bg);">
         <div class="max-w-7xl mx-auto px-6 h-20 sm:h-24 flex items-center justify-between">
-            <a href="#" class="text-2xl font-black tracking-tighter flex items-center gap-1 group cursor-pointer py-2">
-                ABZAN<span class="text-emerald-500 group-hover:scale-125 transition-transform duration-300 inline-block">.</span>
+            <a href="#" class="text-2xl font-black tracking-tighter flex items-center gap-3 group cursor-pointer py-2">
+                <img src="Abzan Logi.png" alt="Mohammed Abzan Logo" class="w-9 h-9 object-contain group-hover:scale-110 transition-transform duration-300">
+                <span>ABZAN<span class="text-emerald-500 group-hover:scale-125 transition-transform duration-300 inline-block">.</span></span>
             </a>
-            
+
             <nav class="hidden md:flex items-center gap-6 text-[11px] font-bold tracking-[0.2em] uppercase opacity-75">
                 <a href="#about" class="hover:text-emerald-500 transition-colors">Summary</a>
                 <a href="#experience" class="hover:text-emerald-500 transition-colors">Experience</a>
@@ -365,7 +396,7 @@
                     </span>
                     Dubai, UAE • UAE Driving Licence
                 </div>
-                
+
                 <div>
                     <h1 class="text-5xl sm:text-8xl lg:text-[10rem] font-black tracking-tighter hero-title-primary leading-none">
                         MOHAMMED
@@ -383,7 +414,7 @@
                     <a href="Abzan's_Resume.pdf" download="Mohammed_Abzan_CV.pdf" onclick="triggerToast()" class="magnetic bg-gradient-to-r from-emerald-400 to-teal-500 hover:from-emerald-300 hover:to-teal-400 text-black font-extrabold px-7 py-3.5 rounded-full flex items-center gap-3 transition-all duration-300 shadow-[0_0_30px_rgba(16,185,129,0.4)] hover:scale-105 cursor-pointer">
                         <i data-lucide="download" class="w-5 h-5"></i> Download PDF CV
                     </a>
-                    
+
                     <a href="https://www.linkedin.com/in/mohdabzan" target="_blank" class="magnetic hd-card hover:bg-emerald-600/30 font-bold px-7 py-3.5 rounded-full transition-all duration-300 flex items-center gap-3 border hover:border-emerald-500 hover:scale-105 cursor-pointer">
                         <svg class="w-5 h-5 fill-current text-emerald-500" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                         LinkedIn Profile
@@ -452,7 +483,7 @@
                             <div class="text-xs sm:text-sm font-bold group-hover:text-emerald-500 transition-colors">+971 56 575 4523</div>
                         </div>
                     </a>
-                    
+
                     <a href="https://www.linkedin.com/in/mohdabzan" target="_blank" class="hd-card p-5 sm:p-6 flex items-center gap-4 group cursor-pointer">
                         <div class="p-3.5 rounded-2xl bg-teal-500/10 text-teal-500 group-hover:bg-teal-400 group-hover:text-black transition-colors flex items-center justify-center">
                             <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
@@ -479,11 +510,11 @@
             </h2>
 
             <div class="space-y-8 relative before:absolute before:inset-0 before:left-[19px] sm:before:left-[27px] before:w-0.5 before:bg-gradient-to-b before:from-emerald-400 before:via-teal-600 before:to-transparent">
-                
+
                 <!-- Role 1 -->
                 <div class="relative pl-10 sm:pl-16 group reveal">
                     <div class="absolute left-[10px] sm:left-[18px] top-6 sm:top-8 w-5 h-5 rounded-full border-4 border-emerald-500 group-hover:scale-150 transition-transform shadow-[0_0_15px_rgba(16,185,129,0.8)]" style="background-color: var(--bg-base);"></div>
-                    
+
                     <div class="hd-card p-6 sm:p-10 border-l-2 border-l-emerald-500">
                         <div class="mb-6">
                             <div class="inline-flex items-center gap-2 bg-emerald-500/10 text-emerald-500 border border-emerald-500/30 text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest mb-3">
@@ -506,7 +537,7 @@
                 <!-- Role 2 -->
                 <div class="relative pl-10 sm:pl-16 group reveal">
                     <div class="absolute left-[10px] sm:left-[18px] top-6 sm:top-8 w-5 h-5 rounded-full border-4 border-teal-500 group-hover:scale-150 transition-transform shadow-[0_0_15px_rgba(20,184,166,0.8)]" style="background-color: var(--bg-base);"></div>
-                    
+
                     <div class="hd-card p-6 sm:p-10 border-l-2 border-l-teal-500">
                         <div class="mb-6">
                             <div class="text-[10px] font-black opacity-50 uppercase tracking-widest mb-2">2024 — 2025</div>

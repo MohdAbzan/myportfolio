@@ -1,0 +1,13 @@
+GOOGLE / GITHUB PAGES READY
+
+1. Upload the contents of this folder to the root of your GitHub Pages repository.
+2. Keep CNAME in the repository root.
+3. Make sure https://mohdabzan.com/ opens the index.html file.
+4. In Google Search Console, verify the domain and submit:
+   https://mohdabzan.com/sitemap.xml
+5. Google may take time to refresh the favicon in Search results.
+
+The favicon is available at:
+https://mohdabzan.com/favicon.ico
+and
+https://mohdabzan.com/assets/favicon-512.png

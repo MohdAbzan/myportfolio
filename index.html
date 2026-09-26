@@ -1,5 +1,3 @@
-<!doctype html>
-<html lang="en">
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,6 +31,11 @@
     >
 
     <meta
+        name="keywords"
+        content="Mohammed Abzan, Administration Professional, Customer Service Professional, dnata, Emirates Group, Dubai International Airport, airport cargo, cargo operations, administration, customer service"
+    >
+
+    <meta
         name="robots"
         content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
     >
@@ -57,7 +60,7 @@
     >
 
     <!-- =========================
-         FAVICON
+         FAVICON / LOGO
     ========================== -->
 
     <link
@@ -94,14 +97,12 @@
         href="/assets/favicon-512.png"
     >
 
-    <!-- Apple / Mobile -->
     <link
         rel="apple-touch-icon"
         sizes="180x180"
         href="/assets/favicon-192.png"
     >
 
-    <!-- Web App Manifest -->
     <link
         rel="manifest"
         href="/site.webmanifest"
@@ -173,11 +174,8 @@
     {
         "@context": "https://schema.org",
         "@type": "Person",
-
         "name": "Mohammed Abzan",
-
         "url": "https://mohdabzan.com/",
-
         "jobTitle": "Administration and Customer Service Professional",
 
         "description": "Administration and Customer Service Professional at dnata (Emirates Group), Dubai International Airport, specializing in airport cargo operations, documentation, coordination, and customer service.",
@@ -199,55 +197,956 @@
     </script>
 
     <!-- =========================
-         STYLESHEET
+         FONTS
     ========================== -->
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap"
         rel="stylesheet"
-        href="/assets/css/style.css"
     >
 
+    <!-- =========================
+         CSS
+    ========================== -->
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background: #080808;
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            width: min(1180px, calc(100% - 40px));
+            margin: auto;
+        }
+
+        /* =========================
+           NAVIGATION
+        ========================== */
+
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(8, 8, 8, 0.88);
+            backdrop-filter: blur(18px);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .nav-inner {
+            height: 76px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 800;
+            letter-spacing: 0.05em;
+        }
+
+        .brand img {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .nav-links a {
+            color: #b8b8b8;
+            font-size: 14px;
+            transition: 0.25s ease;
+        }
+
+        .nav-links a:hover {
+            color: #ffffff;
+        }
+
+        /* =========================
+           HERO
+        ========================== */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 120px 0 80px;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .eyebrow {
+            color: #9c9c9c;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            margin-bottom: 22px;
+        }
+
+        .hero h1 {
+            font-family: "Manrope", sans-serif;
+            font-size: clamp(58px, 9vw, 128px);
+            line-height: 0.9;
+            letter-spacing: -0.065em;
+            margin-bottom: 28px;
+        }
+
+        .hero h1 span {
+            color: #8d8d8d;
+        }
+
+        .hero-role {
+            font-size: clamp(20px, 2.2vw, 30px);
+            font-weight: 600;
+            margin-bottom: 18px;
+        }
+
+        .hero-description {
+            max-width: 650px;
+            color: #a8a8a8;
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 32px;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 48px;
+            padding: 0 22px;
+            border: 1px solid rgba(255,255,255,0.18);
+            border-radius: 999px;
+            font-size: 14px;
+            transition: 0.25s ease;
+        }
+
+        .button.primary {
+            background: #ffffff;
+            color: #080808;
+            border-color: #ffffff;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-image img {
+            width: min(430px, 100%);
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            border-radius: 28px;
+            filter: grayscale(100%);
+            border: 1px solid rgba(255,255,255,0.12);
+        }
+
+        /* =========================
+           SECTIONS
+        ========================== */
+
+        section {
+            padding: 110px 0;
+            border-top: 1px solid rgba(255,255,255,0.07);
+        }
+
+        .section-label {
+            color: #707070;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            margin-bottom: 18px;
+        }
+
+        .section-title {
+            font-family: "Manrope", sans-serif;
+            font-size: clamp(42px, 7vw, 86px);
+            line-height: 0.95;
+            letter-spacing: -0.055em;
+            margin-bottom: 42px;
+        }
+
+        /* =========================
+           ABOUT
+        ========================== */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+        }
+
+        .about-text {
+            color: #b0b0b0;
+            font-size: 17px;
+            line-height: 1.9;
+        }
+
+        .about-text p + p {
+            margin-top: 20px;
+        }
+
+        .info-list {
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .info-item {
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .info-item small {
+            display: block;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            font-size: 10px;
+            margin-bottom: 5px;
+        }
+
+        .info-item strong {
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        /* =========================
+           EXPERIENCE
+        ========================== */
+
+        .experience-card {
+            padding: 34px 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .experience-card:last-child {
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .experience-top {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .experience-title {
+            font-size: 25px;
+            font-weight: 700;
+        }
+
+        .experience-company {
+            color: #999;
+            margin-top: 6px;
+        }
+
+        .experience-date {
+            color: #777;
+            font-size: 13px;
+            white-space: nowrap;
+        }
+
+        .experience-description {
+            max-width: 780px;
+            color: #a4a4a4;
+            margin-top: 20px;
+            line-height: 1.8;
+        }
+
+        /* =========================
+           EDUCATION
+        ========================== */
+
+        .education-card {
+            padding: 35px;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 20px;
+            background: #0d0d0d;
+        }
+
+        .education-card h3 {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+
+        .education-card p {
+            color: #9d9d9d;
+        }
+
+        /* =========================
+           SKILLS
+        ========================== */
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill {
+            padding: 11px 16px;
+            border: 1px solid rgba(255,255,255,0.13);
+            border-radius: 999px;
+            color: #bdbdbd;
+            font-size: 13px;
+        }
+
+        /* =========================
+           CONTACT
+        ========================== */
+
+        .contact-box {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: end;
+        }
+
+        .contact-heading {
+            font-family: "Manrope", sans-serif;
+            font-size: clamp(44px, 7vw, 90px);
+            line-height: 0.95;
+            letter-spacing: -0.06em;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            color: #a5a5a5;
+        }
+
+        .contact-info a {
+            transition: 0.2s ease;
+        }
+
+        .contact-info a:hover {
+            color: #ffffff;
+        }
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            padding: 30px 0;
+            border-top: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .footer-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+        }
+
+        .footer-brand img {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .footer-copy {
+            color: #666;
+            font-size: 12px;
+        }
+
+        /* =========================
+           MOBILE
+        ========================== */
+
+        @media (max-width: 800px) {
+
+            .container {
+                width: min(100% - 28px, 680px);
+            }
+
+            .nav-inner {
+                height: 64px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .brand span {
+                display: none;
+            }
+
+            .brand img {
+                width: 34px;
+                height: 34px;
+            }
+
+            .hero {
+                padding-top: 100px;
+            }
+
+            .hero-grid,
+            .about-grid,
+            .contact-box {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .hero h1 {
+                font-size: clamp(58px, 17vw, 100px);
+            }
+
+            .hero-description {
+                font-size: 15px;
+            }
+
+            section {
+                padding: 80px 0;
+            }
+
+            .section-title {
+                font-size: clamp(48px, 14vw, 75px);
+            }
+
+            .experience-top {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .experience-date {
+                white-space: normal;
+            }
+
+            .contact-heading {
+                font-size: clamp(50px, 15vw, 85px);
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            * {
+                transition: none !important;
+                animation: none !important;
+            }
+        }
+
+    </style>
+
 </head>
+
 <body>
-<div class="noise"></div><div class="progress" id="progress"></div><div class="cursor-ring" aria-hidden="true"></div>
-<nav class="nav"><div class="wrap nav-in"><a class="logo" href="#top" aria-label="Abzan home"><img src="assets/abzan-logo.png" alt="Abzan logo"><span>ABZAN</span></a><div class="links"><a href="#about">About</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#education">Education</a><a href="#contact">Contact</a></div><div class="nav-right"><a class="pill cv" href="assets/Abzan_Resume.pdf" target="_blank">CV ↗</a><button class="pill hamb" id="menuBtn" aria-label="Open menu">☰</button></div></div></nav>
-<div class="menu-panel" id="menuPanel"><div class="mono muted">Navigate</div><a href="#about">01 — About</a><a href="#experience">02 — Experience</a><a href="#skills">03 — Skills</a><a href="#education">04 — Education</a><a href="#contact">05 — Contact</a><a href="assets/Abzan_Resume.pdf" target="_blank">CV ↗</a></div>
-<main id="top">
-<section class="hero" id="home"><img class="hero-photo" id="heroPhoto" src="assets/abzan-photo.jpeg" alt="Professional portrait of Mohammed Abzan"><div class="hero-content wrap"><div class="hero-kicker mono reveal">Dubai / UAE · Administrative Assistant · dnata</div><div class="reveal"><h1 class="hero-title">MOHAMMED<br><em>ABZAN</em></h1></div><div class="hero-bottom reveal"><div><p class="hero-intro"><strong>Administration, aviation operations and customer service</strong> — with a data-focused direction through an MBA in Business Analytics, currently in progress.</p><div class="hero-actions"><a class="pill" href="#experience">Explore experience ↓</a><a class="pill" href="mailto:mohdabzan2003@gmail.com">Get in touch ↗</a></div></div><div class="hero-index mono">01 / 05</div></div></div><div class="hero-scroll mono"><i></i> Scroll</div></section>
-<div class="marquee"><div class="marquee-track"><span>ADMINISTRATION</span><span class="dot">◆</span><span>AVIATION OPERATIONS</span><span class="dot">◆</span><span>CUSTOMER SERVICE</span><span class="dot">◆</span><span>DOCUMENTATION</span><span class="dot">◆</span><span>REPORTING</span><span class="dot">◆</span><span>BUSINESS ANALYTICS</span><span class="dot">◆</span><span>ADMINISTRATION</span><span class="dot">◆</span><span>AVIATION OPERATIONS</span></div></div>
-<section class="section" id="about"><div class="wrap"><div class="section-head reveal"><div class="chapter mono">01 / Profile</div><div><h2>THE WORK<br>IS THE STORY.</h2><p class="section-copy">A professional portfolio built around the work itself: structured administration, aviation operations, customer coordination, documentation, reporting and a growing focus on business analytics.</p></div></div><div class="snapshot"><div class="snapshot-main reveal"><div class="statement">Built for <span>precision.</span><br>Driven by <span>progress.</span></div><div class="facts"><div class="fact"><span class="mono muted">CURRENT ROLE</span><b>Administrative Assistant</b><small>dnata · Emirates Group</small></div><div class="fact"><span class="mono muted">LOCATION</span><b>Dubai</b><small>United Arab Emirates</small></div><div class="fact"><span class="mono muted">DIRECTION</span><b>Business Analytics</b><small>MBA · currently pursuing</small></div></div></div><div class="snapshot-side reveal"><img class="story-image" src="assets/abzan-photo.jpeg" alt="Mohammed Abzan professional portrait"><div class="story-copy"><div class="story-label"><span class="mono">WORK / STORY</span><span class="mono">01</span></div><div class="quote-mark">“</div><div class="quote">Structured work. Clear communication. Continuous learning.</div><p class="mono muted" style="margin-top:28px">Mohammed Abzan · Dubai, UAE</p></div></div></div></div></section>
-<section class="section experience" id="experience"><div class="wrap"><div class="section-head reveal"><div class="chapter mono">02 / Experience</div><div><h2>REAL WORK.<br>REAL RESPONSIBILITY.</h2><p class="section-copy">Experience across airport cargo administration, customer service, documentation, compliance and operational coordination.</p></div></div><div style="margin-top:75px"><article class="exp-row reveal"><div class="exp-date mono">2025 — NOW</div><div><h3 class="exp-role">Administrative<br>Assistant</h3><div class="exp-company">dnata · Emirates Group · Dubai International Airport</div></div><div class="exp-detail"><strong>Administrative & operational support</strong>Manage document archiving for cargo and operational records, support sustainability record-keeping, handle enquiries, coordinate correspondence and scheduling, and maintain accurate data entry for reporting.<div class="exp-tags"><span class="tag">Documentation</span><span class="tag">Reporting</span><span class="tag">Coordination</span><span class="tag">Data Entry</span></div></div></article><article class="exp-row reveal"><div class="exp-date mono">2024 — 2025</div><div><h3 class="exp-role">Cargo & Customer<br>Service Agent</h3><div class="exp-company">dnata · Emirates Group · Dubai International Airport</div></div><div class="exp-detail"><strong>Customer service & cargo operations</strong>Served airlines, freight forwarders and multinational clients; maintained compliance-grade records for AWB, Dangerous Goods, Pharmaceutical and AVI/HUM shipments; prepared billing and inventory trackers; supported Calogi users; and carried out ULD build-up and breakdown with safety and load-integrity focus.<div class="exp-tags"><span class="tag">Cargo Operations</span><span class="tag">Customer Service</span><span class="tag">Compliance</span><span class="tag">Calogi</span></div></div></article></div></div></section>
-<section class="section system" id="skills"><div class="wrap"><div class="section-head reveal"><div class="chapter mono">03 / How I Work</div><div><h2>THE SYSTEM<br>BEHIND THE WORK.</h2><p class="section-copy">Four connected strengths that shape the way I approach operational work: keeping information organised, people informed, standards respected and records accurate.</p></div></div><div class="system-stage"><div class="orb">OPERATIONS<br>SYSTEM</div><div class="connector c1"></div><div class="connector c2"></div><div class="connector c3"></div><div class="connector c4"></div><div class="sys-node n1 reveal"><span class="mono muted">01</span><b>Documentation</b><p>Organised records, shipment documentation and audit-ready filing.</p></div><div class="sys-node n2 reveal"><span class="mono muted">02</span><b>Coordination</b><p>Clear communication across airlines, freight forwarders and internal teams.</p></div><div class="sys-node n3 reveal"><span class="mono muted">03</span><b>Customer Service</b><p>Practical support, updates and guidance through operational platforms.</p></div><div class="sys-node n4 reveal"><span class="mono muted">04</span><b>Compliance</b><p>Careful handling of records and processes aligned with required standards.</p></div></div><div class="tools"><div class="tool reveal"><span class="tool-num mono">01</span><h4>Microsoft 365</h4><p>Word · Excel · PowerPoint · Outlook</p></div><div class="tool reveal"><span class="tool-num mono">02</span><h4>Power BI</h4><p>Data visualisation and business reporting</p></div><div class="tool reveal"><span class="tool-num mono">03</span><h4>One Cargo</h4><p>Cargo operations platform</p></div><div class="tool reveal"><span class="tool-num mono">04</span><h4>Calogi</h4><p>Digital cargo platform</p></div><div class="tool reveal"><span class="tool-num mono">05</span><h4>AI Prompt Engineering</h4><p>One Million Prompters · Dubai Future Foundation / DCAI</p></div></div></div></section>
-<section class="section analytics"><div class="wrap"><div class="section-head reveal"><div class="chapter mono">04 / Direction</div><div><h2>DATA<br>THINKING.</h2><p class="section-copy">The next chapter is business analytics: learning to connect operational understanding with structured data, reporting and better decisions.</p></div></div><div class="analytics-grid"><div class="a-card reveal"><span class="a-label mono">MBA / BUSINESS ANALYTICS</span><h3>FROM<br>OPERATIONS<br>TO DATA.</h3><p>Currently pursuing an MBA in Business Analytics, building a stronger foundation for analytical and business-focused work.</p><div class="chart"><svg viewBox="0 0 600 150" preserveAspectRatio="none"><line class="gridline" x1="0" y1="30" x2="600" y2="30"/><line class="gridline" x1="0" y1="75" x2="600" y2="75"/><line class="gridline" x1="0" y1="120" x2="600" y2="120"/><path class="chartpath" d="M0 126 C80 118 105 105 165 112 S250 80 305 90 S390 52 440 64 S520 26 600 34"/></svg></div></div><div class="a-card reveal"><span class="a-label mono">LEARNING / VISUAL</span><h3>STRUCTURE<br>BEFORE<br>INSIGHT.</h3><p>Clean records, consistent processes and understandable reporting create the foundation for useful analysis.</p><div class="bars"><i style="--h:38%"></i><i style="--h:52%"></i><i style="--h:46%"></i><i style="--h:68%"></i><i style="--h:61%"></i><i style="--h:82%"></i><i style="--h:74%"></i><i style="--h:94%"></i></div></div></div></div></section>
-<section class="section education" id="education"><div class="wrap"><div class="section-head reveal"><div class="chapter mono">05 / Education</div><div><h2>LEARNING<br>IN MOTION.</h2><p class="section-copy">Formal business education, now extended toward analytics and data-informed decision making.</p></div></div><div class="edu-grid"><article class="edu-card reveal"><div><span class="mono muted">CURRENT</span><h3>MBA</h3><p><strong>Business Analytics</strong><br>Currently pursuing</p></div><span class="status mono">In progress</span></article><article class="edu-card reveal"><div><span class="mono muted">2021 — 2024</span><h3>B.Com</h3><p><strong>Business Management</strong><br>Mangalore University · India</p></div><span class="status mono">Completed</span></article></div><div class="languages"><div class="mono muted">LANGUAGES</div><div class="language-grid"><div class="lang"><span class="mono">01</span><b>English</b><span>Professional</span></div><div class="lang"><span class="mono">02</span><b>Hindi</b><span>Language</span></div><div class="lang"><span class="mono">03</span><b>Urdu</b><span>Language</span></div><div class="lang"><span class="mono">04</span><b>Kannada</b><span>Language</span></div><div class="lang"><span class="mono">05</span><b>Tulu</b><span>Language</span></div></div></div></div></section>
-<section class="contact" id="contact"><div class="wrap"><div class="contact-inner reveal"><div class="mono muted">LET'S CONNECT</div><h2>MAKE<br><span>CONTACT.</span></h2><p class="contact-copy">For professional conversations, opportunities or collaboration, the fastest way to reach me is by email or LinkedIn.</p><div class="contact-links"><a class="contact-link" href="mailto:mohdabzan2003@gmail.com">Email ↗</a><a class="contact-link" href="tel:+971565754523">+971 56 575 4523</a><a class="contact-link" href="https://www.linkedin.com/in/mohdabzan" target="_blank" rel="noreferrer">LinkedIn ↗</a><a class="contact-link" href="assets/Abzan_Resume.pdf" target="_blank">View CV ↗</a></div></div></div></section>
-</main>
-<footer><div class="wrap" style="display:flex;justify-content:space-between;width:min(1420px,calc(100% - 64px))"><span class="footer-brand"> ABZAN</span><span>MOHAMMED ABZAN · DUBAI, UAE</span></div></footer>
-<script>
-(function(){
- const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
- const menuBtn=document.getElementById('menuBtn'),panel=document.getElementById('menuPanel');
- if(menuBtn && panel){menuBtn.addEventListener('click',()=>{panel.classList.toggle('open');document.body.classList.toggle('menu-open');menuBtn.textContent=panel.classList.contains('open')?'×':'☰'});
- panel.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{panel.classList.remove('open');document.body.classList.remove('menu-open');menuBtn.textContent='☰'}));}
- if(typeof gsap!=='undefined'&&!reduce){gsap.registerPlugin(ScrollTrigger);
-  const heroTl=gsap.timeline({defaults:{ease:'power4.out'}});
-  heroTl.from('.hero-kicker',{y:24,autoAlpha:0,duration:.8,delay:.15}).from('.hero-title',{yPercent:18,autoAlpha:0,duration:1.25},'-=.35').from('.hero-bottom',{y:22,autoAlpha:0,duration:.9},'-=.6');
-  gsap.utils.toArray('.reveal').forEach(el=>gsap.fromTo(el,{autoAlpha:0,y:34},{autoAlpha:1,y:0,duration:1,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 88%',once:true}}));
-  gsap.to('#heroPhoto',{yPercent:-3,scale:1.055,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:1.25}});
-  gsap.to('.story-image',{yPercent:-6,scale:1.08,ease:'none',scrollTrigger:{trigger:'.snapshot-side',start:'top bottom',end:'bottom top',scrub:1.4}});
-  gsap.to('.marquee-track',{xPercent:-22,ease:'none',scrollTrigger:{trigger:'.marquee',start:'top bottom',end:'bottom top',scrub:1}});
-  gsap.utils.toArray('.chartpath').forEach(p=>gsap.to(p,{strokeDashoffset:0,duration:1.8,ease:'power3.out',scrollTrigger:{trigger:p,start:'top 85%',once:true}}));
-  gsap.utils.toArray('.bars i').forEach((b,i)=>gsap.to(b,{scaleY:1,duration:.9,ease:'power3.out',scrollTrigger:{trigger:b,start:'top 90%',once:true},delay:i*.045}));
-  gsap.utils.toArray('.section-head h2').forEach(h=>gsap.fromTo(h,{clipPath:'inset(0 0 100% 0)'},{clipPath:'inset(0 0 0% 0)',duration:1.15,ease:'power4.out',scrollTrigger:{trigger:h,start:'top 82%',once:true}}));
-  const cursor=document.querySelector('.cursor-ring'); if(cursor && window.matchMedia('(pointer:fine)').matches){document.addEventListener('mousemove',e=>{gsap.to(cursor,{x:e.clientX,y:e.clientY,duration:.16,ease:'power2.out'})});document.querySelectorAll('a,button,.sys-node,.edu-card,.a-card,.snapshot-side').forEach(el=>{el.addEventListener('mouseenter',()=>cursor.classList.add('active'));el.addEventListener('mouseleave',()=>cursor.classList.remove('active'))})}
- }
 
- if(typeof gsap==='undefined'){
-   document.querySelectorAll('.reveal').forEach(el=>{el.style.opacity='1';el.style.transform='none';});
- }
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
 
- const progress=document.getElementById('progress');window.addEventListener('scroll',()=>{const h=document.documentElement.scrollHeight-innerHeight;progress.style.width=(h>0?(scrollY/h)*100:0)+'%'},{passive:true});
- const navLinks=[...document.querySelectorAll('.links a')];const sections=navLinks.map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){navLinks.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id))}}),{rootMargin:'-45% 0px -45%'});sections.forEach(s=>io.observe(s));
-})();
-</script>
-</body></html>
+    <header class="nav">
+
+        <div class="container nav-inner">
+
+            <a
+                href="#home"
+                class="brand"
+                aria-label="Mohammed Abzan Home"
+            >
+
+                <img
+                    src="/assets/favicon-512.png"
+                    alt="Mohammed Abzan logo"
+                    width="512"
+                    height="512"
+                >
+
+                <span>MOHAMMED ABZAN</span>
+
+            </a>
+
+            <nav
+                class="nav-links"
+                aria-label="Main navigation"
+            >
+
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#education">Education</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <!-- =========================
+             HERO
+        ========================== -->
+
+        <section
+            class="hero"
+            id="home"
+        >
+
+            <div class="container hero-grid">
+
+                <div>
+
+                    <div class="eyebrow">
+                        dnata · Emirates Group · Dubai
+                    </div>
+
+                    <h1>
+                        MOHAMMED
+                        <span>ABZAN</span>
+                    </h1>
+
+                    <div class="hero-role">
+                        Administration & Customer Service Professional
+                    </div>
+
+                    <p class="hero-description">
+                        Administration and Customer Service Professional
+                        at dnata (Emirates Group), Dubai International Airport,
+                        with experience in airport cargo operations,
+                        documentation, coordination, and customer service.
+                    </p>
+
+                    <div class="hero-buttons">
+
+                        <a
+                            href="#experience"
+                            class="button primary"
+                        >
+                            View Experience
+                        </a>
+
+                        <a
+                            href="#contact"
+                            class="button"
+                        >
+                            Contact Me
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="hero-image">
+
+                    <!-- Replace with your actual portrait if required -->
+                    <img
+                        src="/assets/profile.jpg"
+                        alt="Mohammed Abzan"
+                        loading="eager"
+                    >
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             ABOUT
+        ========================== -->
+
+        <section id="about">
+
+            <div class="container">
+
+                <div class="section-label">
+                    01 · About
+                </div>
+
+                <h2 class="section-title">
+                    ABOUT ME
+                </h2>
+
+                <div class="about-grid">
+
+                    <div class="about-text">
+
+                        <p>
+                            I am Mohammed Abzan, an Administration and
+                            Customer Service Professional working at dnata,
+                            part of the Emirates Group, at Dubai International
+                            Airport.
+                        </p>
+
+                        <p>
+                            My professional experience includes airport cargo
+                            operations, administration, documentation,
+                            coordination, and customer service.
+                        </p>
+
+                        <p>
+                            Alongside my professional experience, I am pursuing
+                            an MBA in Business Analytics at Manipal Academy
+                            of Higher Education.
+                        </p>
+
+                    </div>
+
+
+                    <div class="info-list">
+
+                        <div class="info-item">
+
+                            <small>Professional Role</small>
+
+                            <strong>
+                                Administration & Customer Service Professional
+                            </strong>
+
+                        </div>
+
+                        <div class="info-item">
+
+                            <small>Organization</small>
+
+                            <strong>
+                                dnata · Emirates Group
+                            </strong>
+
+                        </div>
+
+                        <div class="info-item">
+
+                            <small>Location</small>
+
+                            <strong>
+                                Dubai International Airport
+                            </strong>
+
+                        </div>
+
+                        <div class="info-item">
+
+                            <small>Education</small>
+
+                            <strong>
+                                MBA Business Analytics
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             EXPERIENCE
+        ========================== -->
+
+        <section id="experience">
+
+            <div class="container">
+
+                <div class="section-label">
+                    02 · Experience
+                </div>
+
+                <h2 class="section-title">
+                    EXPERIENCE
+                </h2>
+
+
+                <article class="experience-card">
+
+                    <div class="experience-top">
+
+                        <div>
+
+                            <h3 class="experience-title">
+                                Administration & Customer Service Professional
+                            </h3>
+
+                            <div class="experience-company">
+                                dnata · Emirates Group
+                            </div>
+
+                        </div>
+
+                        <div class="experience-date">
+                            Dubai International Airport
+                        </div>
+
+                    </div>
+
+
+                    <p class="experience-description">
+                        Supporting administrative and customer service
+                        activities within the airport environment, including
+                        cargo-related operations, documentation, coordination,
+                        communication, and day-to-day operational support.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             EDUCATION
+        ========================== -->
+
+        <section id="education">
+
+            <div class="container">
+
+                <div class="section-label">
+                    03 · Education
+                </div>
+
+                <h2 class="section-title">
+                    EDUCATION
+                </h2>
+
+
+                <div class="education-card">
+
+                    <h3>
+                        MBA — Business Analytics
+                    </h3>
+
+                    <p>
+                        Manipal Academy of Higher Education
+                    </p>
+
+                    <p style="margin-top: 12px;">
+                        Currently pursuing
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             SKILLS
+        ========================== -->
+
+        <section id="skills">
+
+            <div class="container">
+
+                <div class="section-label">
+                    04 · Professional Skills
+                </div>
+
+                <h2 class="section-title">
+                    SKILLS
+                </h2>
+
+                <div class="skills">
+
+                    <span class="skill">
+                        Administration
+                    </span>
+
+                    <span class="skill">
+                        Customer Service
+                    </span>
+
+                    <span class="skill">
+                        Airport Operations
+                    </span>
+
+                    <span class="skill">
+                        Cargo Operations
+                    </span>
+
+                    <span class="skill">
+                        Documentation
+                    </span>
+
+                    <span class="skill">
+                        Coordination
+                    </span>
+
+                    <span class="skill">
+                        Communication
+                    </span>
+
+                    <span class="skill">
+                        Operational Support
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CONTACT
+        ========================== -->
+
+        <section id="contact">
+
+            <div class="container">
+
+                <div class="section-label">
+                    05 · Contact
+                </div>
+
+                <div class="contact-box">
+
+                    <h2 class="contact-heading">
+                        LET'S<br>
+                        CONNECT.
+                    </h2>
+
+
+                    <div class="contact-info">
+
+                        <!-- Replace with your actual email -->
+                        <a href="mailto:your-email@example.com">
+                            your-email@example.com
+                        </a>
+
+                        <!-- Replace with your actual LinkedIn URL -->
+                        <a
+                            href="https://www.linkedin.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            LinkedIn ↗
+                        </a>
+
+                        <a
+                            href="https://github.com/MohdAbzanwebsite-mohdabzan.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            GitHub ↗
+                        </a>
+
+                        <span>
+                            Dubai, United Arab Emirates
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <div class="container footer-inner">
+
+            <div class="footer-brand">
+
+                <img
+                    src="/assets/favicon-512.png"
+                    alt="Mohammed Abzan logo"
+                    width="512"
+                    height="512"
+                >
+
+                <span>
+                    MOHAMMED ABZAN
+                </span>
+
+            </div>
+
+            <div class="footer-copy">
+                © 2026 Mohammed Abzan. All rights reserved.
+            </div>
+
+        </div>
+
+    </footer>
+
+</body>
+</html>
